@@ -1,13 +1,17 @@
-GRUPO-5#
-<<<<<<< HEAD
+Temática del Marketplace:
+Piezas de cerámica de diseño de autor, elaboradas en gres de manera artesanal.
+La variedad de los productos incluye desde vajilla para uso cotidiano como platos y tazas, hasta esculturas inspiradas en el monte chaqueño.
 
-?Hola!
- Soy Norma Emilce, y colaboro con (?"Leila Creaciones"....)  en la elaboraci?n de productos en cer?mica.
- En mis ratos libres estudio con Digital House, para convertirme en Desarrolladora Web Full Stack.
- Espero que les agrade los productos que ofrecemos.
-=======
-¡Hola!
- Soy Norma Emilce, y colaboro con (…"Leila Creaciones"....)  en la elaboración de productos en cerámica.
- En mis ratos libres estudio con Digital House, para convertirme en Desarrolladora Web Full Stack.
- Espero que les agrade los productos que ofrecemos.
->>>>>>> e513b4594c54c7a74f81e29ae8cafc2e0f7f4c8a
+El público objetivo son personas que buscan adquirir desde la comodidad de su casa, productos de diseño exclusivos.
+
+
+Nuestro grupo está conformado por:
+ * Norma Emilce:
+  ¡Hola!En mis ratos libres estudio con Digital House, para convertirme en Desarrolladora Web Full Stack.
+* Leila Robledo:
+    Soy docente del nivel primario y me gustan las actividades artísticas. 
+* Diego Cuello:
+*Juan Arellano:
+
+
+
