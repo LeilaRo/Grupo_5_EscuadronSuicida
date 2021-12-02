@@ -13,6 +13,8 @@ Páginas de referencia:
 
 4- https://www.grimoldi.com/ Utilizamos el carrito de compras de este sitio como referencia para nuestro wireframe ya que nos pareció simple pero funcional.
 
+5- https://planetacasa.com.ar/  De ésta página nos gusto la estética que presenta, visualmente es una referencia de lo que queremos lograr en nuestro proyecto. 
+
 
 Nuestro grupo está conformado por:
  * Norma Emilce:
@@ -22,7 +24,8 @@ Nuestro grupo está conformado por:
 * Diego Cuello:
   Hola!En mis ratos libres practico y estudio para terminar mi carrera de tecnico en informatica, ademas de jugar al basket y hacer natacion.
 
-*Juan Arellano:
+* Juan Arellano:
+  hola, me encuentro estudiando programación ademas de trabajar en comercio, en mis ratos libres me dedico a la musica.
 
 
 
