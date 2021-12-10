@@ -1,0 +1,22 @@
+{
+  "name": "dh.grupo-5",
+  "version": "1.0.0",
+  "description": "Temática del Marketplace:\r Piezas de cerámica de diseño de autor, elaboradas en gres de manera artesanal.\r La variedad de los productos incluye desde vajilla para uso cotidiano como platos y tazas, hasta esculturas inspiradas en el monte chaqueño.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeilaRo/DH.GRUPO-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeilaRo/DH.GRUPO-5/issues"
+  },
+  "homepage": "https://github.com/LeilaRo/DH.GRUPO-5#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
