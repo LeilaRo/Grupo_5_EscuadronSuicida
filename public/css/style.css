@@ -336,3 +336,59 @@ footer {
   border: black solid 1px;
   background-color: beige;
 }
+
+
+.control-formulario {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.control-formulario label {
+    margin-bottom: 5px;
+    font-style: italic;
+    display: block;
+}
+
+.boton-formulario {
+    background-color: cadetblue;
+    font-size: 25px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+input:disabled {
+    border-color: orange;
+}
+body{
+ background-color:   #B8860B;
+ font-style: italic;
+ text-align: center;
+ width: 100vw;
+}
+header{
+background-color: #B8860B;
+width: 100vw;
+}
+.cambio-devoluc{
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-around;
+    margin: auto;
+}
+.form{
+    padding-top: 60px;
+    width: 25vw;
+    display: block ;
+    margin-left: 500px;
+    }
+
+.form div{
+    padding-bottom: 15px;
+    text-align: right;
+ }
+.contact div{
+padding-bottom: 15px;
+}
+
+
