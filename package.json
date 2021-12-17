@@ -1,22 +1,32 @@
 {
-  "name": "dh.grupo-5",
+  "name": "sprint2",
   "version": "1.0.0",
-  "description": "Temática del Marketplace:\r Piezas de cerámica de diseño de autor, elaboradas en gres de manera artesanal.\r La variedad de los productos incluye desde vajilla para uso cotidiano como platos y tazas, hasta esculturas inspiradas en el monte chaqueño.",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "anymatch": "^3.1.2",
+    "clone-response": "^1.0.2",
+    "decompress-response": "^3.3.0",
+    "express": "^4.17.1",
+    "make-dir": "^3.1.0",
+    "mimic-response": "^1.0.1",
+    "minimist": "^1.2.5",
+    "nodemon": "^2.0.15",
+    "nopt": "^1.0.10",
+    "normalize-path": "^3.0.0",
+    "normalize-url": "^4.5.1",
+    "p-cancelable": "^1.1.0",
+    "picomatch": "^2.3.0",
+    "prepend-http": "^2.0.0",
+    "pupa": "^2.1.1",
+    "readdirp": "^3.6.0",
+    "responselike": "^1.0.2"
+  },
+  "devDependencies": {},
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LeilaRo/DH.GRUPO-5.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LeilaRo/DH.GRUPO-5/issues"
-  },
-  "homepage": "https://github.com/LeilaRo/DH.GRUPO-5#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "license": "ISC"
 }

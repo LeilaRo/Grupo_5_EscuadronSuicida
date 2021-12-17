@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: rgb(238, 228, 209);
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.contenedorSuperior {
+    position: sticky;
+    top:0px;
+    z-index: 300000;
+    background-color: rgb(238, 228, 209);
+    width: 100%;
+    height: 10vh;
+    margin: 0px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenedorSuperior > .imagenCarrito {
+    background-color: rgb(238, 228, 209)  ;
+    padding: 16px 4px 4px 4px;
+    text-align: right;
+}
+.botonCarrito {
+    max-width: 10vh;
+    height: auto;
+}
+.imagenCarrito::before{
+    font-size: 0.8rem;
+    vertical-align: text-top;
+    content: "Carrito";
+}
+
+.contenedorSuperior > .imagenLogo {
+  
+  background-color: rgb(238, 228, 209);
+  max-height: 10vh;
+  width: auto;
+  justify-content: center;
+}
+
+.logoHeader {
+  max-height: 10vh;
+  width: auto;
+}
+
+.btnMenu {
+    background-color: rgb(238, 228, 209);
+    padding: 18px 18px 10px 18px;
+    font-size: 1.3rem;
+    cursor:pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 200000;
+    top: 0;
+    left: 0;
+    background-color: rgb(224, 206, 147);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    -webkit-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.75);
+  }
+  
+  .sidenav a {
+    background-color: rgb(224, 206, 147);
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #181818;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #dda844;
+}
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: rgb(160, 136, 69);
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: #5f4c0d;
+  color: rgb(255, 255, 255);
+}
+
+
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 6px;
+}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.mySlides {
+  display: none;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: relative;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.numbertext {
+  display: flex;
+  position: inherit;
+  z-index: 1;
+}
+
+.containerProd {
+  display: flex;
+  width: auto;
+  height: 40vh;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 5px;
+  align-items: center;
+}
+
+.imagenProd{
+  height: 60%;
+  width: auto;
+}
+
+.textProd{
+  max-height: 60%;
+  border: solid 1px black;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.containerBeneficios{
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border: 2px black solid;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imgBene1 {
+  height: auto;
+  max-width:15%;
+}
+
+
+.imgBene2 {
+  height: auto;
+  max-width: 20%;
+}
+
+.imgBene3 {
+  height: auto;
+  max-width: 15%
+}
+
+.contenedorImagen {
+  flex-direction: column;
+    display: flex;
+    align-items: center;
+    height: auto;
+    max-width: 300px;
+  font-size: 1rem;
+}
+
+
+.info-footer{
+  display: flex;
+  justify-content: space-between;
+  background-color:beige
+}
+
+.info-contacto{
+  margin: 3px;
+  text-align: center;
+  background-color: beige;
+}
+
+.control-formulario {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.control-formulario label {
+  margin-bottom: 5px;
+  font-style: italic;
+  display: block;
+}
+
+.boton-formulario {
+  background-color: cadetblue;
+  font-size: 25px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 5px;
+  margin-top: 5px;
+  border: black solid 1px;
+  background-color: beige;
+}
