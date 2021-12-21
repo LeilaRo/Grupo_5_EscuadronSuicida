@@ -1,5 +1,6 @@
 Breve retrospectiva del equipo de trabajo:
 
+
 *Como buenas prácticas: Para la presentación del Primer Sprint trabajamos todo el equipo.
 Se llevaron a cabo reuniones previas y hubo acuerdos en la distribución de las tareas a
 realizar cada uno. 
