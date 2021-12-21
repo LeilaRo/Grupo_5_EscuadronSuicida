@@ -9,10 +9,38 @@
         <title>INICIAR SESION</title>
 </head>
 <body>
+    <header class="contenedorSuperior">
 
-<header>
-
-</header>
+        <div id="mySidenav" class="sidenav">
+    
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Tienda</a>
+            <a href="#">Productos</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Contacto</a>
+          </div>
+    
+        <span class="btnMenu" onclick="openNav()">&#9776;</span>
+    
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "55vw";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    
+        <div class="imagenLogo"> 
+          <img class="logoHeader" src="\imagenes\logoMain.png" alt="logo">
+        </div>
+    
+        <div class="imagenCarrito">
+            <img class="botonCarrito" href="*" src="\iconos\bagHome.svg">
+        </div>
+            
+    </header>
 <main>
     <form action="Creá tu cuenta" method="POST" class="control-formulario">
         <div>
