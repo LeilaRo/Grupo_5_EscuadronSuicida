@@ -4,9 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href= "./css/style.css" rel="stylesheet">
+    <title>REGISTRARSE</title>
 </head>
 <body>
-    Registro
+    <header class="contenedorSuperior">
+
+        <div id="mySidenav" class="sidenav">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Tienda</a>
+            <a href="#">Productos</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Contacto</a>
+          </div>
+
+        <span class="btnMenu" onclick="openNav()">&#9776;</span>
+
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "55vw";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+        <div class="imagenLogo"> 
+          <img class="logoHeader" src="\imagenes\logoMain.png" alt="logo">
+        </div>
+
+        <div class="imagenCarrito">
+            <img class="botonCarrito" href="*" src="\iconos\bagHome.svg">
+        </div>
+            
+    </header>
+    <main>
+    <form action="register.html" method="POST" class="control-formulario">
+        <p></p>
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre">       
+        <p></p>
+    <label>Email: </label>
+    <input type="email" name="email">
+        <p></p>
+    <label for=>contraseña:</label>
+    <input type="password" name="password">
+        <p></p>
+    <label for=>confirmar contraseña:</label>
+    <input type="new_password" name="new_password">
+        <p></p>
+    <button type="submit" class="boton-formulario">REGISTRARSE</button>
+        <p></p>
+    </form>
+</main>
+        <footer>
+      
+            <div class="info-footer">
+              <p>cómo comprar</p>
+              <p>cambios y devoluciones</p>
+              <p>métodos de envíos</p>
+              <p>métodos de pago</p>
+            </div>
+            
+            <div class="info-contacto">
+              <ul>
+                  <div><i class="fas fa-phone-square-alt">Teléfono</i></div>
+                  <div><i class="fas fa-envelope-open-text">Correo electrónico</i></div>
+                  <div><i class="fas fa-map-marker-alt">Domicilio</i></div>
+              </ul>
+            </div>
+    </footer>
 </body>
 </html>
