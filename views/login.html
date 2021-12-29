@@ -1,97 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href= "./css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
         <title>INICIAR SESION</title>
 </head>
 <body>
     <header class="contenedorSuperior">
 
         <div id="mySidenav" class="sidenav">
-    
+
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Tienda</a>
-            <a href="#">Productos</a>
-            <a href="#">Sobre Nosotros</a>
+            <a href="/">inico</a>
+            <a href="/productcart">Tienda</a>
+            <a href="/productDetail">Productos</a>
+            <a href="/login">Iniciar Sesion</a>
+            <a href="/register">Registrarse</a>
             <a href="#">Contacto</a>
           </div>
-    
+
         <span class="btnMenu" onclick="openNav()">&#9776;</span>
-    
+
         <script>
         function openNav() {
-          document.getElementById("mySidenav").style.width = "55vw";
+          document.getElementById("mySidenav").style.width = "35vw";
         }
         
-        function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
+        function closeNav() { 
+          document.getElementById("mySidenav").style.width = "0vw";
         }
         </script>
-    
+      <div class="contenedor-buscador">
+              <input type="search" placeholder="Buscar un productos">
+             </div>
         <div class="imagenLogo"> 
-          <img class="logoHeader" src="\imagenes\logoMain.png" alt="logo">
+          <a href="/"><img class="logoHeader" src="\imagenes\logo_fondoblanco.jpg" alt="logo"></a>
         </div>
-    
+        <div class="registro-formulario">
+          <ul>
+            <li><a href="/login">iniciar Sesion</a></li>
+            <li> || </li>
+            <li><a href="/register">Registrarse</a></li>
+          </ul>
+        </div>  
         <div class="imagenCarrito">
-            <img class="botonCarrito" href="*" src="\iconos\bagHome.svg">
+           <a href="/productCart"><i class="fab fa-opencart"></i></a>
         </div>
             
     </header>
 <main>
     <form action="Creá tu cuenta" method="POST" class="control-formulario">
         <div>
+            <br>
+            <br>
            <div>
               <label for="name">nombre</label>
-              <input type="text" id="name" name="nombre">
+              <input type="text" id="name" name="nombre"  placeholder="ej:Juan Perez">
            </div>
+           <br>
            <div>
             <label for="email">email</label>
-            <input type="texto" id="email" name="correo">
+            <input type="texto" id="email" name="correo"  placeholder="ejemplo@correo">
            </div>
+           <br>
            <div>
            <label for="contraseña">contraseña</label>
-           <input type="password" id="password" name="contraseña">
+           <input type="password" id="password" name="contraseña"  placeholder="clave">
            </div>
-           <div>
-              <label for="contraseña">confirmar contraseña</label>
-              <input type="password" id="password" name="contraseña">
+           <br>
            </div>
-           </div>
-
-
            <div><button>"CapTChA"</button></div>
            <div>
            <button type="submit" class="boton-formulario">CREAR CUENTA</button>
-            </div>             
+            </div> 
+            <br>
+            <br>            
             </div>           
              <a>"¿ya tienes cuenta?"</a>
+             <br>
+             
             <div>
                 <button type="submit" class="boton-formulario">INICIAR SESION</button>
                  
             </div>
+            <br>
+           
         </div>
         </form>
     </main>
     
-<footer>
-    <div class="info-footer">
-        <p>cómo comprar</p>
-        <p>cambios y devoluciones</p>
-        <p>métodos de envíos</p>
-        <p>métodos de envio</p>
-    </div>
-    
-    <div class="info-contacto">
-        <ul>
-            <div><i class="fas fa-phone-square-alt">Teléfono</i></div>
-            <div><i class="fas fa-envelope-open-text">Correo electrónico</i></div>
-            <div><i class="fas fa-map-marker-alt">Domicilio</i></div>
-        </ul>
-    </div>
-   </footer>       
+<footer> 
+    <div class="containerBeneficios">
+        <div class="contenedorImagen1">
+        <img class="imgBene1"src="/iconos/gift-box-with-a-ribbon.png" alt="">
+        <p>Envíos 100% seguros</p>
+        </div>
+        <div class="contenedorImagen2">
+        <img class="imgBene2" src="/iconos/bank-building.png" alt="">
+        <p>10% de descuento</p>
+        </div>
+        <div class="contenedorImagen3">
+        <img class="imgBene3" src="/iconos/credit-card.png" alt="">
+        <p>12 Cuotas sin interes</p>
+        </div>
+      </div>
+
+<div class="info-footer">
+  <p>cómo comprar</p>
+  <p>cambios y devoluciones</p>
+  <p>métodos de envíos</p>
+  <p>métodos de envio</p>
+</div>
+
+<div class="info-contacto">
+  <ul>
+      <div><i class="fas fa-phone-square-alt"> teléfono</i></div>
+      <div><i class="fas fa-envelope-open-text"> correo electrónico</i></div>
+      <div><i class="fas fa-map-marker-alt"> domicilio</i></div>
+  </ul>
+</div>
+</footer>       
 </body>
 </html>

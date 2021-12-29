@@ -8,52 +8,51 @@
     font-size: 100%;
     vertical-align: baseline;
     background: rgb(243, 241, 237);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-
-
 .contenedorSuperior {
-    position: sticky;
-    top:0px;
-    z-index: 300000;
-    background-color: rgb(238, 228, 209);
-    width: 100%;
-    height: 10vh;
-    margin: 0px;
-    border: 0.5px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  z-index: 300000;
+  background-color: rgb(238, 228, 209);
+  width: 100%;
+  height: 12vh;
+  margin: 2px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-around;
+  align-items: center;
+  height: 120px;
 }
 
 .contenedorSuperior > .imagenCarrito {
     background-color: rgb(238, 228, 209)  ;
-    padding: 16px 4px 4px 4px;
+    padding: 10px 10px 10px 10px;
     text-align: right;
+    padding: 10px 10px 10px 10px
 }
-.botonCarrito {
+.imagenCarrito {
     max-width: 10vh;
     height: auto;
-}
-.imagenCarrito::before{
-    font-size: 0.8rem;
-    vertical-align: text-top;
-    content: "Carrito";
+    color: black;
+    font-size: 2em;
+    background-color: rgb(238, 228, 209) 
 }
 
 .contenedorSuperior > .imagenLogo {
   
   background-color: rgb(238, 228, 209);
-  max-height: 10vh;
-  width: auto;
+  width: 118px; 
   justify-content: center;
 }
 
 .logoHeader {
-  max-height: 10vh;
-  width: auto;
+  width: 118px;
+  height: auto;
 }
 
 .btnMenu {
@@ -65,12 +64,12 @@
 
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 0vw;
     position: fixed;
     z-index: 200000;
     top: 0;
     left: 0;
-    background-color: rgb(224, 206, 147);
+    background-color: rgb(238, 228, 209);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -80,7 +79,7 @@
   }
   
   .sidenav a {
-    background-color: rgb(224, 206, 147);
+    background-color: rgb(238, 228, 209);
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -90,7 +89,7 @@
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color:rgb(238, 228, 209);
   }
   
   .sidenav .closebtn {
@@ -101,53 +100,44 @@
     margin-left: 50px;
   }
   
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+.contenedor-buscador{
+  display: flex;
+  background-color: rgb(238, 228, 209);
+}
+.registro-formulario{
+  display:flex;
+  background-color: rgb(238, 228, 209);
 
-
+}
 
 .topnav {
   overflow: hidden;
-  background-color: #dda844;
-}
-
-
-.topnav a {
   float: left;
-  display: block;
+  display: flex;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 12px;
   text-decoration: none;
   font-size: 17px;
 }
 
-
-.topnav a:hover {
-  background-color: rgb(160, 136, 69);
-  color: black;
+ul {
+  list-style-type: none;
 }
 
-
-.topnav a.active {
-  background-color: #5f4c0d;
-  color: rgb(255, 255, 255);
+li {
+  background-color: rgb(238, 228, 209);
+  float: left;
 }
-
-
-.topnav input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-  border-radius: 6px;
+a{
+  text-decoration: none;
+  background-color: rgb(238, 228, 209);
+  color:black;
 }
-
-
+a i{
+  background-color: rgb(238, 228, 209);
+  color:black;
+}
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -243,23 +233,24 @@
   display: flex;
   width: auto;
   height: 40vh;
-  border: 2px solid black;
+  box-shadow: 0px 0px 10px rgb(100 100 100);
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
   align-items: center;
+  justify-content: space-around;
 }
 
 .imagenProd{
   height: 70%;
   width: auto;
+  box-shadow:0px 0px 10px rgb(50, 60, 50);
 }
 
 .textProd{
   max-height: 60%;
-  border: solid 1px black;
   border-radius: 2px;
   padding: 5px;
-  margin: 2px;
+  margin: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -269,7 +260,6 @@
   display: flex;
   padding: 5px;
   margin: 5px;
-  border: 2px black solid;
   justify-content: space-around;
   align-items: center;
 }
@@ -312,42 +302,22 @@
   background-color: beige;
 }
 
-.control-formulario {
-  margin-bottom: 15px;
-  text-align: center;
-  box-shadow:0px 0px 10px rgb(100, 100, 100);
-}
-.control-formulario label {
-  margin-bottom: 5px;
-  display: block;
-}
-.boton-formulario {
-  background-color: cadetblue;
-  font-size: 25px;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-  transition: all 0.8s;
-}
-.boton-formulario:hover{
-  background-color:#0022AA;
-}
-
 input{
   background-color: white;
-    margin-bottom: 15px;
+    margin: 10px;
     text-align: center;
     box-shadow: 0px 0px 10px rgb(100 100 100);
     border-radius: 5px;
 }
 input:focus{
-  background-color:#885A3A;
+  background-color:rgb(238, 228, 209);
 }
 
 footer {
+  width: auto;
   padding: 5px;
   margin-top: 5px;
-  border: black solid 1px;
+  margin: 10px;
   background-color: beige;
 }
 
@@ -358,30 +328,42 @@ footer {
 }
 .control-formulario label {
     margin-bottom: 5px;
-    font-style: italic;
     display: block;
 }
 
 .boton-formulario {
-    background-color: cadetblue;
-    font-size: 25px;
-    color: white;
-    padding: 5px 10px;
     border-radius: 10px;
+    background-color: rgba(0,0,0,0.7);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
-
+.boton-formulario:hover{
+  opacity: 1;
+}
 input:disabled {
-    border-color: orange;
+    border-color: skyblue;
 }
 body{
- background-color:   #B8860B;
- font-style: italic;
+ background-color: #FFFFFF;;
+ font-family: 'Montserrat', sans-serif;
  text-align: center;
- width: 100vw;
+ width: auto;
 }
 header{
-background-color: #B8860B;
+background-color: #FFFFFF;;
 width: 100vw;
+}
+main{
+  background-color: white;
 }
 .cambio-devoluc{
     display: flex;
@@ -469,6 +451,31 @@ padding-bottom: 15px;
   border: solid 10px #111010;
   box-shadow: 5px -5px 12px -4px #C8BCD8;
 
+}
+
+@media(max-width:390px){
+.contenedor-buscador{
+  display: none;
+}
+.registro-formulario{
+  display: none;
+}
+.info-footer{
+  display: none;
+}
+.contenedorImagen2{
+  display: none;
+}
+.contenedorImagen3{
+  display: none;
+}
+
+}
+@media(min-width:391px){
+
+}
+@media(min-width:769px){
+  
 }
 
 
