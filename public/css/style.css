@@ -456,8 +456,6 @@ padding-bottom: 15px;
 }
 .container-card{
   background-color: white;
-  display: flex;
-  flex: row;
   justify-content: center;
   margin:auto;
 }
@@ -503,7 +501,9 @@ padding-bottom: 15px;
 
 }
 @media(min-width:391px){
-
+.container-card{
+  display:flex;
+  flex-direction: row;
 }
 @media(min-width:769px){
   
