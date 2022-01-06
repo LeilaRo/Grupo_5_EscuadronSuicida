@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <header class="contenedorSuperior">
+
+    <div id="mySidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Tienda</a>
+        <a href="#">Productos</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Contacto</a>
+      </div>
+
+    <span class="btnMenu" onclick="openNav()">&#9776;</span>
+
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "55vw";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+    <div class="imagenLogo"> 
+      <img class="logoHeader" src="\imagenes\logoMain.png" alt="logo">
+    </div>
+
+    <div class="imagenCarrito">
+        <img class="botonCarrito" href="*" src="\iconos\bagHome.svg">
+    </div>
+        
+</header>
+  <main class= "product-detail">
+
+      <section class="contenedor-detalle">
+
+        <div class="contenedor-izquierdo">
+          <div><img src= "/imagenes/taza2_2.jpg" alt = "Jarra Gres"> </div>
+          <div><img src= "/imagenes/taza2_3.jpg" alt = "Jarra Gres"> </div>
+      
+        </div>
+        <div class="contenedor-medio"><img src= "/imagenes/taza2_1.jpg" alt = "Jarra Gres"></div>
+  
+        <div class="contenedor-derecho"> 
+          <div class=nombre>TAZA GRES ESMALTE JASPEADO</div>
+          <div class="precio">$1200</div>
+          <div class="medios-de-pago"> </div>
+          <div>opciones de pago </div>
+          <div><img width=200px src="/imagenes/formas-de-pago.jpeg" alt= "formas de pago"></div>
+          <div> <form= action="cantidad" method="get">
+            <label>Seleccione cantidad  </label>
+            <select name="cantidad">
+                <option>1</option>
+                <option>2</option>
+	              <option>3</option>
+	              <option>4</option>
+	              <option>5</option>
+	              <option>6</option>
+               </select>
+          </form>
+          </div>
+          <div><button type="submit" class="boton-formulario">AGREGAR AL CARRITO</button>
+          
+        </div>
+      </section>
+
+      <section class="descripcion-producto">
+          <div><p> Cerámica gres. Cono 6/7.</p>
+            <p>Producto apto para lavavajillas Y MICROONDAS.</p>
+            <p>Medidas 9 x 8.5 cm</p>
+            <p>Capacidad aprox. 400cc.</p>
+          </div> 
+      </section>
+      <article class="comentarios"></article>
+          <div>
+            
+          </div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Facilis, saepe? Eos quae distinctio, iusto atque non ut nam placeat ea natus minus 
+          </div>
+      </article>
+    
+  </main>
+
+  <footer>
+    <div class="info-footer">
+        <p>cómo comprar</p>
+        <p>cambios y devoluciones</p>
+        <p>métodos de envíos</p>
+        <p>métodos de envio</p>
+    </div>
+    
+    <div class="info-contacto">
+        <ul>
+            <div><i class="fas fa-phone-square-alt">Teléfono</i></div>
+            <div><i class="fas fa-envelope-open-text">Correo electrónico</i></div>
+            <div><i class="fas fa-map-marker-alt">Domicilio</i></div>
+        </ul>
+    </div>
+   </footer> 
+</body>
+</html>
