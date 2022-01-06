@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
-=======
   "name": "sprint2",
   "version": "1.0.0",
   "description": "",
@@ -12,6 +7,7 @@
     "anymatch": "^3.1.2",
     "clone-response": "^1.0.2",
     "decompress-response": "^3.3.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "make-dir": "^3.1.0",
     "mimic-response": "^1.0.1",
@@ -34,5 +30,4 @@
   },
   "author": "",
   "license": "ISC"
->>>>>>> 6fa5df590fe477e4d9c6a9b4cddcfe3a534f5dc9
 }
