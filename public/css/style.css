@@ -52,7 +52,8 @@
 
 .logoHeader {
   width: 118px;
-  height: auto;
+  height: 110px;
+  background-color: rgb(238, 228, 209)
 }
 
 .btnMenu {
