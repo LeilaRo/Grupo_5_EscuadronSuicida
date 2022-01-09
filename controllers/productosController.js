@@ -2,7 +2,9 @@ const controlador={
     index: function(){},
 
     detalleProducto: (req, res) => {
-        res.render( "productDetail");
+        res.send("detalle de producto")
+        
+        /*res.render( "productDetail");/* Corregir */
     },
     /*
     crearProducto: (req, res) => {
