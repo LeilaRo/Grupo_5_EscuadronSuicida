@@ -7,11 +7,32 @@
     
     <%- include('./partials/header') %> 
 
-    <main>
-
-    <!-- aca va el formulario -->
-
+    <main class="body-editProduct">
+            <h1>FORMULARIO: EDICIÓN DE PRODUCTOS</h1>
+            <div class="contenedor-editarProd">
+                <form action="">
+                    <div class="form-editProd">
+                       <label>Producto</label>
+                       <input type="text" name="nombre del producto">
+                    </div>
+                    <div class="form-editProd">
+                       <label>Seleccionar Imagen</label>
+                       <input type="file" name="foto" accept=".jpg, .png" class="control-input">
+                    </div>
+                    <div class="form-editProd">
+                       <label>Descripción del Producto</label>
+                       <textarea name="Descripción" id="" cols="40" rows="6"></textarea>
+                    </div> 
+                    <div class="form-editProad">
+                       <label>Precio</label>
+                       <input type="number" name="precio">
+                    </div>
+                    <button type="submit" class="editProd">EDITAR</button>
+                    <button type="reset" class="editProd">BORRAR</button>
+                </form>
+            </div>
     </main>
+     
 
     <%- include('./partials/footer') %> 
 

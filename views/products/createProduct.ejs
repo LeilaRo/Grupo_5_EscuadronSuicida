@@ -3,14 +3,34 @@
 
     <%- include('./partials/head')%>
 
-<body>
+<body >
     
     <%- include('./partials/header') %> 
-
-    <main>
-
-    <!-- aca va el formulario -->
-
+              
+    <main class="body-loadProduct">
+        <h1>FORMULARIO: NUEVOS PRODUCTOS</h1>
+        <div class="contenedor-agregarProd">
+            <form action="">
+                <div class="form-loadProd">
+                   <label>Producto</label>
+                   <input type="text" name="nombre del producto">
+                </div>
+                <div class="form-loadProd">
+                   <label>Seleccionar Imagen</label>
+                   <input type="file" name="foto" accept=".jpg, .png" class="control-input">
+                </div>
+                <div class="form-loadProd">
+                   <label>Descripción del Producto</label>
+                   <textarea name="Descripción" id="" cols="40" rows="6"></textarea>
+                </div> 
+                <div class="form-loadProad">
+                   <label>Precio</label>
+                   <input type="number" name="precio">
+                </div>
+                <button type="submit" class="loadProd">ENVIAR</button>
+                <button type="reset" class="loadProd">BORRAR</button>
+            </form>
+        </div>
     </main>
 
     <%- include('./partials/footer') %> 

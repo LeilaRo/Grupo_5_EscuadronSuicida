@@ -17,6 +17,4 @@ app.listen(3030, () =>{
 })
 
 app.use('/producto', rutasProductos);
-app.use('/', rutasMain)
-
-
+app.use('/', rutasMain);

@@ -325,7 +325,7 @@ footer {
 }
 
 
-.control-formulario {
+.control-formulario, .form-loadProd, .form-editProd {
     margin-bottom: 15px;
     text-align: center;
 }
@@ -334,7 +334,7 @@ footer {
     display: block;
 }
 
-.boton-formulario {
+.boton-formulario, .loadProd, .editProd {
     border-radius: 10px;
     background-color: rgba(0,0,0,0.7);
     border: none;
