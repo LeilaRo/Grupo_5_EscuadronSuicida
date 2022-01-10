@@ -1,13 +1,12 @@
+const path= require('path');
+
 const controlador={
     register: (req, res) => {
-        res.send("registrarse")
-
-        
-        /*res.render( "register");*/
+        res.render(path.resolve(__dirname, '../views/users/register'))
         
     },
     login: (req, res) => {
-        res.send("Login")
+        res.render(path.resolve(__dirname, '../views/users/login'))
     
        /* res.render("login");*/
     }

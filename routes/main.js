@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 router.get("/login", usuarioController.login)
 
-router.get("/register", usuarioController.register )
+router.get("/register", usuarioController.register)
  
 
 module.exports = router;
