@@ -5,7 +5,9 @@ const controlador={
 
     detalleProducto: (req, res) => {
         res.render(path.resolve(__dirname, '../views/products/productDetail'));
-        /*res.render( "productDetail");/* Corregir */
+        /*
+        res.render( "productDetail");
+        /* Corregir */
     },
     crearProducto: (req, res) => {
         res.render(path.resolve(__dirname, '../views/products/createProduct'));

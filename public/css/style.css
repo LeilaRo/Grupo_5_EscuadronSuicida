@@ -507,7 +507,21 @@ padding-bottom: 15px;
   flex-direction: row;
 }
 @media(min-width:769px){
-  
-}
+  .contenedor-izquierdo{
+    display:block;
+    width: 70%;
+  }
+  .contenedor-izquierdo img{
+    width: 55%;
+  }
+  .contenedor-medio{
+    width:80%;
+  }
+  }
+  .contenedor-detalle{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+  }
 }
 
