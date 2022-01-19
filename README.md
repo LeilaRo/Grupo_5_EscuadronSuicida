@@ -29,13 +29,4 @@ Nuestro grupo está conformado por:
 
 Link de  tablero de trello https://trello.com/grupo5trabajointegrador/home
 
-retro sprint 2:
-Como retrospectiva del trabajo en equipo que nos dejara la entrega del "SPRINT 2" se puede decir:
-Debemos comenzar a implementar mayor número de reuniones, como mínimo dos por semana, porque creemos que las mismas mejoran la calidad del proyecto. 
-Se observó que llevar un permanente ritmo de trabajo con la colaboración de los miembros del equipo brinda buenos resultados, por lo que se decidió el apoyo en las fortalezas
-de cada uno de sus integrantes.
-Se continuará con la comunicación y escucha activa por parte de cada uno, asignando de manera clara y precisa distintas tareas y/o responsabilidades, para no duplicar esfuerzos;
-como así también darle un mayor uso a las tarjetas de TRELLO como herramienta de organización.
-
-retro sprint 3:
 
