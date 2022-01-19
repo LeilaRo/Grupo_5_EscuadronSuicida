@@ -13,7 +13,7 @@ nuestros bocetos.
 *Como práctica de gran valor para el trabajo en equipo es la comunicación a través de los
 canales de discord o whatsapp.
 
-retro sprint 2:
+Retro sprint 2:
 
 Como retrospectiva del trabajo en equipo que nos dejara la entrega del "SPRINT 2" se puede decir:
 Debemos comenzar a implementar mayor número de reuniones, como mínimo dos por semana, porque creemos que las mismas mejoran la calidad del proyecto. 
@@ -22,4 +22,10 @@ de cada uno de sus integrantes.
 Se continuará con la comunicación y escucha activa por parte de cada uno, asignando de manera clara y precisa distintas tareas y/o responsabilidades, para no duplicar esfuerzos;
 como así también darle un mayor uso a las tarjetas de TRELLO como herramienta de organización.
 
-retro sprint 3:
+Retro sprint 3:
+
+* Como comenzar a hacer: Asignar tareas a cada uno de los miembros del equipo, a fin de lograr un trabajo equitativo.
+* Como hacer más: "daily meeting" que nos brindara buenos resultados, como ser la mejora en la comunicación.
+* Como continuar haciendo: seguimiento del proyecto a través de la herramienta TRELLO.
+* Como buena práctica: se escribió el código en forma colaborativa.
+* Como falencia: no todos los integrantes del grupo llegan al sprint con la lectura y comprensión de los temas.
