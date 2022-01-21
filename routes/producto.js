@@ -1,9 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const productosController= require('../controllers/productosController.js');
+const multer = require('multer');
+
+//Configuración de Multer:
+const storage = multer.diskStorage({
+    destination:(req, res, cb)=>{
+        cb(null,'./public/imagenes/products');
+    },
+    filename:(req, res, cb) =>{
+        cb(null, `${Date.now()}--{file.originalname}`)
+    }
+
+})
+
+const upload= multer({storage})
 
 /*1- products (GET) listado de productos */
-
 router.get("/", productosController.productsList);
 
 /* 2 products/create (GET)
@@ -11,7 +24,7 @@ Formulario de creación de productos */
 router.get("/create", productosController.createProduct);
 /*4. /products (POST)
 Acción de creación (a donde se envía el formulario)*/
-router.post("/create", productosController.saveProduct);
+router.post("/create", upload.single('productImage'),productosController.saveProduct);
 
 /*3. /products/:id (GET)
 Detalle de un producto particular */
