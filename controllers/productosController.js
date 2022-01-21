@@ -20,10 +20,9 @@ const controlador={
     saveProduct: (req, res) =>{
         //Obtener los datos de req.body
         let newProduct={
-                product: req.body.product,
-                description: req.body.description,
-                price: req.body.price,
-                image: req.body.image,
+                id: products[products.length - 1].id +1,
+                ...req.body,
+                image: 'default.jpg'
             } 
         console.log(newProduct)
         //Escribir esos datos en json, usar fs y escribirlo en el archivo:
@@ -31,10 +30,9 @@ const controlador={
         const newJsonProduct = JSON.stringify(products);
     
         fs.writeFileSync(productsFilePath, newJsonProduct, "utf-8")
-        console.log("se guardo el producto")
-    
-            //res.redirect({ruta a donde quiero que se redirija ej: "/products"})
-        res.redirect("/productDetail");
+
+        //res.redirect({ruta a donde quiero que se redirija ej: "/products"})
+        res.redirect("/products/productsList");
         },
     
     editProduct: (req, res) => {

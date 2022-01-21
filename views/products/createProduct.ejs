@@ -8,27 +8,40 @@
     <%- include('../partials/header') %> 
               
     <main class="body-loadProduct">
-        <h1>FORMULARIO: NUEVOS PRODUCTOS</h1>
+        <h1>CARGAR UN NUEVO PRODUCTO</h1>
         <div class="contenedor-agregarProd">
             <form action="create" method= 'POST'>
                 <div class="form-loadProd">
                    <label>Producto</label>
                    <input type="text" name="product">
                 </div>
-                <div class="form-loadProd">
-                   <label>Seleccionar Imagen</label>
-                   <input type="file" name="image" accept=".jpg, .png" class="control-input">
-                </div>
-                
+
                    <label>Descripción del Producto</label>
                    <div class="form-loadProd">
                    <textarea name="description" id="" cols="40" rows="6"></textarea>
                    </div>
+
+                 <div class="form-loadProad">
+                   <label>Categoría</label>
+                   <input type="text" name="category">
+                </div>
                 
+                <div class="form-loadProad">
+                    <label>Color</label>
+                    <input type="text" name="colour">
+                 </div>
+
                 <div class="form-loadProad">
                    <label>Precio</label>
                    <input type="number" name="precio">
                 </div>
+
+                <div class="form-loadProd">
+                    <label>Seleccionar Imagen</label>
+                    <input type="file" name="image" accept=".jpg, .png" class="control-input">
+                 </div>
+
+
                 <button type="submit" class="loadProd">ENVIAR</button>
                 <button type="reset" class="loadProd">BORRAR</button>
             </form>
