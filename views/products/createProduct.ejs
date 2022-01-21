@@ -10,19 +10,19 @@
     <main class="body-loadProduct">
         <h1>FORMULARIO: NUEVOS PRODUCTOS</h1>
         <div class="contenedor-agregarProd">
-            <form action="">
+            <form action="create" method= 'POST'>
                 <div class="form-loadProd">
                    <label>Producto</label>
-                   <input type="text" name="nombre del producto">
+                   <input type="text" name="product">
                 </div>
                 <div class="form-loadProd">
                    <label>Seleccionar Imagen</label>
-                   <input type="file" name="foto" accept=".jpg, .png" class="control-input">
+                   <input type="file" name="image" accept=".jpg, .png" class="control-input">
                 </div>
                 
                    <label>Descripción del Producto</label>
                    <div class="form-loadProd">
-                   <textarea name="Descripción" id="" cols="40" rows="6"></textarea>
+                   <textarea name="description" id="" cols="40" rows="6"></textarea>
                    </div>
                 
                 <div class="form-loadProad">

@@ -11,6 +11,7 @@
     "express": "^4.17.1",
     "make-dir": "^3.1.0",
     "method": "^2.0.0",
+    "method-override": "^3.0.0",
     "mimic-response": "^1.0.1",
     "minimist": "^1.2.5",
     "nopt": "^1.0.10",
