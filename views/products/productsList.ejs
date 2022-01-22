@@ -1,2 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
 
-Lista de productos
+  <%- include('../partials/head')%>
+
+<body>
+    <%- include('../partials/header') %> 
+
+<main>
+
+    <h2>LISTA DE PRODUCTOS</h2>
+
+    <% products.forEach(element => { %>
+       <br>
+       <h2> <%= element.name %> </h2>
+       <br>
+       <span> <%= element.description %> </span>
+       <br>
+       <br>
+       <h2> $<%= element.price %> </h2>
+       <br>
+       <span> <%= element.category %> </span>
+       <br>
+       <br>
+       <h2> <%= element.image %> </h2>
+       <br>
+       <span> <%= element.colours %> </span> 
+       <br>
+       <p><%= element.id%></p>
+       <br>
+       <br>
+        <% }) %>
+
+
+ </main>
+
+<%- include('../partials/footer') %> 
+    
+</body>
+</html>

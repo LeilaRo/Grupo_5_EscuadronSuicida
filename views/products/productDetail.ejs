@@ -19,8 +19,10 @@
         <div class="contenedor-medio"><img src= "/imagenes/taza2_1.jpg" alt = "Jarra Gres"></div>
   
         <div class="contenedor-derecho"> 
-          <div class=nombre>TAZA GRES ESMALTE JASPEADO</div>
-          <div class="precio">$1200</div>
+
+          <div class=nombre><%= idProduct.name %></div>
+          <div class="precio"> $<%= idProduct.price %> </div>
+          <h2>categoria <%= idProduct.category %></h2>
           <div class="medios-de-pago"> </div>
           <div>opciones de pago </div>
           <div><img width=200px src="/imagenes/formas-de-pago.jpeg" alt= "formas de pago"></div>
@@ -42,10 +44,7 @@
       </section>
 
       <section class="descripcion-producto">
-          <div><p> Cerámica gres. Cono 6/7.</p>
-            <p>Producto apto para lavavajillas Y MICROONDAS.</p>
-            <p>Medidas 9 x 8.5 cm</p>
-            <p>Capacidad aprox. 400cc.</p>
+          <div> <%= idProduct.description %>
           </div> 
       </section>
       <article class="comentarios"></article>
@@ -56,7 +55,7 @@
          Facilis, saepe? Eos quae distinctio, iusto atque non ut nam placeat ea natus minus 
           </div>
       </article>
-    
+
   </main>
 
   <%- include('../partials/footer') %> 

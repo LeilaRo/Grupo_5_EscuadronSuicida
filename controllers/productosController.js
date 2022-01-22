@@ -10,12 +10,11 @@ const products = JSON.parse(jsonProducts);
 const controlador={
     index: function(){},
 
-    productDetail: (req, res) => { 
-        res.render( "products/productDetail");
-        
-    },
     createProduct: (req, res) => {
         res.render( "products/createProduct");
+    },
+    editProduct: (req, res) => {
+        res.render('products/editProduct');
     },
     saveProduct: (req, res) =>{
         //Obtener los datos de req.body
@@ -34,13 +33,23 @@ const controlador={
         //res.redirect({ruta a donde quiero que se redirija ej: "/products"})
         res.redirect("/products/productsList");
         },
-    
-    editProduct: (req, res) => {
-        res.render('products/editProduct');
-    },
 /* Sprint 4*/
-//Juan
+//Juan  
     productsList: (req, res)=> {
+		res.render('products/productsList', {products})
+    },
+    productDetail: (req, res) =>{
+
+        const id = req.params.id;
+
+            const selectProduct = (id) =>{
+            const idProduct = products.find(productSelected => productSelected.id == id);
+            return idProduct;
+            
+        }
+        console.log(selectProduct(id));
+        
+        res.render('products/productDetail', {idProduct: selectProduct(id)});
     },
 //Leila
    
@@ -50,6 +59,7 @@ const controlador={
     deleteProduct: (req, res) =>{
 
     },
+
 
     
 }
