@@ -10,11 +10,37 @@ const products = JSON.parse(jsonProducts);
 const controlador={
     index: function(){},
 
+    productsList: (req, res)=> {
+		res.render('products/productsList', {products})
+    },
+
+    productDetail: (req, res) =>{
+
+        const id = req.params.id;
+
+            const selectProduct = (id) =>{
+            const idProduct = products.find(productSelected => productSelected.id == id);
+            return idProduct;         
+        }
+        console.log(selectProduct(id));
+        
+        res.render('products/productDetail', {idProduct: selectProduct(id)});
+    },
+
     createProduct: (req, res) => {
         res.render( "products/createProduct");
     },
-    editProduct: (req, res) => {
-        res.render('products/editProduct');
+
+    editProduct: (req, res) => { 
+
+        const id = req.params.id;
+
+            const selectProduct = (id) =>{
+            const idProduct = products.find(productSelected => productSelected.id == id);
+            return idProduct;         
+        }
+     
+        res.render('products/editProduct', {idProduct: selectProduct(id)} );
     },
     saveProduct: (req, res) =>{
         //Obtener los datos de req.body
@@ -33,27 +59,19 @@ const controlador={
         //res.redirect({ruta a donde quiero que se redirija ej: "/products"})
         res.redirect("/products/productsList");
         },
-/* Sprint 4*/
-//Juan  
-    productsList: (req, res)=> {
-		res.render('products/productsList', {products})
-    },
-    productDetail: (req, res) =>{
-
-        const id = req.params.id;
-
-            const selectProduct = (id) =>{
-            const idProduct = products.find(productSelected => productSelected.id == id);
-            return idProduct;
-            
+ 
+    updateProduct: (req, res) =>{
+        let productUpdate = {
+            ...req.body,
+            image:'default.jpg'
         }
-        console.log(selectProduct(id));
-        
-        res.render('products/productDetail', {idProduct: selectProduct(id)});
-    },
-//Leila
-   
-    saveEditProduct: (req, res) =>{
+
+        console.log(productUpdate)
+
+        //pensar de que manera voy a editar mi variable de json para que 
+        //agregue la info que actualizo.
+
+        //idProduct= req.params.id
 
     },
     deleteProduct: (req, res) =>{

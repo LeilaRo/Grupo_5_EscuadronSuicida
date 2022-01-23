@@ -13,33 +13,25 @@ const storage = multer.diskStorage({
     }
 
 })
-
 const upload= multer({storage})
 
-/*1- products (GET) listado de productos */
+//Listado de productos
 router.get("/", productosController.productsList);
 
-/* 2 products/create (GET)
-Formulario de creación de productos */
+//Formulario de creación de productos
 router.get("/create", productosController.createProduct);
-/*4. /products (POST)
-Acción de creación (a donde se envía el formulario)*/
+
+//Acción de creación (a donde se envía el formulario) de POST
 router.post("/create", upload.single('productImage'),productosController.saveProduct);
 
-/*3. /products/:id (GET)
-Detalle de un producto particular */
+//Detalle de un producto particular
 router.get("/:id", productosController.productDetail);
 
-
-/*5. /products/:id/edit (GET)
-Formulario de edición de productos
-*/
+//Formulario de edición de productos
 router.get("/:id/edit", productosController.editProduct);
-/* 
-6. /products/:id (PUT)
-Acción de edición (a donde se envía el formulario):
-*/
-router.put("/:id", productosController.saveEditProduct);
+
+//Acción de edición (a donde se envía el formulario):
+router.put("/:id", productosController.updateProduct);
 
 /*
 7. /products/:id (DELETE)

@@ -12,24 +12,37 @@
 
             
             <div class="contenedor-editarProd">
-                <form action="">
+                <form action="/products/:id?_method=PUT" method= 'POST'>
                     <div class="form-editProd">
-                       <label>Producto</label>
-                       <input type="text" name="nombre del producto">
-                    </div>
-                    <div class="form-editProd">
-                       <label>Seleccionar Imagen</label>
-                       <input type="file" name="foto" accept=".jpg, .png" class="control-input">
-                    </div>
-                    
-                       <label>Descripción del Producto</label>
-                       <div class="form-editProd">   
-                         <textarea name="Descripción" id="" cols="40" rows="6"></textarea>
-                       </div> 
-                    <div class="form-editProd">
-                       <label>Precio</label>
-                       <input type="number" name="precio">
-                    </div>
+                        <label>Nombre del producto</label>
+                   <input type="text" name="product" value=<%= idProduct.name %> >
+                </div>
+
+                   <label>Descripción del Producto</label>
+                   <div class="form-loadProd">
+                   <textarea name="description" id="" cols="40" rows="6" ><%= idProduct.description %></textarea>
+                   </div>
+
+                 <div class="form-loadProad">
+                   <label>Categoría</label>
+                   <input type="text" name="category" value=<%= idProduct.category %>>
+                </div>
+                
+                <div class="form-loadProad">
+                    <label>Color</label>
+                    <input type="text" name="colour" value=<%= idProduct.colours %>>
+                 </div>
+
+                <div class="form-loadProad">
+                   <label>Precio</label>
+                   <input type="number" name="precio" value=<%= idProduct.price %>>
+                </div>
+
+                <div class="form-loadProd">
+                    <label>Imagen del producto</label>
+                    <input type="file" name="productImage" accept=".jpg, .png" class="control-input">
+                 </div>
+
                     <button type="submit" class="editProd">EDITAR</button>
                     <button type="reset" class="editProd">BORRAR</button>
                 </form>
