@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('../partials/head')%>
+<%- include('../partials/head')%>
 
-<body>
-  
-<%- include('../partials/header') %> 
+  <body>
 
-  <main class= "product-detail">
+    <%- include('../partials/header') %>
 
-      <section class="contenedor-detalle">
-
-        <div class="contenedor-izquierdo">
-          <div><img src= "/imagenes/taza2_2.jpg" alt = "Jarra Gres"> </div>
-          <div><img src= "/imagenes/taza2_3.jpg" alt = "Jarra Gres"> </div>
-      
-        </div>
-        <div class="contenedor-medio"><img src= "/imagenes/taza2_1.jpg" alt = "Jarra Gres"></div>
-  
-        <div class="contenedor-derecho"> 
-
-          <div class=nombre><%= idProduct.name %></div>
-          <div class="precio"> $<%= idProduct.price %> </div>
-          <h2>categoria <%= idProduct.category %></h2>
-          <div class="medios-de-pago"> </div>
-          <div>opciones de pago </div>
-          <div><img width=200px src="/imagenes/formas-de-pago.jpeg" alt= "formas de pago"></div>
-          <div> <form= action="cantidad" method="get">
-            <label>Seleccione cantidad  </label>
-            <select name="cantidad">
+      <main class="product-detail">
+        <section class="contenedor-detalle">
+          <section class="contenedor-imagenes">
+            <figure class="contenedor-izquierdo">
+              <img src="/imagenes/taza2_2.jpg" alt="Jarra Gres">
+              <img src="/imagenes/taza2_3.jpg" alt="Jarra Gres">
+            </figure>
+            <img class="contenedor-medio" src="/imagenes/taza2_1.jpg" alt="Jarra Gres">
+          </section>
+          <section class="contenedor-derecho">
+            <h1 class=nombre>
+              <%= idProduct.name %>
+            </h1>
+            <h1 class="precio"> $<%= idProduct.price %>
+            </h1>
+            <h2>categoria <%= idProduct.category %>
+            </h2>
+            <figure class="forma-de-pago">
+              <img class="credit-card" src="/iconos/credit-card.svg" alt="formas de pago">
+              <figcaption>Opciones de pago</figcaption>
+            </figure>
+            <form= action="cantidad" method="get">
+              <label>Seleccione cantidad </label>
+              <select name="cantidad">
                 <option>1</option>
                 <option>2</option>
-	              <option>3</option>
-	              <option>4</option>
-	              <option>5</option>
-	              <option>6</option>
-               </select>
-          </form>
-          </div>
-          <div><button type="submit" class="boton-formulario">AGREGAR AL CARRITO</button>
-          
-        </div>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+              <button type="submit" class="boton-formulario">AGREGAR AL CARRITO</button>
+              </form>
+          </section>
+          <section class="descripcion-producto">
+            <div>
+              <%= idProduct.description %>
+            </div>
+          </section>
+          <article class="comentarios"></article>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Facilis, saepe? Eos quae distinctio, iusto atque non ut nam placeat ea natus minus
+          </p>
+          </article>
       </section>
+      </main>
 
-      <section class="descripcion-producto">
-          <div> <%= idProduct.description %>
-          </div> 
-      </section>
-      <article class="comentarios"></article>
-          <div>
-            
-          </div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Facilis, saepe? Eos quae distinctio, iusto atque non ut nam placeat ea natus minus 
-          </div>
-      </article>
+      <%- include('../partials/footer') %>
 
-  </main>
+  </body>
 
-  <%- include('../partials/footer') %> 
-  
-</body>
 </html>

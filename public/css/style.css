@@ -397,12 +397,19 @@ main{
 padding-bottom: 15px;
 }
 
+.product-detail{
+background-color: rgb(243, 241, 237);
+}
 .contenedor-detalle{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around ;
-  align-items: center;
-  padding: 20px
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.contenedor-imagenes{
+  width: 45%;
+  display: flex;
 }
 .contenedor-izquierdo{
   display:none;
@@ -414,16 +421,27 @@ padding-bottom: 15px;
   padding: 5px;
   justify-content: center;
   box-shadow: 5px -5px 12px -4px #C8BCD8;
+  max-width: 100%;
 }
 .contenedor-medio img{
   width: 100%
 }
 .contenedor-derecho{
   padding: 5px;
-  width: 100%
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 200px;
 }
-.contenedor-derecho div{
-  padding:5px;
+.forma-de-pago{
+  display: flex;
+}
+.credit-card{
+  width:15px;
+  height: 15px;
+  margin-right: 10px;
 }
 .contenedor-derecho .nombre{
   text-align: start;
@@ -486,8 +504,9 @@ padding-bottom: 15px;
 .container-card .card img{
   
   border-radius: 5px;
-  width: 50px;
-  height: 50px;
+  width: 90%;
+}
+.form-editProd textarea, .form-loadProd textarea { border: solid 1px black;
 }
 
 @media(max-width:390px){
@@ -515,22 +534,19 @@ padding-bottom: 15px;
 }
 @media(min-width:769px){
   .contenedor-izquierdo{
-    display:block;
-    width: 70%;
-  }
-  .contenedor-izquierdo img{
-    width: 55%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .contenedor-medio{
-    width:80%;
+    width: 68%;
   }
-  }
-  .contenedor-detalle{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-around;
+  .contenedor-derecho {
+    width: 45%;
+    height: auto;
   }
 }
+}
 
-.form-editProd textarea, .form-loadProd textarea { border: solid 1px black;
- }
+
