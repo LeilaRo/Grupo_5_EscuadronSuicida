@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
     <%- include('../partials/head')%>
@@ -9,43 +9,55 @@
               
     <main class="body-loadProduct">
         <h1>CARGAR UN NUEVO PRODUCTO</h1>
-        <div class="contenedor-agregarProd">
-            <form action="create" method= 'POST' enctype="multipart/form-data">
-                <div class="form-loadProd">
-                   <label>Nombre del producto</label>
-                   <input type="text" name="product">
-                </div>
+   
+            <form action="create" method= 'POST' enctype="multipart/form-data" class= "form-create">
+                <div class="forms">
+                <div class="left">
+                    <p>
+                    <br>
+                       <label>Nombre del producto</label> 
+                       <br>
+                      <input type="text" name="product">
+                    </p>
 
-                   <label>Descripción del Producto</label>
-                   <div class="form-loadProd">
-                   <textarea name="description" id="" cols="40" rows="6"></textarea>
-                   </div>
-
-                 <div class="form-loadProad">
-                   <label>Categoría</label>
-                   <input type="text" name="category">
+                    <p>
+                        <label>Precio</label>
+                        <br>
+                        <input type="number" name="precio">
+                    </p>
+                    <p>
+                        <label>Color</label>
+                        <br>
+                        <input type="text" name="colour">
+                    </p>
+                    <p>
+                        <label>Categoría</label>
+                        <br>
+                        <input type="text" name="category">
+                        
+                    </p>   
                 </div>
                 
-                <div class="form-loadProad">
-                    <label>Color</label>
-                    <input type="text" name="colour">
-                 </div>
-
-                <div class="form-loadProad">
-                   <label>Precio</label>
-                   <input type="number" name="precio">
+                <div class="right">
+                <div class="form-loadProd"></p>
+                   <label>Descripción del Producto</label> 
+                   <br>
+                   <textarea name="description" id="" cols="40" rows="6"></textarea>
                 </div>
-
-                <div class="form-loadProd">
+                <p>
                     <label>Imagen del producto</label>
+                    <br>
                     <input type="file" name="productImage" accept=".jpg, .png" class="control-input">
-                 </div>
-
-
-                <button type="submit" class="loadProd">ENVIAR</button>
+                 </p>
+                </div> 
+            </div>
+            <br>
+        
+                <button type="submit" class="loadProd">GUARDAR</button>
                 <button type="reset" class="loadProd">BORRAR</button>
+                <br>
             </form>
-        </div>
+    
     </main>
 
     <%- include('../partials/footer') %> 

@@ -7,9 +7,10 @@
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
-    background: rgb(243, 241, 237);
+   /* background: rgb(243, 241, 237);*/
     font-family: 'Montserrat', sans-serif;
 }
+
 
 .contenedorSuperior {
   position: sticky;
@@ -230,41 +231,37 @@ a i{
   z-index: 1;
 }
 
-
+/******* Vista del container index  *******/
 .containerProd {
   display: flex;
-  width:90%;
-  height:auto;
+  flex-direction:column;
   box-shadow: 0px 0px 10px rgb(100 100 100);
   margin: 10px;
   padding: 10px;
   align-items: center;
   justify-content: space-around;
 }
-
+.containerIm{
+  width:60%;
+  margin: 3%;
+}
 .imagenProd{
-  height: 200px;
-  width:200px;
+  width:100%;
   box-shadow:0px 0px 10px rgb(50, 60, 50);
 }
 
-.textProd{
-  text-align: center;
-  max-height: 60%;
-  border-radius: 2px;
-  padding: 5px;
-  margin: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.containerText{
+  padding: 10%;
 }
 
 .containerBeneficios{
   display: flex;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 10px;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .imgBene1 {
@@ -294,22 +291,27 @@ a i{
 
 
 .info-footer{
+  padding: 5px;
+  margin: 15px;
   display: flex;
   justify-content: space-between;
   background-color:beige
 }
 
-.info-contacto{
-  margin: 3px;
+.info-contacto {
+  padding: 5px;
+  margin: 5px;
   text-align: center;
   background-color: beige;
+  display:flex;
+  flex-direction:column;
 }
 
 input{
   background-color: white;
     margin: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgb(100 100 100);
+    box-shadow: 0px 0px 3px rgb(100 100 100);
     border-radius: 5px;
 }
 input:focus{
@@ -320,7 +322,6 @@ footer {
   width: auto;
   padding: 5px;
   margin-top: 5px;
-  margin: 10px;
   background-color: beige;
 }
 
@@ -363,7 +364,8 @@ input:disabled {
     border-color: skyblue;
 }
 body{
- background-color: #FFFFFF;;
+  
+ background-color: #FFFFFF;
  font-family: 'Montserrat', sans-serif;
  text-align: center;
  width: auto;
@@ -397,6 +399,7 @@ main{
 padding-bottom: 15px;
 }
 
+/******* Vista del Detalle de Producto   *******/
 .product-detail{
 background-color: rgb(243, 241, 237);
 }
@@ -480,6 +483,27 @@ background-color: rgb(243, 241, 237);
   box-shadow: 5px -5px 12px -4px #C8BCD8;
 
 }
+/******* Cards de la Lista de Productos ********/
+.productList{
+margin:0 auto;
+}
+
+
+.card-list{
+  background-color: white;
+  width: 80%;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: all 0.25px;
+}
+.card-list:hover{
+  transform: translate(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+/******* Cards del index ********/
 .container-card{
   background-color: white;
   justify-content: center;
@@ -488,7 +512,7 @@ background-color: rgb(243, 241, 237);
 
 .card{
   width: 300px;
-  height:430px;
+  height:470px;
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.3);
   overflow: hidden;
@@ -501,12 +525,45 @@ background-color: rgb(243, 241, 237);
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
-.container-card .card img{
+.imagenCard{
   
   border-radius: 5px;
   width: 90%;
 }
-.form-editProd textarea, .form-loadProd textarea { border: solid 1px black;
+.form-editProd textarea, .form-loadProd textarea { 
+  border: solid 1px white;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgb(100 100 100);
+
+}
+/******* Formulario crear producto ********/
+.body-loadProduct{
+  background-color: rgb(243, 241, 237);
+  width:70%;
+  padding: 20px ;
+  margin: 0 auto;
+  border: solid 20px white;
+  border-radius: 10px;
+
+}
+.forms{
+  display:flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-top: 5px;
+
+}
+.left{
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.right{
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 @media(max-width:390px){
@@ -526,13 +583,20 @@ background-color: rgb(243, 241, 237);
   display: none;
 }
 
+
 }
 @media(min-width:391px){
 .container-card{
   display:flex;
   flex-direction: row;
 }
+
+
 @media(min-width:769px){
+  .containerProd{
+    display:flex;
+    flex-direction:row;
+  }
   .contenedor-izquierdo{
     display: flex;
     width: 100%;
@@ -546,7 +610,42 @@ background-color: rgb(243, 241, 237);
     width: 45%;
     height: auto;
   }
+
+  .forms{
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+  
+  }
+  .left{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .right{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;;
+  }
+  .card-list{
+    background-color: white;
+    width: 30%;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transition: all 0.25px;
+  }
+
+  .productList{
+    width:90%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 }
 }
-
-
