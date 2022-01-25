@@ -468,7 +468,9 @@ background-color: rgb(243, 241, 237);
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  padding: 8px;
+  margin-top:20px;
+  margin-bottom:20px;
+
   
 }
 .comentarios{
