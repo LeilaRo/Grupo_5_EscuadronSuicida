@@ -4,7 +4,8 @@ const app = express();
 const publicPath =  "public";
 const morgan = require('morgan');
 
-const rutasProductos= require('./routes/producto.js');
+const productsRoutes= require('./routes/producto.js');
+const userRoutes=require('./routes/users.js')
 const rutasMain= require('./routes/main.js');
 
 const methodOverride = require('method-override');// put-delete
@@ -26,7 +27,8 @@ app.listen(3030, () =>{
 
 /*********** Rutas ***********/
 
-app.use('/products', rutasProductos);
+app.use('/products', productsRoutes);
+app.use('/user', userRoutes);
 app.use('/', rutasMain)
 
 
