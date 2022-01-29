@@ -11,6 +11,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.sliderImagenes{
+  background-color: white
+}
+.sliderImagenes img{
+  width: 95%;
+}
 
 .contenedorSuperior {
   position: sticky;

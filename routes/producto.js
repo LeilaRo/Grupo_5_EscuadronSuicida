@@ -33,11 +33,12 @@ router.get("/:id/edit", productosController.editProduct);
 //Acción de edición (a donde se envía el formulario):
 router.put("/:id", productosController.updateProduct);
 
-/*
-7. /products/:id (DELETE)
-Acción de borrado
-*/
+//Borrar
+
 router.delete("/:id", productosController.deleteProduct);
+
+
+
 
 /* Preguntar si es necesario crear un carritoController y mover a la ruta de abajo, o si lo llevamos a productoController*/
 router.get("/productCart", (req, res) => {
