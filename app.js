@@ -28,7 +28,7 @@ app.listen(3030, () =>{
 /*********** Rutas ***********/
 
 app.use('/products', productsRoutes);
-app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 app.use('/', rutasMain)
 
 
