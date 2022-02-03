@@ -11,6 +11,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.sliderImagenes{
+  background-color: white
+}
+.sliderImagenes img{
+  width: 95%;
+}
 
 .contenedorSuperior {
   position: sticky;
@@ -567,6 +573,16 @@ margin:0 auto;
   flex-direction: column;
   margin: 0 auto;
 }
+
+/**** Register ****/
+.errorMsg{
+  color: rgb(218, 7, 7);
+  font-size: 13px;
+  font-weight: bold;
+
+}
+
+
 
 @media(max-width:390px){
 .contenedor-buscador{

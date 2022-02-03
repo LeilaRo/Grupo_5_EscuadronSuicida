@@ -9,25 +9,26 @@
 
     <main class="body-loadProduct">
         <h1>FORMULARIO: EDICIÓN DE PRODUCTOS</h1> 
-        <form action="/products/:id?_method=PUT" method= 'POST' class= "form-create">
+        <form action="/products/<%= idProduct.id %>?_method=PUT" method= 'POST' class= "form-create">
+            <input type="hidden" name="id" value=<%= idProduct.id %>> 
                 <div class="forms">
                 <div class="left">
                     <p>
                     <br>
                        <label>Nombre del producto</label> 
                        <br>
-                      <input type="text" name="product" value=<%= idProduct.name %>>
+                      <input type="text" name="name" value=<%= idProduct.name %>>
                     </p>
 
                     <p>
                         <label>Precio</label>
                         <br>
-                        <input type="number" name="precio" value=<%= idProduct.price %>>
+                        <input type="number" name="price" value=<%= idProduct.price %>>
                     </p>
                     <p>
                         <label>Color</label>
                         <br>
-                        <input type="text" name="colour" value=<%= idProduct.colours %>>
+                        <input type="text" name="colours" value=<%= idProduct.colours %>>
                     </p>
                     <p>
                         <label>Categoría</label>
@@ -53,7 +54,10 @@
             <br>
         
                 <button type="submit" class="loadProd">GUARDAR</button>
-                <button type="reset" class="loadProd">BORRAR</button>
+        
+                    <button type="reset" class="loadProd">BORRAR</button>
+            
+
                 <br>
             </form>  
     </main>

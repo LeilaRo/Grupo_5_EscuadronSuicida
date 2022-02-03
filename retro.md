@@ -29,3 +29,10 @@ Retro sprint 3:
 * Como continuar haciendo: seguimiento del proyecto a través de la herramienta TRELLO.
 * Como buena práctica: se escribió el código en forma colaborativa.
 * Como falencia: no todos los integrantes del grupo llegan al sprint con la lectura y comprensión de los temas.
+
+Retro sprint 4:
+
+* Con el Sprint 4 puede decirse que mejoró la comunicación entre los miembros del equipo de trabajo, dado que la mayoría asiste a las "daily meeting" en los días y horarios pactados.
+* Como buena práctica: se llegó a la entrega de los ítems solicitados, con caracter de 'obligatorio', del proyecto integrador en tiempo y forma.
+* Como falencia se podría hacer mención: "aprender a manejar las frustraciones de algún miembro, a fin de no perjudicar a todo el equipo de trabajo".
+* Continuar haciendo uso del tablero de trabajo TRELLO, ya que a través de esta herramienta se visualizan los puntos pendientes como los avances del proyecto.

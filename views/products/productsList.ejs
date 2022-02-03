@@ -13,9 +13,13 @@
     <% products.forEach(element => { %>
       <div class="card-list">
           <img class="imagenCard" src="\imagenes\mate1_3.jpg" alt="Producto"> 
-    <!--      <%= element.image %>   --> 
+         <!--<%= element.image %> --> 
           <h3> <%= element.name %> </h4>
           <br>
+          <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
+            <button type="submit" class="loadProd">BORRAR</button>
+        </form>
+
           <h4> $<%= element.price %> </h5>
           <br>
       <!--
