@@ -8,45 +8,44 @@
     <%- include('../partials/header') %> 
 
 <main>
-    <form action="Creá tu cuenta" method="POST" class="control-formulario">
+    <form action="/users/login" method="POST" class="control-formulario">
         <div>
-            <br>
-            <br>
+                <br>
            <div>
-              <label for="name">nombre</label>
-              <input type="text" id="name" name="nombre"  placeholder="ej:Juan Perez">
+                    <label for="email">email</label>
+                    <input type="texto" id="email" name="email"  placeholder="ejemplo@correo" value="<%= locals.oldData ? oldData.email : null%>">
+                    <% if (locals.errors && errors.email) { %>
+                        <p class="errorMsg"> <%= errors.email.msg  %>  </p>
+                        
+                       <% } %>
            </div>
-           <br>
+                <br>
            <div>
-            <label for="email">email</label>
-            <input type="texto" id="email" name="correo"  placeholder="ejemplo@correo">
+                    <label for="contraseña">contraseña</label>
+                    <input type="password" id="password" name="password"  placeholder="clave">
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="errorMsg"> <%= errors.password.msg  %>  </p>
+                        
+                       <% } %>
            </div>
-           <br>
-           <div>
-           <label for="contraseña">contraseña</label>
-           <input type="password" id="password" name="contraseña"  placeholder="clave">
-           </div>
-           <br>
-           </div>
-           <div><button>"CapTChA"</button></div>
-           <div>
-           <button type="submit" class="boton-formulario">CREAR CUENTA</button>
-            </div> 
-            <br>
-            <br>            
+                <br>
+                     <!--<div><button>"CapTChA"</button></div>-->
             </div>           
-             <a>"¿ya tienes cuenta?"</a>
-             <br>
+                    <a>"¿olvidaste tu contraseña?"</a>
+                <br>
              
             <div>
-                <button type="submit" class="boton-formulario">INICIAR SESION</button>
+                    <button type="submit" class="boton-formulario">INICIAR SESION</button>
                  
             </div>
-            <br>
-           
+                <br>
+            <div>
+                    <button type="submit" class="boton-formulario">CREAR CUENTA</button>
+            </div> 
+                <br>
         </div>
-        </form>
-    </main>
+    </form>
+</main>
     
     <%- include('../partials/footer') %>   
 

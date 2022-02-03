@@ -56,7 +56,7 @@ router.post("/register",upload.single('userImage'), validations, userController.
 
 
 router.get("/login", userController.login);
-router.post("/login", userController.saveLogin);
+router.post("/login", validations, userController.saveLogin);
 
 
  
