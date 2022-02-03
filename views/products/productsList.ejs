@@ -16,10 +16,6 @@
          <!--<%= element.image %> --> 
           <h3> <%= element.name %> </h4>
           <br>
-          <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
-            <button type="submit" class="loadProd">BORRAR</button>
-        </form>
-
           <h4> $<%= element.price %> </h5>
           <br>
       <!--
@@ -28,10 +24,18 @@
           <p><%= element.colours %> </p>
           <br>       
        --> 
-          <br>
+
+          <details>
+          <summary> Detalles:        
+          </summary>
           <p> <%= element.description %> </p>
+          </details>
+         
           <br>
           <button type="submit" class="loadProd">Agregar al carrito</button>
+          <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
+            <button type="submit" class="loadProd">BORRAR</button>
+        </form>
       </div>
          <br>
          <br>
