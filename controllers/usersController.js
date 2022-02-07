@@ -25,8 +25,36 @@ const controlador={
                 oldData:req.body
             })
         }
+
+       /* Esto no funcionó asi que voy a probar la manera que muestra en el video
+       let userInDb = users.find(user => user.email == req.body.email);
+        if (userInDb){
+            return res.render('users/register',{
+                errors:{
+                    email:{
+                        msg:'Este email ya está registrado'
+                    }
+                },
+                oldData:req.body
+            })
+        } else  
+        */
+
+        let userInDb = users.find(user => user.email == req.body.email)
+        if (userInDb){
+            return res.render('users/register',{
+                errors:{
+                    email:{
+                        msg:'Este email ya está registrado'
+                    }
+                },
+                oldData:req.body
+            })
+        } 
         let newUser ={
+            id: users[users.length - 1].id +1,
             ...req.body,
+            image: req.file.filename,
             password: bcrypt.hashSync(req.body.password,10),
 
         }
@@ -36,7 +64,7 @@ const controlador={
     
         fs.writeFileSync(usersFilePath, newJsonUser, "utf-8")
 
-        res.redirect("/users");
+        res.redirect("/users/profile");
 
     },
 

@@ -56,9 +56,9 @@
         <p>
           <label>Seleccione una imagen de perfil</label>
     
-          <input type="file" name="userImage" accept=".jpg, .png" class="control-input">
-          <% if (locals.errors && errors.userImage) { %>
-            <p class="errorMsg"> <%= errors.userImage.msg  %>  </p>
+          <input type="file" name="image" accept=".jpg, .png" class="control-input">
+          <% if (locals.errors && errors.image) { %>
+            <p class="errorMsg"> <%= errors.image.msg  %>  </p>
             
            <% } %>
        </p>
