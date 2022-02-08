@@ -3,59 +3,73 @@
 
   <%- include('../partials/head')%>
 
-<body>
+<body class="fondo">
 
   <%- include('../partials/header') %> 
 
     <main>
-      <h1>CREAR UNA CUENTA NUEVA</h1>
-    <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario">
- 
-      <label for="nombre">Nombre</label>
-    <input type="text" name="first_name" id="nombre" placeholder="">
-    <% if (locals.errors && errors.first_name) { %>
-     <p class="errorMsg">
-      <%= errors.first_name.msg  %> 
-       
-     </p> 
+      <section class ="registerForm">
+        <h1>CREAR UNA CUENTA NUEVA</h1>
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario">
      
-    <% } %>
+          <label for="nombre">Nombre</label>
+        <input 
+        type="text" 
+        name="first_name" 
+        placeholder=""
+        value="<%= locals.oldData ? oldData.first_name : null %> ">
 
-      <label for="nombre">Apellido</label>
-      <input type="text" name="last_name" id="nombre" placeholder="">
-      <% if (locals.errors && errors.last_name) { %>
-        <p class="errorMsg">
-          <%= errors.last_name.msg  %> 
-         </p>
-       
-      <% } %>
-      <label>Email</label>
-      <input type="email" name="email" placeholder="ejemplo@correo">
-      <% if (locals.errors && errors.email) { %>
-       <p class="errorMsg"> <%= errors.email.msg  %>  </p>
-       
-      <% } %>
+        <% if (locals.errors && errors.first_name) { %>
+         <p class="errorMsg">
+          <%= errors.first_name.msg  %>   
+         </p> 
+         
+        <% } %>
+    
+          <label for="apellido">Apellido</label>
+          <input type="text" name="last_name" placeholder=""
+          value="<%= locals.oldData ? oldData.last_name : null %> ">
+          <% if (locals.errors && errors.last_name) { %>
+            <p class="errorMsg">
+              <%= errors.last_name.msg  %> 
+             </p>
+           
+          <% } %>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="ejemplo@correo"
+          value="<%= locals.oldData ? oldData.email : null %> ">
+          <% if (locals.errors && errors.email) { %>
+           <p class="errorMsg"> <%= errors.email.msg  %>  </p>
+           
+          <% } %>
+    
+        <label for=>Contraseña</label>
+        <input type="password" name="password" placeholder="">
+        <% if (locals.errors && errors.password) { %>
+          <p class="errorMsg"> <%= errors.password.msg  %>  </p>
+          
+         <% } %>
+    
+        <!--<label for=>Confirmar Contraseña</label>
+        <input type="password" name="new_password" placeholder=""> -->
+    
+        <p>
+          <label>Seleccione una imagen de perfil</label>
+    
+          <input type="file" name="image" accept=".jpg, .png" class="control-input">
+          <% if (locals.errors && errors.image) { %>
+            <p class="errorMsg"> <%= errors.image.msg  %>  </p>
+            
+           <% } %>
+       </p>
+ 
+        <button type="submit" class="boton-formulario">REGISTRARSE</button>
 
-    <label for=>Contraseña</label>
-    <input type="password" name="password" placeholder="">
-    <% if (locals.errors && errors.password) { %>
-      <p class="errorMsg"> <%= errors.password.msg  %>  </p>
-      
-     <% } %>
+ 
+        </form>
 
-    <label for=>Confirmar Contraseña</label>
-    <input type="password" name="new_password" placeholder="">
-
-    <p>
-      <label>Seleccione una imagen de perfil</label>
-      <br>
-      <input type="file" name="userImage" accept=".jpg, .png" class="control-input">
-   </p>
-    <br>
-    <button type="submit" class="boton-formulario">REGISTRARSE</button>
-    <br>
-    <br>
-    </form>
+      </section>
+     
 </main>
 
 <%- include('../partials/footer') %>

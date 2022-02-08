@@ -1,7 +1,8 @@
 <header class="contenedorSuperior">
 
-    <div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav">
 
+<<<<<<< HEAD
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/">Inicio</a>
         <a href="/products/productcart">Tienda</a>
@@ -10,9 +11,20 @@
         <a href="/users/register">Registrarse</a>
         <a href="#">Contacto</a>
       </div>
+=======
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/">Inicio</a>
+      <a href="/products/productcart">Tienda</a>
+      <a href="/products/">Productos</a>
+      <a href="/users/login">Iniciar Sesión</a>
+      <a href="/users/register">Registrarse</a>
+      <a href="#">Contacto</a>
+    </div>
+>>>>>>> b3c3c29a902a3ac30471e7c44e01b2c2e6c5348f
 
-    <span class="btnMenu" onclick="openNav()">&#9776;</span>
+  <span class="btnMenu" onclick="openNav()">&#9776;</span>
 
+<<<<<<< HEAD
     <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "35vw";
@@ -39,4 +51,32 @@
        <a href="/views/products/productCart.ejs"><i class="fab fa-opencart"></i></a>
     </div>
         
+=======
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "35vw";
+  }
+  
+  function closeNav() { 
+    document.getElementById("mySidenav").style.width = "0vw";
+  }
+  </script>
+<div class="contenedor-buscador">
+        <input type="search" placeholder="Buscar un producto">
+       </div>
+  <div class="imagenLogo"> 
+    <a href="/"><img class="logoHeader" src="\imagenes\logo.png" alt="logo"></a>
+  </div>
+  <div class="registro-formulario">
+    <ul>
+      <li><a href="/users/login">iniciar Sesión</a></li>
+      <li> || </li>
+      <li><a href="/users/register">Registrarse</a></li>
+    </ul>
+  </div>  
+  <div class="imagenCarrito">
+     <a href="/views/products/productCart.ejs"><i class="fab fa-opencart"></i></a>
+  </div>
+      
+>>>>>>> b3c3c29a902a3ac30471e7c44e01b2c2e6c5348f
 </header>
