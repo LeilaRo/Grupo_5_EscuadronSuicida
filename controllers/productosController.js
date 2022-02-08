@@ -43,7 +43,7 @@ const controlador={
         let newProduct={
                 id: products[products.length - 1].id +1,
                 ...req.body,
-                image: 'default.jpg'
+                image: req.file.filename
             } 
         console.log(newProduct)
         //Escribir esos datos en json, usar fs y escribirlo en el archivo:

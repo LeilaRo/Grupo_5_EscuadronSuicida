@@ -38,11 +38,11 @@ const validations = [
 
 //Configuración de Multer:
 const storage = multer.diskStorage({
-    destination:(req, res, cb)=>{
+    destination:(req, file, cb)=>{
         cb(null,'./public/imagenes/users');
     },
-    filename:(req, res, cb) =>{
-        cb(null, `${Date.now()}--{file.originalname}`);
+    filename:(req, file, cb) =>{
+        cb(null, `${Date.now()}--${file.originalname}`);
     }
 
 })

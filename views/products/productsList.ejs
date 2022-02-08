@@ -12,7 +12,7 @@
     <section ></section>
     <% products.forEach(element => { %>
       <div class="card-list">
-          <img class="imagenCard" src="\imagenes\mate1_3.jpg" alt="Producto"> 
+          <img class="imagenCard" src= "/imagenes/products/<%= element.image %>"  alt="Producto"> 
          <!--<%= element.image %> --> 
           <h3> <%= element.name %> </h4>
           <br>
