@@ -55,20 +55,6 @@ const controlador={
             })
         }
 
-       /* Esto no funcionó asi que voy a probar la manera que muestra en el video
-       let userInDb = users.find(user => user.email == req.body.email);
-        if (userInDb){
-            return res.render('users/register',{
-                errors:{
-                    email:{
-                        msg:'Este email ya está registrado'
-                    }
-                },
-                oldData:req.body
-            })
-        } else  
-        */
-
         let userInDb = users.find(user => user.email == req.body.email)
         if (userInDb){
             return res.render('users/register',{
@@ -110,10 +96,12 @@ saveLogin: (req, res) => {
                 errors: resultValidation.mapped()
             })
         }*/
+
+
     let userToLogin = User.findByField('email', req.body.email);
     
     if(userToLogin) {
-        let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+        let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
         if (isOkThePassword) {
             delete userToLogin.password;
             req.session.userLogged = userToLogin;

@@ -22,6 +22,8 @@
   position: sticky;
   top: 0px;
   z-index: 300000;
+  /*background-image: linear-gradient(to bottom, #f0ddad, #f2e2b3, #f3e8b8, #f5edbe, #f7f2c4);*/
+  
   background-image: linear-gradient(to top, #eee4d3, #f0e2cb, #f2e1c4, #f4dfbc, #f6ddb5);
   
   width: 100%;
@@ -403,6 +405,7 @@ padding-bottom: 15px;
 }
 
 /******* Vista del Detalle de Producto   *******/
+
 .product-detail{
 background-color: rgb(253, 250, 242);
 }
@@ -443,23 +446,25 @@ background-color: rgb(253, 250, 242);
 }
 .forma-de-pago{
   display: flex;
+  font-size: 18px;
 }
 .credit-card{
-  width:15px;
-  height: 15px;
+  width:30px;
   margin-right: 10px;
 }
-.contenedor-derecho .nombre{
+.nombre{
   text-align: start;
   font-size: 20px;
   
 }
-.contenedor-derecho .precio{
+.precio{
   text-align: start;
-  font-size: 20px;
+  font-size: 25px;
+  color:#ca802c
 }
+
 .boton-agregarCarrito{
-  background-color: rgb(167, 160, 145);
+  background-color: rgb(223, 155, 8);
   font-size: 15PX;
   color: white;
   padding: 5px 10px;
@@ -570,6 +575,9 @@ margin:0 auto;
 }
 
 /**** Register ****/
+
+  
+
 .errorMsg{
   color: rgb(218, 7, 7);
   font-size: 13px;
@@ -584,6 +592,7 @@ margin:0 auto;
 
 }
 .registerForm{
+  
   box-shadow: 0px 0px 3px rgb(209, 193, 138);
   background-color: rgb(253, 250, 242);
   width: 60%;
@@ -643,7 +652,8 @@ margin:0 auto;
     justify-content: space-evenly;
   }
   .contenedor-medio{
-    width: 68%;
+    width: 70%;
+    margin-left: 20px;
   }
   .contenedor-derecho {
     width: 45%;
