@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const publicPath =  "public";
 const morgan = require('morgan');
+const session = require('express-session');
 
 const productsRoutes= require('./routes/producto.js');
 const userRoutes=require('./routes/users.js')
@@ -12,6 +13,12 @@ const methodOverride = require('method-override');// put-delete
 app.use(morgan('dev'))
 
 app.set("view engine", "ejs");
+
+app.use(session({
+    secret: "mensaje secreto",
+    resave:  false,
+    saveUninitialized: false,
+}));
 
 app.use(express.static(publicPath)); 
 
