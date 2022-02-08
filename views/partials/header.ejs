@@ -29,10 +29,20 @@
       <a href="/"><img class="logoHeader" src="\imagenes\logo.png" alt="logo"></a>
     </div>
     <div class="registro-formulario">
-      <ul>
+      <ul class="navbar-nav align-items-center">
+				<% if (locals.isLogged) { %>
+				  	hola <%=locals.userLogged.first_name%>
+            
+            <a href="/users/profile">Mi Perfil</a>
+					
+            <a href="/users/logout">Cerrar Sesión</a>
+						</ul>
+					</li>
+				<% } else { %>
         <li><a href="/users/login">iniciar Sesión</a></li>
         <li> || </li>
         <li><a href="/users/register">Registrarse</a></li>
+        <% } %>
       </ul>
     </div>  
     <div class="imagenCarrito">

@@ -4,11 +4,13 @@ const app = express();
 const publicPath =  "public";
 const morgan = require('morgan');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const productsRoutes= require('./routes/producto.js');
 const userRoutes=require('./routes/users.js')
 const rutasMain= require('./routes/main.js');
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const methodOverride = require('method-override');// put-delete
 app.use(morgan('dev'))
 
@@ -20,6 +22,8 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use(express.static(publicPath)); 
 
 app.use(express.urlencoded({extended:false}));//post

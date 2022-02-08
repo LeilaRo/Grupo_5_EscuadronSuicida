@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
 
-<p>Nombre: </p>
-<p>Apellido:</p>
+  <%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/header') %> 
+
+<main>
+    <br>
+        <div>
+            <h2>Bienvenido <%= user.first_name %>  <%= user.last_name%> </h2>
+                <br>
+				<br>
+                <!--aca va la imagen del usuario logueado-->
+				<br>
+				<br>
+				<div><%= user.email %> </div>
+        </div>
+    <br>
+
+    </main>
+    
+    <%- include('../partials/footer') %>   
+
+</body>
+</html>
