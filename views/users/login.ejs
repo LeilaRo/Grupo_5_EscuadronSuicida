@@ -22,13 +22,16 @@
                     <% if (locals.errors && errors.password) { %>
                         <p class="errorMsg"> <%= errors.password.msg  %>  </p>
                         
-                       <% } %>        
-                     <!--<div><button>"CapTChA"</button></div>-->
-                    <br>
-                   <p>
-                    <a>"¿Olvidaste tu contraseña?"</a>
-                   </p>
-                   <br>
+                       <% } %>
+           </div>
+                <br>
+                <label class="form-check-label">
+                    <input type="checkbox" name="remember_user">Recordar mi usuario
+                </label>
+                <br>
+            </div>           
+                    <a>"¿olvidaste tu contraseña?"</a>
+                <br>
              
                     <button type="submit" class="boton-formulario">INICIAR SESIÓN</button>
             

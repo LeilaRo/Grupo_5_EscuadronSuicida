@@ -30,12 +30,20 @@
       <a href="/"><img class="logoHeader" src="\imagenes\logo.png" alt="logo"></a>
     </div>
     <div class="registro-formulario">
-      
-      <span><a href="/users/register">Registrarse</a></span>
-      <span> <a href="/users/login">Iniciar Sesión</a></span>
-    
-      
-      
+      <ul class="navbar-nav align-items-center">
+				<% if (locals.isLogged) { %>
+				  	hola <%=locals.userLogged.first_name%>
+            
+            <a href="/users/profile">Mi Perfil</a>
+					
+            <a href="/users/logout">Cerrar Sesión</a>
+						</ul>
+					</li>
+				<% } else { %>
+          <span><a href="/users/register">Registrarse</a></span>
+          <span> <a href="/users/login">Iniciar Sesión</a></span>
+        <% } %>
+      </ul>
     </div>  
     <div class="imagenCarrito">
        <a href="/views/products/productCart.ejs"><i class="fab fa-opencart"></i></a>

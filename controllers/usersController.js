@@ -39,9 +39,7 @@ const User = {
 }
 
 const controlador={
-    profile : (req, res) => {
-    res.render('users/profile')
-    },
+    
     register: (req, res) => {
         res.render('users/register')
         
@@ -90,14 +88,7 @@ const controlador={
 
     
 saveLogin: (req, res) => {
-   /* const resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0){
-            return res.render('users/login',{
-                errors: resultValidation.mapped()
-            })
-        }*/
-
-
+ 
     let userToLogin = User.findByField('email', req.body.email);
     
     if(userToLogin) {
@@ -110,7 +101,7 @@ saveLogin: (req, res) => {
                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
             }
 
-            return res.redirect('/user/');
+            return res.redirect('/users/profile');
         } 
         return res.render('users/login', {
             errors: {
@@ -124,16 +115,21 @@ saveLogin: (req, res) => {
     return res.render('users/login', {
         errors: {
             email: {
-                msg: 'No se encuentra este email en nuestra base de datos'
+                msg: 'usuario no registrado'
             }
         }
     });
 },
 profile: (req, res) => {
-    return res.render('/users', {
+    return res.render('users/Profile', {
         user: req.session.userLogged
     });
 },
+logout: (req, res) => {
+
+    req.session.destroy();
+    return res.redirect('/');
+}
 }
 
 module.exports = controlador;

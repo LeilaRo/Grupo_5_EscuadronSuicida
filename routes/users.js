@@ -60,6 +60,10 @@ router.post("/register",upload.single('image'), validations, userController.save
 router.get("/login", userController.login);
 router.post("/login", validations, userController.saveLogin);
 
+router.get("/profile", userController.profile);
+
+router.get('/logout', userController.logout);
+
 
  
 
