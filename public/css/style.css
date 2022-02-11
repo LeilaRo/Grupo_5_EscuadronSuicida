@@ -454,14 +454,19 @@ background-color: rgb(253, 250, 242);
   font-size: 25px;
   color:#ca802c
 }
-
-.boton-agregarCarrito{
-  background-color: rgb(223, 155, 8);
-  font-size: 15PX;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-  border: solid 1px black;
+.product-detail button{
+  border-radius: 5px;
+  background-color: rgb(240, 204, 161);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .descripcion-producto{
@@ -567,9 +572,6 @@ margin:0 auto;
 }
 
 /**** Register ****/
-
-  
-
 .errorMsg{
   color: rgb(218, 7, 7);
   font-size: 13px;
@@ -608,6 +610,28 @@ margin:0 auto;
 .registro-formulario{
   display: none;
   background-color:rgba(253, 250, 242, 0)
+}
+/******* Profile  *******/
+.profile{
+  margin: 0 100px;
+  width:60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile h1{
+  margin: 20px;
+}
+
+.imageUser img{
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+}
+.profile section{
+  font-size: 20px;
+
 }
 
 @media(min-width:391px){

@@ -7,18 +7,19 @@
 
     <%- include('../partials/header') %> 
 
-<main>
-    <br>
-        <div>
-            <h2>Bienvenido <%= user.first_name %>  <%= user.last_name%> </h2>
+<main class="profile">
+            <h1>¡Te damos la bienvenida <%= user.first_name %>  <%= user.last_name%> !</h1>
                 <br>
+				<figure class="imageUser" >
+                <img src="/imagenes/users/<%= user.image %>"  alt="Imagen de usuario">
+                </figure>
 				<br>
-                <img class="imageUser" src= "/imagenes/users/<%= element.image %>"  alt="Imagen de usuario">
-				<br>
-				<br>
-				<div><%= user.email %> </div>
-        </div>
-    <br>
+                <section>
+                    <p>Nombre: <%= user.first_name %> </p>
+                    <p>Apellido: <%= user.last_name %></p>
+                    <p>Email: <%= user.email %> </p>
+                </section>
+			
 
     </main>
     

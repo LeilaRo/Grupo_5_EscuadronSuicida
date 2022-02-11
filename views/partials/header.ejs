@@ -32,18 +32,15 @@
     <div class="registro-formulario">
       <ul class="navbar-nav align-items-center">
 				<% if (locals.isLogged) { %>
-				  	hola <%=locals.userLogged.first_name%>
-            
-            <a href="/users/profile">Mi Perfil</a>
-					
-            <a href="/users/logout">Cerrar Sesión</a>
-						</ul>
-					</li>
+				  	<span>Hola <%=locals.userLogged.first_name%></span>
+            <span> <a href="/users/profile">Mi Perfil</a> </span>
+            <span> <a href="/users/logout">Cerrar Sesión</a> </span>
+           
 				<% } else { %>
           <span><a href="/users/register">Registrarse</a></span>
           <span> <a href="/users/login">Iniciar Sesión</a></span>
         <% } %>
-      </ul>
+
     </div>  
     <div class="imagenCarrito">
        <a href="/views/products/productCart.ejs"><i class="fab fa-opencart"></i></a>
