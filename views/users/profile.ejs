@@ -9,16 +9,53 @@
 
 <main class="profile">
             <h1>¡Te damos la bienvenida <%= user.first_name %>  <%= user.last_name%> !</h1>
-                <br>
-				<figure class="imageUser" >
-                <img src="/imagenes/users/<%= user.image %>"  alt="Imagen de usuario">
-                </figure>
-				<br>
-                <section>
-                    <p>Nombre: <%= user.first_name %> </p>
-                    <p>Apellido: <%= user.last_name %></p>
-                    <p>Email: <%= user.email %> </p>
-                </section>
+                
+
+            <section class="data">
+
+                
+                <article class="userData">
+                    <br>
+                    <figure class="userImage" >
+                        <img src="/imagenes/users/<%= user.image %>"  alt="Imagen de usuario">
+                        </figure>
+                        <br>
+
+                    <div class="datas">
+                        <h2>Datos de la cuenta</h2>
+                        <p>Nombre: <%= user.first_name %> </p>
+                        <p>Apellido: <%= user.last_name %></p>
+                        <p>Email: <%= user.email %> </p>
+
+                    </div>
+
+                </article >
+                
+                <article class="personalData">
+                    <h2>Datos personales</h2>
+                    
+                <p>Email: <%= user.email %> </p>
+                <p>Apellido:</p>
+                <p>Nombre:</p>
+                <p>Tipo de Documento:</p>
+                <p>Documento:</p>
+                <p>Dirección:</p>
+                <p>Localidad:</p>
+                <p>Provincia:</p>
+                <p>Código Postal:</p>
+                <p>País</p>
+                <p>Teléfono:</p>
+                <p>Teléfono alternativo:</p>
+                </article>
+                <button type="submit" class="profilebutton">Modificar datos</button>
+                
+                
+
+            </section>
+                
+                
+
+
 			
 
     </main>
