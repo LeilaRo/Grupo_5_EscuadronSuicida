@@ -634,8 +634,8 @@ margin:0 auto;
 .profile img{
   display:flex;
   text-align: center;
-  width:150px;
-  height:150px;
+  width:120px;
+  height:120px;
   border-radius: 2px;
 }
 .userData{

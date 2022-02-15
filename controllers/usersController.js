@@ -77,7 +77,7 @@ const controlador={
     
         fs.writeFileSync(usersFilePath, newJsonUser, "utf-8")
 
-        res.redirect("/users/profile");
+        res.redirect("/users/login");
 
     },
 
