@@ -41,7 +41,7 @@ const controlador={
     saveProduct: (req, res) =>{
         //Obtener los datos de req.body
         let newProduct={
-                id: products[products.length - 1].id +1,
+                id: parseInt(products[products.length - 1].id) + 1,
                 ...req.body,
                 image: req.file.filename
             } 
@@ -75,11 +75,9 @@ const controlador={
         },
 
     deleteProduct: (req, res) =>{
-       
         res.redirect('/products')
       
     },
-
 }
 
 module.exports= controlador;

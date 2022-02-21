@@ -42,7 +42,7 @@ router.delete("/:id", productosController.deleteProduct);
 
 /* Preguntar si es necesario crear un carritoController y mover a la ruta de abajo, o si lo llevamos a productoController*/
 router.get("/productCart", (req, res) => {
-    res.render(path.resolve(__dirname, '../views/products/editProduct'));
+    res.render('/products/productCart');
 })
 
 
