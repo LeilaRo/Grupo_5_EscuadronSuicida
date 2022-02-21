@@ -8,7 +8,7 @@
     <%- include('../partials/header') %> 
 
 <main class="profile">
-            <h1>¡Te damos la bienvenida <%= user.first_name %>  <%= user.last_name%> !</h1>
+            <h1>¡Te damos la bienvenida <%=user.first_name%>  <%=user.last_name%> !</h1>
                 
 
             <section class="data">
@@ -31,10 +31,12 @@
 
                 </article >
                 
-                <article class="personalData">
-                    <h2>Datos personales</h2>
+                
                     
-                <p>Email: <%= user.email %> </p>
+               <!-- 
+                   <article class="personalData">
+                    <h2>Datos personales</h2>
+                   <p>Email: <%= user.email %> </p>
                 <p>Apellido:</p>
                 <p>Nombre:</p>
                 <p>Tipo de Documento:</p>
@@ -43,14 +45,13 @@
                 <p>Localidad:</p>
                 <p>Provincia:</p>
                 <p>Código Postal:</p>
-                <p>País</p>
+                <p>País:</p>
                 <p>Teléfono:</p>
                 <p>Teléfono alternativo:</p>
                 </article>
                 <button type="submit" class="profilebutton">Modificar datos</button>
-                
-                
 
+               --> 
             </section>
                 
                 

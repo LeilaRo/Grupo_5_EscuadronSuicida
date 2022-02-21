@@ -34,6 +34,9 @@
               
               <button type="submit" >AGREGAR AL CARRITO</button>
               </form>
+              <form action="/products/<%=idProduct.id%>?_method=DELETE" method="POST">
+                <button type="submit" class="cardButton">BORRAR</button>
+            </form>
           </section>
           <section class="descripcion-producto">
             <div>

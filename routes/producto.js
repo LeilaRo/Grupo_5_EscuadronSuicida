@@ -38,6 +38,4 @@ router.put("/:id", productosController.updateProduct);
 router.delete("/:id", productosController.deleteProduct);
 
 
-
-
 module.exports= router
