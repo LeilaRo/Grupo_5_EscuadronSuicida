@@ -18,24 +18,16 @@
           <br>
           <h4> $<%= element.price %> </h5>
           <br>
-      <!--
-          <p><%= element.category %> </p>
-          <br>
-          <p><%= element.colours %> </p>
-          <br>       
-       --> 
 
-          <details>
-          <summary> Detalles:        
-          </summary>
-          <p> <%= element.description %> </p>
-          </details>
+          <a href="/products/<%=element.id%>">detalle</a>
          
+          <br>
           <br>
           <button type="submit" class="loadProd">Agregar al carrito</button>
           <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
             <button type="submit" class="loadProd">BORRAR</button>
         </form>
+        <br> 
       </div>
          <br>
          <br>

@@ -9,9 +9,13 @@ const cookies = require('cookie-parser');
 const productsRoutes= require('./routes/producto.js');
 const userRoutes=require('./routes/users.js')
 const rutasMain= require('./routes/main.js');
+const cartRoutes= require('./routes/carrito.js')
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const methodOverride = require('method-override');// put-delete
+
+app.use(methodOverride('_method'))
+
 app.use(morgan('dev'))
 
 app.set("view engine", "ejs");
@@ -29,8 +33,6 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({extended:false}));//post
 app.use(express.json());
 
-app.use(methodOverride('_method'))
-
 
 app.listen(3030, () =>{
     console.log("servidor corriendo en el puerto 3030");
@@ -40,6 +42,7 @@ app.listen(3030, () =>{
 
 app.use('/products', productsRoutes);
 app.use('/users', userRoutes);
+app.use('/carrito', cartRoutes);
 app.use('/', rutasMain)
 
 
