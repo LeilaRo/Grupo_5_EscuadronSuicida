@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
     <%- include('../partials/head')%>
@@ -8,7 +8,7 @@
     <%- include('../partials/header') %> 
 
     <main class="body-loadProduct">
-        <h1>FORMULARIO: EDICIÓN DE PRODUCTOS</h1> 
+        <h1>EDITAR PRODUCTO</h1> 
         <form action="/products/<%= idProduct.id %>?_method=PUT" method= 'POST' class= "form-create">
             <input type="hidden" name="id" value=<%= idProduct.id %>> 
                 <div class="forms">

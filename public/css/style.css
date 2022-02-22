@@ -9,9 +9,9 @@
     font-family: 'Montserrat', sans-serif;
  
 }
-body{
+/*body{
   background-color: rgb(73, 67, 49)
-}
+}*/
 .sliderImagenes{
   background-color: rgba(255, 255, 255, 0)
 }
@@ -22,7 +22,8 @@ body{
   position: sticky;
   top: 0px;
   z-index: 300000;
-  background-color: rgb(250, 245, 245);
+  /*background-color: rgb(250, 245, 245);*/
+  background-color: #c5beb0;
   /*background-image: linear-gradient(to top, #eee4d3, #f0e2cb, #f2e1c4, #f4dfbc, #f6ddb5);*/
   width: 100%;
   padding: 0px;
