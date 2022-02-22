@@ -3,6 +3,9 @@ const router = express.Router();
 const userController = require('../controllers/usersController.js')
 const path = require('path');
 
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 const multer= require('multer');
 
 const {body} = require('express-validator');
@@ -50,13 +53,13 @@ const upload= multer({storage});
 
 router.get('/profile/:userId', userController.profile);
 
-router.get("/register", userController.register);
+router.get("/register", guestMiddleware, userController.register);
 router.post("/register",upload.single('image'), validations, userController.saveRegister);
 
-router.get("/login", userController.login);
+router.get("/login", guestMiddleware, userController.login);
 router.post("/login", validations, userController.saveLogin);
 
-router.get("/profile", userController.profile);
+router.get("/profile", authMiddleware, userController.profile);
 router.get('/logout', userController.logout);
 
 module.exports = router;
