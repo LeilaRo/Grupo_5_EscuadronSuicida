@@ -491,7 +491,7 @@ margin:0 auto;
   border-radius: 3px;
   
   overflow: hidden;
-  transition: all 0.25px;}**/
+  transition: all 0.25px;}
 
 .card:hover{
   transform: translate(-15px);

@@ -9,7 +9,7 @@
     <h1>CATÁLOGO DE PRODUCTOS</h1>
     <main class="productList">
     <% products.forEach(element => { %>
-      <div class="card-list">
+      <div class="card">
         <div class="imagenCardContainer">
           <img class="imagenCard" src= "/imagenes/products/<%= element.image %>"  alt="Producto"> 
         </div>
@@ -20,10 +20,10 @@
           <h4> $<%= element.price %> </h5>
           <br>
 
-          <a href="/products/<%=element.id%>">detalle</a>
+          <a href="/products/<%=element.id%>">Ver más</a>
           <br>
           <br>
-          <button type="submit" class="loadProd">Agregar al carrito</button>
+          <button type="submit" class="cardButton">Agregar al carrito</button>
           <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
             <button type="submit" class="cardButton">BORRAR</button>
         </form>

@@ -10,11 +10,14 @@
       <main class="product-detail">
         <section class="contenedor-detalle">
           <section class="contenedor-imagenes">
-            <figure class="contenedor-izquierdo">
-              <%= idProduct.image %>
+            <figure class="contenedor-medio">
+              <img src="/imagenes/products/<%= idProduct.image %>" alt="Imagen de producto" >
            </figure>
           </section>
+          
           <section class="contenedor-derecho">
+            <br>
+            <br>
             <h1 class="nombre"> <%= idProduct.name %>
             </h1>
             <h1 class="precio"> $<%= idProduct.price %>
@@ -32,12 +35,11 @@
               
               <button type="submit" >AGREGAR AL CARRITO</button>
               </form>
-              <form action="/products/<%=idProduct.id%>?_method=DELETE" method="POST">
-                <button type="submit" class="cardButton">BORRAR</button>
-            </form>
           </section>
           <section class="descripcion-producto">
             <div>
+              <br>
+              <br>
            
               <%= idProduct.description %>
 

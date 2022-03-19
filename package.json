@@ -20,6 +20,7 @@
     "minimist": "^1.2.5",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
     "nopt": "^1.0.10",
     "normalize-path": "^3.0.0",
     "normalize-url": "^4.5.1",
@@ -28,7 +29,8 @@
     "prepend-http": "^2.0.0",
     "pupa": "^2.1.1",
     "readdirp": "^3.6.0",
-    "responselike": "^1.0.2"
+    "responselike": "^1.0.2",
+    "sequelize": "^6.17.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
