@@ -19,10 +19,10 @@ const upload= multer({storage})
 router.get("/", productosController.productsList);
 
 //Formulario de creación de productos
-router.get("/create", productosController.createProduct);
+router.get("/create", productosController.createProductView);
 
 //Acción de creación (a donde se envía el formulario) de POST
-router.post("/create", upload.single('productImage'),productosController.saveProduct);
+router.post("/create", upload.single('productImage'),productosController.createProduct);
 
 //Detalle de un producto particular
 router.get("/:id", productosController.productDetail);

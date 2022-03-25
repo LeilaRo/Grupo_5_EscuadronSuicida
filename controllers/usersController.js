@@ -12,6 +12,85 @@ const jsonUsers = fs.readFileSync(usersFilePath, "utf-8");
 
 const users = JSON.parse(jsonUsers);
 
+const db =require('../src/database/models')
+
+const controlador={
+
+    register: (req, res) => {
+        res.render('users/register')
+
+    },
+    saveRegister:function (req, res){
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length < 0){
+            db.User.create({
+                email: req.body.email,
+                image: req.file.filename,
+                password: bcrypt.hashSync(req.body.password,10)
+            })
+            }else {
+                res.render('users/register', {error : resultValidation.errors})
+            }
+        },
+    login: (req, res) => {
+        res.render('users/login')
+    
+        },
+    
+        saveLogin:function (req, res){
+            const resultValidation = validationResult(req);
+                if(resultValidation.errors.length < 0){
+                    db.User.findOne({
+                        where: {
+                            email: req.body.email
+                                }
+                                }).then((userOne) =>{
+                                    let userToLogin = User.findByField('email', req.body.email);
+                                    if(userToLogin) {
+                                        let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                                        if (isOkThePassword) {
+                                            delete userToLogin.password;
+                                            req.session.userLogged = userToLogin;
+    
+                                            if(req.body.remember_user) {
+                                                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+                                            }
+                                            return res.redirect('/users/profile');
+                                        } 
+                                        return res.render('users/login', {
+                                            errors: {
+                                                email: {
+                                                    msg: 'Las credenciales son inválidas'
+                                                }
+                                            }
+                                        });
+                                        }
+                                        return res.render('users/login', {
+                                            errors: {
+                                                email: {
+                                                    msg: 'usuario no registrado'
+                                                }
+                                            }
+                                        });
+        })
+    }},
+        
+        profile: (req, res) => {
+            return res.render('users/Profile', {
+                user: req.session.userLogged
+    });
+},
+        logout: (req, res) => {
+
+            req.session.destroy();
+            return res.redirect('/');
+}
+}
+
+module.exports = controlador
+
+/*
+
 const User = {
     
     fileName: './data/users.json',
@@ -38,13 +117,11 @@ const User = {
 
 }
 
-const controlador={
-    
-    register: (req, res) => {
-        res.render('users/register')
-        
-    },
+.....................
+
+    /*
     saveRegister:function (req, res){
+
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
             return res.render('users/register',{
@@ -80,7 +157,7 @@ const controlador={
         res.redirect("/users/login");
 
     },
-
+    
     login: (req, res) => {
         res.render('users/login')
 
@@ -116,17 +193,4 @@ saveLogin: (req, res) => {
             }
         }
     });
-},
-profile: (req, res) => {
-    return res.render('users/Profile', {
-        user: req.session.userLogged
-    });
-},
-logout: (req, res) => {
-
-    req.session.destroy();
-    return res.redirect('/');
-}
-}
-
-module.exports = controlador;
+},*/

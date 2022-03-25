@@ -36,3 +36,11 @@ Retro sprint 4:
 * Como buena práctica: se llegó a la entrega de los ítems solicitados, con caracter de 'obligatorio', del proyecto integrador en tiempo y forma.
 * Como falencia se podría hacer mención: "aprender a manejar las frustraciones de algún miembro, a fin de no perjudicar a todo el equipo de trabajo".
 * Continuar haciendo uso del tablero de trabajo TRELLO, ya que a través de esta herramienta se visualizan los puntos pendientes como los avances del proyecto.
+
+Retro Sprint 5:
+
+*Actualmente quedan dos integrantes del grupo 5, esto hace que sea más sencillo ponerse de acuerdo acerca de como se trabajará en cada srpint.
+*Continuar haciendo: comunicación durante la semana a través de whatsapp y por meet los viernes/domingos para ver como viene trabajando cada uno.
+*Hacer más: Seguir con la implementación del tablero de trabajo.
+
+
