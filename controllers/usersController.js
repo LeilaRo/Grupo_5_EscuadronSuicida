@@ -45,9 +45,9 @@ const controlador={
                             email: req.body.email
                                 }
                                 }).then((userOne) =>{
-                                    let userToLogin = User.findByField('email', req.body.email);
-                                    if(userToLogin) {
-                                        let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                        
+                                    if(userOne) {
+                                        let isOkThePassword = bcrypt.compareSync(req.body.password, userOne.password);
                                         if (isOkThePassword) {
                                             delete userToLogin.password;
                                             req.session.userLogged = userToLogin;
@@ -74,6 +74,31 @@ const controlador={
                                         });
         })
     }},
+
+        edit: (req, res) => {
+            db.User.findByPK(req.params.id)
+            .then(function(idUser){
+                res.render('users/edit', {idUser})
+        });
+    },
+
+        saveEdit: (req, res) => {
+            db.User.update({
+                name: req.body.name,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password,10),
+                address: req.body.address,
+                city: req.body.city,
+                province: req.body.province,
+                phone: req.body.phone,
+                brithDate: req.body.brithDate,
+                country: req.body.country,
+                role: req.body.role,
+                userimage: req.file.image,
+                
+            });
+    },
         
         profile: (req, res) => {
             return res.render('users/Profile', {
@@ -88,7 +113,6 @@ const controlador={
 }
 
 module.exports = controlador
-
 /*
 
 const User = {

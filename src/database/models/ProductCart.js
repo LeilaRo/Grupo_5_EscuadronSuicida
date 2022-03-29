@@ -1,35 +1,30 @@
 
+module.exports = (sequelize, DataTypes) =>{
 
-
-module.exports = (sequelize, dataTypes) =>{
-
-    const ProductCart = sequelize.define("ProductCart", {
+    const ProductCart = sequelize.define("productCart", {
         id:{
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         idProduct:{
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
         idUser:{
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
         amount:{
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
         discount:{
-            type: dataTypes.DECIMAL
+            type: DataTypes.DECIMAL
         },
         totalPrice:{
-            type: dataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
-        date:{
-            type: dataTypes.TIMESTAMP
-        }
     },
     {
-        tableName: 'ProductCart',
+        tableName: 'productCart',
         TimesTamps: false
     }
     );
