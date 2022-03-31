@@ -1,21 +1,22 @@
+module.exports = (sequelize, DataTypes) => {
 
-
-module.exports = (sequelize, DataTypes) =>{
-
-    const Image = sequelize.define("Image", {
-        id:{
+    let alias = "image"
+    let cols = {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        url:{
+        url: {
             type: DataTypes.STRING(255)
-        }},
-        {
-            tableName: 'images',
-            TimesTamps: false
         }
-        );
-        return Image;
-    
     }
+    let config = {
+        tableName: 'images',
+        TimesTamps: false
+    }
+
+    const Image = sequelize.define(alias, cols, config);
+    return Image;
+
+}

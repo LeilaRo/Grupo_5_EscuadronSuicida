@@ -2,50 +2,53 @@
 //const { DataTypes } = require("sequelize/types");
 
 
-module.exports = (sequelize, DataTypes) =>{
+module.exports = (sequelize, DataTypes) => {
 
-    const Product = sequelize.define("Products", {
-        id:{
+    let alias = "product"
+    let cols = {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name:{
+        name: {
             type: DataTypes.STRING
         },
         description: {
             type: DataTypes.STRING
         },
-        price:{
+        price: {
             type: DataTypes.DECIMAL
         },
-        categoryId:{
+        categoryId: {
             type: DataTypes.INTEGER
         },
-        productImages:{
+        productImages: {
             type: DataTypes.INTEGER
         },
-        colours:{
+        colours: {
             type: DataTypes.STRING
         }
-    },
-    {
+    } 
+    const config = {        
+    
         tableName: 'products',
         TimesTamps: false
     }
-    );
-    Product.associate = function(models){
+    const Product = sequelize.define(alias, cols, config);
+    
+    Product.associate = function (models) {
         Product.belongsTo(models.Category, {
             foreignKey: 'categoryId',
             as: 'categories'
         })
 
-        Product.belongsToMany(models.ProductCart,{
-            as:'productCart',
-            through:'prodCart',
-            foreignKey:'idProduct',
-            otherKey:'idProductCart',
-            timeStamps:'false'
+        Product.belongsToMany(models.ProductCart, {
+            as: 'productCart',
+            through: 'prodCart',
+            foreignKey: 'idProduct',
+            otherKey: 'idProductCart',
+            timeStamps: 'false'
 
         })
     };

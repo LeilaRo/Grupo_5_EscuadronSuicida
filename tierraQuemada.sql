@@ -32,7 +32,7 @@ CREATE TABLE `categories` (
 );
 
 CREATE TABLE `productImages` (
-   `id`  NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `url` VARCHAR(255) NOT NULL,
    PRIMARY KEY (`id`)
 );

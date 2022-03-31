@@ -2,27 +2,30 @@
 
 module.exports = (sequelize, DataTypes) =>{
 
-    const Role = sequelize.define("Role", {
+    let alias = "role";
+    let cols = {
         id:{
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        name:{
-            type: DataTypes.STRING(25)
-        }},
-        {
-            tableName: 'role',
-            TimesTamps: false
-        }
-        );
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    name:{
+        type: DataTypes.STRING(25)
+    }
+}
+    let config =  {
+        tableName: 'role',
+        TimesTamps: false
+    }
+    const Role = sequelize.define(alias, cols, config);
 
         Role.associate = function(models){
             Role.belongsTo(models.User, {
                 foreignKey: 'role',
                 as: 'roles'
             })
-        return Role;
+
+    }        
+    return Role;
     
-    }
 }

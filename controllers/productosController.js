@@ -66,6 +66,13 @@ const controlador={
         res.redirect('/products')
       
     },
+    /*search:(req,res) =>{
+        db.Product.findOne({
+            where: {
+                name: req.body.search
+            }
+        }) .then
+    }*/
     
 }
 
