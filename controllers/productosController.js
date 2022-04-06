@@ -7,9 +7,9 @@ const controlador={
     index: function(){},
 
     productsList: (req, res)=>{
-        db.Product.findAll({
-            include: [{association: 'categories'}]
-        })
+        db.Product.findAll(
+            //{include: [{association: 'categories'}]}
+        )
         .then(function(products){
             res.render('products/productsList', {products})
         })

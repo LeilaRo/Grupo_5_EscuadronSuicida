@@ -1,6 +1,6 @@
-const path= require('path');
+const path = require('path');
 const express = require("express");
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const bcrypt = require('bcryptjs');
 
@@ -12,104 +12,115 @@ const jsonUsers = fs.readFileSync(usersFilePath, "utf-8");
 
 const users = JSON.parse(jsonUsers);
 
-const db =require('../src/database/models')
+const db = require('../src/database/models')
 
-const controlador={
+const controlador = {
 
     register: (req, res) => {
         res.render('users/register')
 
     },
-    saveRegister:function (req, res){
-        const resultValidation = validationResult(req);
-        if(resultValidation.errors.length < 0){
-            db.User.create({
-                email: req.body.email,
-                image: req.file.filename,
-                password: bcrypt.hashSync(req.body.password,10)
-            })
-            }else {
-                res.render('users/register', {error : resultValidation.errors})
+    saveRegister: async function (req, res) {
+        
+        try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length < 0) {
+                await db.User.create({
+                    email: req.body.email,
+                    image: req.file.filename,
+                    password: bcrypt.hashSync(req.body.password, 10)
+                });
+                return res.redirect('/login');
+            } else {
+                res.render('users/register', { error: resultValidation.errors })
             }
-        },
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
     login: (req, res) => {
         res.render('users/login')
-    
-        },
-    
-        saveLogin:function (req, res){
-            const resultValidation = validationResult(req);
-                if(resultValidation.errors.length < 0){
-                    db.User.findOne({
-                        where: {
-                            email: req.body.email
-                                }
-                                }).then((userOne) =>{
-                        
-                                    if(userOne) {
-                                        let isOkThePassword = bcrypt.compareSync(req.body.password, userOne.password);
-                                        if (isOkThePassword) {
-                                            delete userToLogin.password;
-                                            req.session.userLogged = userToLogin;
-    
-                                            if(req.body.remember_user) {
-                                                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-                                            }
-                                            return res.redirect('/users/profile');
-                                        } 
-                                        return res.render('users/login', {
-                                            errors: {
-                                                email: {
-                                                    msg: 'Las credenciales son inválidas'
-                                                }
-                                            }
-                                        });
-                                        }
-                                        return res.render('users/login', {
-                                            errors: {
-                                                email: {
-                                                    msg: 'usuario no registrado'
-                                                }
-                                            }
-                                        });
-        })
-    }},
 
-        edit: (req, res) => {
-            db.User.findByPK(req.params.id)
-            .then(function(idUser){
-                res.render('users/edit', {idUser})
+    },
+
+    saveLogin: function (req, res) {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length < 0) {
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then((userOne) => {
+
+                if (userOne) {
+                    let isOkThePassword = bcrypt.compareSync(req.body.password, userOne.password);
+                    if (isOkThePassword) {
+                        req.session.userLogged = userOne.email
+
+                        /*delete userToLogin.password;
+                        req.session.userLogged = userToLogin;*/
+
+                        if (req.body.remember_user) {
+                            res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+                        }
+                        return res.redirect('/users/profile');
+                    }
+                    return res.render('users/login', {
+                        errors: {
+                            email: {
+                                msg: 'Las credenciales son inválidas'
+                            }
+                        }
+                    });
+                }
+                return res.render('users/login', {
+                    errors: {
+                        email: {
+                            msg: 'usuario no registrado'
+                        }
+                    }
+                });
+            })
+        }
+    },
+
+    edit: (req, res) => {
+        db.User.findByPK(req.params.id)
+            .then(function (idUser) {
+                res.render('users/edit', { idUser })
+            });
+    },
+
+    saveEdit: (req, res) => {
+        db.User.update({
+            name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            address: req.body.address,
+            city: req.body.city,
+            province: req.body.province,
+            phone: req.body.phone,
+            brithDate: req.body.brithDate,
+            country: req.body.country,
+            role: req.body.role,
+            userimage: req.file.image,
+
         });
     },
 
-        saveEdit: (req, res) => {
-            db.User.update({
-                name: req.body.name,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password,10),
-                address: req.body.address,
-                city: req.body.city,
-                province: req.body.province,
-                phone: req.body.phone,
-                brithDate: req.body.brithDate,
-                country: req.body.country,
-                role: req.body.role,
-                userimage: req.file.image,
-                
-            });
+    profile: (req, res) => {
+        return res.render('users/Profile', {
+            user: req.session.userLogged
+        });
     },
-        
-        profile: (req, res) => {
-            return res.render('users/Profile', {
-                user: req.session.userLogged
-    });
-},
-        logout: (req, res) => {
+    logout: (req, res) => {
 
-            req.session.destroy();
-            return res.redirect('/');
-}
+        req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 module.exports = controlador
