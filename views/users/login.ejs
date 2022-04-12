@@ -13,12 +13,12 @@
         <form action="/users/login" method="POST" class="control-formulario">
       
                     <label for="email">Email</label>
-                    <input type="texto" id="email" name="email"  placeholder="ejemplo@correo" value="<%= locals.oldData ? oldData.email : null%>">
+                    <input type="texto" id="email" name="email"  placeholder="ejemplo@correo" value="<%= locals.oldData ? oldData.email : null%>" class="email">
                     <% if (locals.errors && errors.email) { %>
                         <p class="errorMsg"> <%= errors.email.msg  %>  </p>
                        <% } %>
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" id="password" name="password"  placeholder="clave">
+                    <input type="password" id="password" name="password"  placeholder="clave" class="password">
                     <% if (locals.errors && errors.password) { %>
                         <p class="errorMsg"> <%= errors.password.msg  %>  </p>
                         

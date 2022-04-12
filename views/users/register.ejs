@@ -10,6 +10,11 @@
     <main>
       <section class ="registerForm">
         <h1>CREAR UNA CUENTA NUEVA</h1>
+
+        <div class="errorFormFront">
+          <ul></ul>
+        </div>
+
         <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario">
      
           <label for="nombre">Nombre</label>
@@ -17,8 +22,8 @@
         type="text" 
         name="first_name" 
         placeholder=""
-        value="<%= locals.oldData ? oldData.first_name : null %> ">
-
+        value="<%= locals.oldData ? oldData.first_name : null %> "
+        class="first_name">
         <% if (locals.errors && errors.first_name) { %>
          <p class="errorMsg">
           <%= errors.first_name.msg  %>   
@@ -28,7 +33,8 @@
     
           <label for="apellido">Apellido</label>
           <input type="text" name="last_name" placeholder=""
-          value="<%= locals.oldData ? oldData.last_name : null %> ">
+          value="<%= locals.oldData ? oldData.last_name : null %> "
+          class="last_name">
           <% if (locals.errors && errors.last_name) { %>
             <p class="errorMsg">
               <%= errors.last_name.msg  %> 
@@ -37,14 +43,16 @@
           <% } %>
           <label>Email</label>
           <input type="email" name="email" placeholder="ejemplo@correo"
-          value="<%= locals.oldData ? oldData.email : null %> ">
+          value="<%= locals.oldData ? oldData.email : null %> "
+          class="email">
           <% if (locals.errors && errors.email) { %>
            <p class="errorMsg"> <%= errors.email.msg  %>  </p>
            
           <% } %>
     
         <label for=>Contraseña</label>
-        <input type="password" name="password" placeholder="">
+        <input type="password" name="password" placeholder=""
+        class="password">
         <% if (locals.errors && errors.password) { %>
           <p class="errorMsg"> <%= errors.password.msg  %>  </p>
           
@@ -56,7 +64,7 @@
         <p>
           <label>Seleccione una imagen de perfil</label>
     
-          <input type="file" name="image" accept=".jpg, .png" class="control-input">
+          <input type="file" name="image" accept=".jpg, .png" class="control-input" class="image">
           <% if (locals.errors && errors.image) { %>
             <p class="errorMsg"> <%= errors.image.msg  %>  </p>
             
@@ -74,5 +82,6 @@
 
 <%- include('../partials/footer') %>
 
+<script src="./js/script.js"></script>
 </body>
 </html>
