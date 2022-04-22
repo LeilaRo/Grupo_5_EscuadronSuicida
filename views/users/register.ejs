@@ -15,7 +15,7 @@
           <ul></ul>
         </div>
 
-        <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario">
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario"  id="formValidations">
      
           <label for="nombre">Nombre</label>
         <input 
@@ -28,8 +28,11 @@
          <p class="errorMsg">
           <%= errors.first_name.msg  %>   
          </p> 
-         
         <% } %>
+        </div>
+        <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+        </div>
+
     
           <label for="apellido">Apellido</label>
           <input type="text" name="last_name" placeholder=""
@@ -39,27 +42,33 @@
             <p class="errorMsg">
               <%= errors.last_name.msg  %> 
              </p>
-           
           <% } %>
+          </div>
+          <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+          </div>
+
+
           <label>Email</label>
           <input type="email" name="email" placeholder="ejemplo@correo"
           value="<%= locals.oldData ? oldData.email : null %> "
           class="email">
           <% if (locals.errors && errors.email) { %>
            <p class="errorMsg"> <%= errors.email.msg  %>  </p>
-           
           <% } %>
+          </div>
+          <p class="form__input-error">Campo obligatorio debe ingresar un mail valido</p>
+          </div>
     
         <label for=>Contraseña</label>
         <input type="password" name="password" placeholder=""
         class="password">
         <% if (locals.errors && errors.password) { %>
-          <p class="errorMsg"> <%= errors.password.msg  %>  </p>
-          
+          <p class="errorMsg"> <%= errors.password.msg  %>  </p> 
          <% } %>
-    
-        <!--<label for=>Confirmar Contraseña</label>
-        <input type="password" name="new_password" placeholder=""> -->
+        </div>
+        <p class="form__input-error">Campo obligatorio debe contener al menos 8 caracteres</p>
+        </div>
+
     
         <p>
           <label>Seleccione una imagen de perfil</label>
@@ -82,6 +91,7 @@
 
 <%- include('../partials/footer') %>
 
-<script src="./js/script.js"></script>
+<script src="/public/js/script.js"></script>
+
 </body>
 </html>

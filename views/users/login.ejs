@@ -10,19 +10,25 @@
 <main>
     <section class ="registerForm">
         <h1>INICIAR SESIÓN</h1>
-        <form action="/users/login" method="POST" class="control-formulario">
+        <form action="/users/login" method="POST" class="control-formulario" id="formValidations">
       
                     <label for="email">Email</label>
                     <input type="texto" id="email" name="email"  placeholder="ejemplo@correo" value="<%= locals.oldData ? oldData.email : null%>" class="email">
                     <% if (locals.errors && errors.email) { %>
                         <p class="errorMsg"> <%= errors.email.msg  %>  </p>
                        <% } %>
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe ingresar un mail valido</p>
+                    </div>
+
                     <label for="contraseña">Contraseña</label>
                     <input type="password" id="password" name="password"  placeholder="clave" class="password">
                     <% if (locals.errors && errors.password) { %>
                         <p class="errorMsg"> <%= errors.password.msg  %>  </p>
-                        
                        <% } %>
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe contener al menos 8 caracteres</p>
+                    </div>
            </div>
                 <br>
                 <label class="form-check-label">
@@ -35,7 +41,7 @@
              
                     <button type="submit" class="boton-formulario">INICIAR SESIÓN</button>
             
-                    <button type="submit" class="boton-formulario" <a href="/users/register"></a>CREAR CUENTA</a></button>
+                    <button type="submit" class="boton-formulario"><a href="/users/register">CREAR CUENTA</a></button>
     </form>
     </section>
 </main>

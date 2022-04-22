@@ -10,14 +10,17 @@
     <main class="body-loadProduct">
         <h1>CARGAR UN NUEVO PRODUCTO</h1>
    
-            <form action="create" method= 'POST' enctype="multipart/form-data" class= "form-create">
+            <form action="create" method= 'POST' enctype="multipart/form-data" class= "form-create" id="formValidations">
                 <div class="forms">
                 <div class="left">
                     <p>
                     <br>
                        <label>Nombre del producto</label> 
                        <br>
-                      <input type="text" name="name">
+                      <input type="text" name="product_name">
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe contener al menos 5 caracteres</p>
+                    </div>
                     </p>
 
                     <p>
@@ -42,7 +45,10 @@
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
-                   <textarea name="description" id="" cols="40" rows="6"></textarea>
+                    <input name="description" id="" cols="40" rows="6">
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe contener al menos 20 caracteres</p>
+                    </div>
                 </div>
                 <p>
                     <label>Imagen del producto</label>

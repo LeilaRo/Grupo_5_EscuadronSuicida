@@ -29,7 +29,7 @@ const controlador = {
                     oldData: req.body
                 });
             };
-            let userInDB = await User.findOne({where: {email: req.body.email}});
+            let userInDB = await db.User.findOne({where: {email: req.body.email}});
             if (userInDB != null) {
                 return res.render('users/register', {
                     errors: {
@@ -43,7 +43,7 @@ const controlador = {
             let userAvatarCreated = await Image.create({
                 url: req.file.filename
             })
-            let userCreated = await User.create({
+            let userCreated = await db.User.create({
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10),
                 image: userAvatarCreated.id,

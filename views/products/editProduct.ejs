@@ -9,7 +9,7 @@
 
     <main class="body-loadProduct">
         <h1>EDITAR PRODUCTO</h1> 
-        <form action="/products/<%= idProduct.id %>?_method=PUT" method= 'POST' class= "form-create">
+        <form action="/products/<%= idProduct.id %>?_method=PUT" method= 'POST' class= "form-create" id="formValidations">
             <input type="hidden" name="id" value=<%= idProduct.id %>> 
                 <div class="forms">
                 <div class="left">
@@ -17,7 +17,10 @@
                     <br>
                        <label>Nombre del producto</label> 
                        <br>
-                      <input type="text" name="name" value="<%= idProduct.name%>">
+                      <input type="text" name="product_name" value="<%= idProduct.name%>">
+                        </div>
+                        <p class="form__input-error">Campo obligatorio debe contener al menos 5 caracteres</p>
+                        </div>
                     </p>
 
                     <p>
@@ -42,7 +45,10 @@
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
-                   <textarea name="description" id="" cols="40" rows="6"><%= idProduct.description %></textarea>
+                   <input name="description" id="" cols="40" rows="6" <%= idProduct.description %>>
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe contener al menos 5 caracteres</p>
+                    </div>
                 </div>
                 <p>
                     <label>Imagen del producto</label>
