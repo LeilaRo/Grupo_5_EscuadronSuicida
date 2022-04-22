@@ -20,12 +20,46 @@ const controlador = {
         res.render('users/register')
 
     },
-    saveRegister: async function (req, res) {
-        
+    saveRegister: async function (req, res){
+        try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('users/register', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            };
+            let userInDB = await User.findOne({where: {email: req.body.email}});
+            if (userInDB != null) {
+                return res.render('users/register', {
+                    errors: {
+                        email: {
+                            msg : 'Este email ya está registrado'
+                        }
+                    },
+                    oldData: req.body
+                });
+            };
+            let userAvatarCreated = await Image.create({
+                url: req.file.filename
+            })
+            let userCreated = await User.create({
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                image: userAvatarCreated.id,
+            });
+            return res.render('users/login');
+        } catch (error) {
+            res.status(500).send({msg: error.message})
+        }
+    },
+    /*saveRegister: async function (req, res) {
         try {
             const resultValidation = validationResult(req);
             if (resultValidation.errors.length < 0) {
                 await db.User.create({
+                    firstName:req.body.first_name,
+                    lastName: req.body.last_name,
                     email: req.body.email,
                     image: req.file.filename,
                     password: bcrypt.hashSync(req.body.password, 10)
@@ -38,8 +72,9 @@ const controlador = {
         } catch (error) {
             console.log(error);
         }
+        console.log(firstName)
 
-    },
+    }*/
     login: (req, res) => {
         res.render('users/login')
 

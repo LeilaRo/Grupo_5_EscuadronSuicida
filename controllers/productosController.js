@@ -28,7 +28,7 @@ const controlador={
         db.Product.create({
             name:req.body.name,
             description: req.body.description,
-            /*categorieId: req.body.categories,*/
+            categorieId: req.body.categories,
             price: req.body.price,
             productImages:req.file.filename,
             colours:req.body.colours,

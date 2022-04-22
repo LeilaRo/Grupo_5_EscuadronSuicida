@@ -1,7 +1,7 @@
 //const { DataTypes } = require("sequelize/types");
 
 module.exports = (sequelize, DataTypes) => {
-    let alias = "user";
+    let alias = "User";
     let cols = {
         id: {
             type: DataTypes.INTEGER,
@@ -51,12 +51,12 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = function (models) {
-        User.belongsTo(models.role, {
+        User.belongsTo(models.Role, {
             foreignKey: 'role',
             as: 'roles'
         });
         {
-        User.belongsToMany(models.productCart, {
+        User.belongsToMany(models.ProductCart, {
                 as: 'product',
                 through: 'userCart',
                 foreignKey: 'idUser',
