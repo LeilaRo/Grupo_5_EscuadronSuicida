@@ -1,97 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include('../partials/head')%>
+<%- include('../partials/head')%>
 
-<body class="fondo">
+  <body class="fondo">
 
-  <%- include('../partials/header') %> 
+    <%- include('../partials/header') %>
 
-    <main>
-      <section class ="registerForm">
-        <h1>CREAR UNA CUENTA NUEVA</h1>
+      <main>
+        <section class="registerForm">
+          <h1>CREAR UNA CUENTA NUEVA</h1>
 
-        <div class="errorFormFront">
-          <ul></ul>
-        </div>
-
-        <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario"  id="formValidations">
-     
-          <label for="nombre">Nombre</label>
-        <input 
-        type="text" 
-        name="first_name" 
-        placeholder=""
-        value="<%= locals.oldData ? oldData.first_name : null %> "
-        class="first_name">
-        <% if (locals.errors && errors.first_name) { %>
-         <p class="errorMsg">
-          <%= errors.first_name.msg  %>   
-         </p> 
-        <% } %>
-        </div>
-        <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
-        </div>
-
-    
-          <label for="apellido">Apellido</label>
-          <input type="text" name="last_name" placeholder=""
-          value="<%= locals.oldData ? oldData.last_name : null %> "
-          class="last_name">
-          <% if (locals.errors && errors.last_name) { %>
-            <p class="errorMsg">
-              <%= errors.last_name.msg  %> 
-             </p>
-          <% } %>
-          </div>
-          <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+          <div class="errorFormFront">
+            <ul></ul>
           </div>
 
+          <form action="/users/register" method="POST" enctype="multipart/form-data" class="control-formulario"
+            id="formValidations">
 
-          <label>Email</label>
-          <input type="email" name="email" placeholder="ejemplo@correo"
-          value="<%= locals.oldData ? oldData.email : null %> "
-          class="email">
-          <% if (locals.errors && errors.email) { %>
-           <p class="errorMsg"> <%= errors.email.msg  %>  </p>
-          <% } %>
-          </div>
-          <p class="form__input-error">Campo obligatorio debe ingresar un mail valido</p>
-          </div>
-    
-        <label for=>Contraseña</label>
-        <input type="password" name="password" placeholder=""
-        class="password">
-        <% if (locals.errors && errors.password) { %>
-          <p class="errorMsg"> <%= errors.password.msg  %>  </p> 
-         <% } %>
-        </div>
-        <p class="form__input-error">Campo obligatorio debe contener al menos 8 caracteres</p>
-        </div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="first_name" placeholder=""
+              value="<%= locals.oldData ? oldData.first_name : null %> " class="first_name">
+            <% if (locals.errors && errors.first_name) { %>
+              <p class="errorMsg">
+                <%= errors.first_name.msg %>
+              </p>
+              <% } %>
+                </div>
+                <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+                </div>
 
-    
-        <p>
-          <label>Seleccione una imagen de perfil</label>
-    
-          <input type="file" name="image" accept=".jpg, .png" class="control-input" class="image">
-          <% if (locals.errors && errors.image) { %>
-            <p class="errorMsg"> <%= errors.image.msg  %>  </p>
-            
-           <% } %>
-       </p>
- 
-        <button type="submit" class="boton-formulario">REGISTRARSE</button>
 
- 
-        </form>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="last_name" placeholder=""
+                  value="<%= locals.oldData ? oldData.last_name : null %> " class="last_name">
+                <% if (locals.errors && errors.last_name) { %>
+                  <p class="errorMsg">
+                    <%= errors.last_name.msg %>
+                  </p>
+                  <% } %>
+                    </div>
+                    <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+                    </div>
 
-      </section>
-     
-</main>
 
-<%- include('../partials/footer') %>
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="ejemplo@correo"
+                      value="<%= locals.oldData ? oldData.email : null %> " class="email">
+                    <% if (locals.errors && errors.email) { %>
+                      <p class="errorMsg">
+                        <%= errors.email.msg %>
+                      </p>
+                      <% } %>
+                        </div>
+                        <p class="form__input-error">Campo obligatorio debe ingresar un mail valido</p>
+                        </div>
 
-<script src="/public/js/script.js"></script>
+                        <label for=>Contraseña</label>
+                        <input type="password" name="password" placeholder="" class="password">
+                        <% if (locals.errors && errors.password) { %>
+                          <p class="errorMsg">
+                            <%= errors.password.msg %>
+                          </p>
+                          <% } %>
+                            </div>
+                            <p class="form__input-error">Campo obligatorio debe contener al menos 8 caracteres</p>
+                            </div>
 
-</body>
+
+                            <p>
+                              <label>Seleccione una imagen de perfil</label>
+
+                              <input type="file" name="image" accept=".jpg, .png" class="control-input" class="image">
+                              <% if (locals.errors && errors.image) { %>
+                                <p class="errorMsg">
+                                  <%= errors.image.msg %>
+                                </p>
+
+                                <% } %>
+                            </p>
+
+                            <button type="submit" class="boton-formulario">REGISTRARSE</button>
+
+
+          </form>
+
+        </section>
+
+      </main>
+
+      <%- include('../partials/footer') %>
+
+        <script src="/public/js/script.js"></script>
+
+  </body>
+
 </html>

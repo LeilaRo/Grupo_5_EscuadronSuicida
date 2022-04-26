@@ -1,18 +1,12 @@
 const path = require('path');
 const express = require("express");
 const { validationResult } = require('express-validator');
+const router = require('../routes/users');
+
 
 const bcrypt = require('bcryptjs');
-
-
-const fs = require('fs');
-
-const usersFilePath = path.join(__dirname, '../data/users.json')
-const jsonUsers = fs.readFileSync(usersFilePath, "utf-8");
-
-const users = JSON.parse(jsonUsers);
-
-const db = require('../src/database/models')
+//const {User}=require('../database/models')
+const db = require('../src/database/models/User')
 
 const controlador = {
 
@@ -29,7 +23,8 @@ const controlador = {
                     oldData: req.body
                 });
             };
-            let userInDB = await db.User.findOne({where: {email: req.body.email}});
+            let userInDB = await db.User.findOne({
+                where: {email: req.body.email}});
             if (userInDB != null) {
                 return res.render('users/register', {
                     errors: {
@@ -40,13 +35,15 @@ const controlador = {
                     oldData: req.body
                 });
             };
-            let userAvatarCreated = await Image.create({
+            let imageUser = await UserImageId.create({
                 url: req.file.filename
             })
-            let userCreated = await db.User.create({
+            let userCreated = await User.create({
+                firstName:req.body.first_name,
+                lastName: req.body.last_name,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10),
-                image: userAvatarCreated.id,
+                userImageId: imageUser,
             });
             return res.render('users/login');
         } catch (error) {
@@ -122,26 +119,26 @@ const controlador = {
     },
 
     edit: (req, res) => {
-        db.User.findByPK(req.params.id)
+        User.findByPK(req.params.id)
             .then(function (idUser) {
                 res.render('users/edit', { idUser })
             });
     },
 
     saveEdit: (req, res) => {
-        db.User.update({
-            name: req.body.name,
-            lastName: req.body.lastName,
+        User.update({
+            firstName: req.body.first_name,
+            lastName: req.body.last_name,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
-            address: req.body.address,
-            city: req.body.city,
-            province: req.body.province,
-            phone: req.body.phone,
-            brithDate: req.body.brithDate,
-            country: req.body.country,
-            role: req.body.role,
-            userimage: req.file.image,
+            // address: req.body.address,
+            // city: req.body.city,
+            // province: req.body.province,
+            // phone: req.body.phone,
+            // brithDate: req.body.brithDate,
+            // country: req.body.country,
+            roleId: req.body.role,
+            userimageId: req.file.image,
 
         });
     },

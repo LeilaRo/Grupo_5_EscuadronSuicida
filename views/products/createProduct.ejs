@@ -8,8 +8,7 @@
     <%- include('../partials/header') %> 
               
     <main class="body-loadProduct">
-        <h1>CARGAR UN NUEVO PRODUCTO</h1>
-   
+        <h1>CARGAR UN NUEVO PRODUCTO</h1>  
             <form action="create" method= 'POST' enctype="multipart/form-data" class= "form-create" id="formValidations">
                 <div class="forms">
                 <div class="left">
@@ -17,7 +16,13 @@
                     <br>
                        <label>Nombre del producto</label> 
                        <br>
-                      <input type="text" name="product_name">
+                      <input type="text" name="product_name"
+                      value="<%= locals.oldData ? oldData.product_name : null %> " class="product_name">
+                      <% if (locals.errors && errors.product_name) { %>
+                        <p class="errorMsg">
+                          <%= errors.product_name.msg %>
+                        </p>
+                        <% } %>  
                     </div>
                     <p class="form__input-error">Campo obligatorio debe contener al menos 5 caracteres</p>
                     </div>
@@ -26,12 +31,13 @@
                     <p>
                         <label>Precio</label>
                         <br>
-                        <input type="number" name="price">
-                    </p>
-                    <p>
-                        <label>Color</label>
-                        <br>
-                        <input type="text" name="colours">
+                        <input type="number" name="price"
+                        value="<%= locals.oldData ? oldData.price : null %> " class="price">
+                        <% if (locals.errors && errors.price) { %>
+                          <p class="errorMsg">
+                            <%= errors.price.msg %>
+                          </p>
+                          <% } %>
                     </p>
                     <p>
                         <label>Categoría</label>
@@ -45,7 +51,13 @@
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
-                    <input name="description" id="" cols="40" rows="6">
+                    <input name="description" id="" cols="40" rows="6"
+                    value="<%= locals.oldData ? oldData.description : null %> " class="description">
+                    <% if (locals.errors && errors.description) { %>
+                      <p class="errorMsg">
+                        <%= errors.description.msg %>
+                      </p>
+                      <% } %>
                     </div>
                     <p class="form__input-error">Campo obligatorio debe contener al menos 20 caracteres</p>
                     </div>
@@ -53,7 +65,14 @@
                 <p>
                     <label>Imagen del producto</label>
                     <br>
-                    <input type="file" name="productImage" accept=".jpg, .png" class="control-input">
+                    <input type="file" name="productImage" accept=".jpg, .png" class="control-input" class="productImage">
+                    <% if (locals.errors && errors.productImage) { %>
+                      <p class="errorMsg">
+                        <%= errors.productImage.msg %>
+                      </p>
+
+                      <% } %>
+    
                  </p>
                 </div> 
             </div>

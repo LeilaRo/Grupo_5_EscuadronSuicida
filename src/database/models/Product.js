@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50)
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50)
         },
         price: {
             type: DataTypes.DECIMAL
@@ -23,33 +23,34 @@ module.exports = (sequelize, DataTypes) => {
         categoryId: {
             type: DataTypes.INTEGER
         },
-        productImages: {
+        productImagesId: {
             type: DataTypes.INTEGER
         },
-        colours: {
-            type: DataTypes.STRING
-        }
+
     } 
     const config = {        
     
         tableName: 'products',
-        TimesTamps: false
+        timestamps: false
     }
     const Product = sequelize.define(alias, cols, config);
-    
+
     Product.associate = function (models) {
+        Product.hasMany(models.ProductImages, {    
+            as: 'productImage', 
+            foreignKey: 'productImagesId',
+            });
         Product.belongsTo(models.Category, {
-            foreignKey: 'categoryId',
-            as: 'category'
+            as: 'category',
+            foreignKey: 'categoryId'
         })
 
         Product.belongsToMany(models.ProductCart, {
             as: 'productCart',
             through: 'prodCart',
-            foreignKey: 'idProduct',
-            otherKey: 'idProductCart',
-            timeStamps: 'false'
-
+            foreignKey: 'prodId',
+            otherKey: 'prodCartId',
+            timestamps: 'false'
         })
     };
     return Product

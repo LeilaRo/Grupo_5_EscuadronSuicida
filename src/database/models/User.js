@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        firstName: {
             type: DataTypes.STRING(30)
         },
         lastName: {
@@ -20,48 +20,56 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING
         },
-        address: {
-            type: DataTypes.STRING
+        userImageId:{
+            type: DataTypes.INTEGER,
         },
-        city: {
-            type: DataTypes.STRING(50)
-        },
-        province: {
-            type: DataTypes.STRING(50)
-        },
-        phone: {
-            type: DataTypes.INTEGER
-        },
-        /*birthDate:{
-            type: DataTypes.DATETIME
-        },*/
-        country: {
-            type: DataTypes.STRING(50)
-        },
-        role: {
+        // address: {
+        //     type: DataTypes.STRING
+        // },
+        // city: {
+        //     type: DataTypes.STRING(50)
+        // },
+        // province: {
+        //     type: DataTypes.STRING(50)
+        // },
+        // phone: {
+        //     type: DataTypes.INTEGER
+        // },
+        // /*birthDate:{
+        //     type: DataTypes.DATETIME
+        // },*/
+        // country: {
+        //     type: DataTypes.STRING(50)
+        // },
+        roleId: {
             type: DataTypes.STRING(30)
         }
     }
     let config = {
 
-        tableName: 'Users',
-        TimesTamps: false
+        tableName: 'users',
+        timestamps:false
     }
 
     const User = sequelize.define(alias, cols, config);
 
     User.associate = function (models) {
+        User.belongsTo(models.UserImages, {    
+            as: 'image', 
+            foreignKey: 'userImageId',
+            });
         User.belongsTo(models.Role, {
-            foreignKey: 'role',
-            as: 'roles'
+            as: 'roles',
+            foreignKey: 'roleId'
+            
         });
         {
         User.belongsToMany(models.ProductCart, {
                 as: 'product',
                 through: 'userCart',
-                foreignKey: 'idUser',
-                otherKey: 'idProductCart',
-                timeStamps: 'false'
+                foreignKey: 'useCartId',
+                otherKey: 'productoCartId',
+                timestamps: 'false'
 
             })
         }

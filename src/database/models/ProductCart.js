@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     let config = {
-        tableName: 'productCart',
-        TimesTamps: false
+        tableName: 'productcart',
+        timestamps: false
     }
 
     const ProductCart = sequelize.define(alias, cols, config);
@@ -35,17 +35,17 @@ module.exports = (sequelize, DataTypes) => {
         ProductCart.belongsToMany(models.Product, {
             as: 'products',
             through: 'prodCart',
-            foreignKey: 'idProductCart',
-            otherKey: 'idProduct',
-            timeStamps: 'false'
+            foreignKey: 'prodCartId',
+            otherKey: 'prodId',
+            timestamps: 'false'
 
         })
         ProductCart.belongsToMany(models.User, {
             as: 'users',
             through: 'userCart',
-            foreignKey: 'idProductCart',
-            otherKey: 'idUser',
-            timeStamps: 'false'
+            foreignKey: 'productoCartId',
+            otherKey: 'useCartId',
+            timestamps: 'false'
 
         })
     };

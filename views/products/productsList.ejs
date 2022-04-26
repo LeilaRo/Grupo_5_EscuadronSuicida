@@ -8,23 +8,23 @@
     <br>
     <h1>CATÁLOGO DE PRODUCTOS</h1>
     <main class="productList">
-    <% products.forEach(element => { %>
+  <% products.forEach(product => { %>
       <div class="card">
         <div class="imagenCardContainer">
-          <img class="imagenCard" src= "/imagenes/products/<%= element.image %>"  alt="Producto"> 
+          <img class="imagenCard" src= "/imagenes/products/<%= product[i].productImagesId %>"  alt="Producto"> 
         </div>
-         <!--<%= element.image %> --> 
+         <!--<%= products[i].image %> --> 
 
-          <h3> <%= element.name %> </h4>
+          <h3> <%= product[i].name %> </h4>
           <br>
-          <h4> $<%= element.price %> </h5>
+          <h4> $<%= product[i].price %> </h5>
           <br>
 
-          <a href="/products/<%=element.id%>">Ver más</a>
+          <a href="/products/<%=product[i].id%>">Ver más</a>
           <br>
           <br>
           <button type="submit" class="cardButton">Agregar al carrito</button>
-          <form action="/products/<%=element.id%>?_method=DELETE" method="POST">
+          <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
             <button type="submit" class="cardButton">BORRAR</button>
         </form>
         <br> 

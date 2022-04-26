@@ -26,7 +26,7 @@ const validateForm = (e) => {
 			validarCampo(expresiones.firstName, e.target, 'firstName');
 		break;
 		case "last_name":
-			validarCampo(expressions.lastNamne, e.target, 'lastNamne');
+			validarCampo(expressions.lastName, e.target, 'lastName');
 		break;
 		case "password":
 			validarCampo(expressions.password, e.target, 'password');
