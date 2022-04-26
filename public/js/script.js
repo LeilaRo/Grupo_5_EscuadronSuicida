@@ -3,57 +3,54 @@ const inputs = document.querySelectorAll('#formValidations input');
 
 const expressions = {
 
-	firstName: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
-	lastNamne: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
+	first_name: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
+	last_name: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{8,50}$/, // 8 a 50 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // mail valido
     productName: /^[a-zA-ZÀ-ÿ\s]{2,50}$/, // Letras y espacios, pueden llevar acentos.
-    descriptionName: /^[a-zA-ZÀ-ÿ\s]{50,255}$/, // Letras y espacios, pueden llevar acentos.
+    description: /^[a-zA-ZÀ-ÿ\s]{50,255}$/, // Letras y espacios, pueden llevar acentos.
 }
 
+
 const fields = {
-	firstName: false,
-	lastNamne: false,
+	first_name: false,
+	last_name: false,
 	password: false,
 	email: false,
     productName: false,
-    descriptionName: false
+    description: false
 }
 
 const validateForm = (e) => {
 	switch (e.target.name) {
 		case "first_name":
-			validarCampo(expresiones.firstName, e.target, 'firstName');
+			validarCampo(expressions.first_name, e.target, 'first_name');
 		break;
 		case "last_name":
-			validarCampo(expressions.lastNamne, e.target, 'lastNamne');
+			validarCampo(expressions.last_name, e.target, 'last_name');
 		break;
 		case "password":
 			validarCampo(expressions.password, e.target, 'password');
 		break;
 		case "email":
-			validarCampo(expressions.email, e.target, 'correo');
+			validarCampo(expressions.email, e.target, 'email');
 		break;
 		case "product_name":
-			validarCampo(expressions.productName, e.target, 'telefono');
+			validarCampo(expressions.productName, e.target, 'product_name');
 		break;
         case "description":
-			validarCampo(expressions.descriptionName, e.target, 'telefono');
+			validarCampo(expressions.description, e.target, 'description');
 		break;
 	}
 }
 
-const validarCampo = (expression, input, field) => {
+const validarCampo = (expression, input, campo) => {
 	if(expression.test(input.value)){
-		document.getElementById(`validation${field}`).classList.remove('formulario__grupo-incorrecto');
-		document.getElementById(`validation${field}`).classList.add('formulario__grupo-correcto');
-		document.querySelector(`#validation${field} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		fields[field] = true;
+		document.querySelector('.form__input-error').classList.remove('form__input-error-activo');
+		fields[campo] = true;
 	} else {
-		document.getElementById(`validation${field}`).classList.add('formulario__grupo-incorrecto');
-		document.getElementById(`validation${field}`).classList.remove('formulario__grupo-correcto');
-		document.querySelector(`#validation${field} .formulario__input-error`).classList.add('formulario__input-error-activo');
-		fields[field] = false;
+		document.querySelector('.form__input-error').classList.add('form__input-error-activo');
+		fields[campo] = false;
 	}
 }
 
@@ -62,21 +59,13 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validateForm);
 });
 
-formulario.addEventListener('submit', (e) => {
+formValidations.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-/*	if(fields.firstName && fields.lastNamne && fields.password && fields.email && fields.productName && fields.descriptionName ){
-		formulario.reset();
+		if(fields.forEach){
+			validateForm;
+		} else{
+			formValidations.submit()
+		}
 
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}*/
 });

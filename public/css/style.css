@@ -306,6 +306,29 @@ input:focus{
   background-color:rgb(238, 228, 209);
 }
 /****** Formularios ******/
+
+.form__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.form__input-error-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+
+.form__input-error {
+	display: none;
+}
+
+.form__input-error-activo {
+	display: block;
+}
+
+/* ------------------------------ */
+
 .control-formulario, .form-loadProd, .form-editProd {
     margin-bottom: 15px;
     text-align: center;

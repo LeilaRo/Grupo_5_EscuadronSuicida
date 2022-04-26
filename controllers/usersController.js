@@ -147,7 +147,7 @@ const controlador = {
     },
 
     profile: (req, res) => {
-        return res.render('users/Profile', {
+        retur| res.render('users/Profile', {
             user: req.session.userLogged
         });
     },
