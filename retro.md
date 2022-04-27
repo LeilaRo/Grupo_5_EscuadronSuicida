@@ -39,8 +39,16 @@ Retro sprint 4:
 
 Retro Sprint 5:
 
-*Actualmente quedan dos integrantes del grupo 5, esto hace que sea más sencillo ponerse de acuerdo acerca de como se trabajará en cada srpint.
-*Continuar haciendo: comunicación durante la semana a través de whatsapp y por meet los viernes/domingos para ver como viene trabajando cada uno.
-*Hacer más: Seguir con la implementación del tablero de trabajo.
+* Actualmente quedan dos integrantes del grupo 5, esto hace que sea más sencillo ponerse de acuerdo acerca de como se trabajará en cada srpint.
+* Continuar haciendo: comunicación durante la semana a través de whatsapp y por meet los viernes/domingos para ver como viene trabajando cada uno.
+* Hacer más: Seguir con la implementación del tablero de trabajo.
 
+Retro Sprint 6:
+* Como buena práctica destacamos la predisposición de cada integrante para resolver las tareas asignadas. La distribución de las mismas es equitativa.
+* Continuar haciendo: comunicación durante la semana encuentros por meet. Seguir estudiando los temas trabajados para poder resolver los sprints.
+* Hacer más: pedir ayuda a los profesores, ya que al no poder resolver los problemas por nuestra cuenta, nos retrasamos en el resto de las tareas del proyecto.
+
+Retro Sprint 7:
+
+Retro Sprint 8:
 

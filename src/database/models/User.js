@@ -1,5 +1,4 @@
 //const { DataTypes } = require("sequelize/types");
-
 module.exports = (sequelize, DataTypes) => {
     let alias = "User";
     let cols = {
@@ -46,11 +45,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-
         tableName: 'users',
         timestamps:false
     }
-
     const User = sequelize.define(alias, cols, config);
 
     User.associate = function (models) {
@@ -61,7 +58,6 @@ module.exports = (sequelize, DataTypes) => {
         User.belongsTo(models.Role, {
             as: 'roles',
             foreignKey: 'roleId'
-            
         });
         {
         User.belongsToMany(models.ProductCart, {
