@@ -5,6 +5,9 @@ module.exports = {
     "database": "tierraquemadadb",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    define: {
+      timestamps: false,
+  }
   },
   "test": {
     "username": "root",
@@ -12,6 +15,9 @@ module.exports = {
     "database": "tierraquemadadb",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    define: {
+      timestamps: false
+  }
   },
   "production": {
     "username": "root",
@@ -19,5 +25,9 @@ module.exports = {
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    define: {
+      timestamps: false
   }
+  }
+  
 }

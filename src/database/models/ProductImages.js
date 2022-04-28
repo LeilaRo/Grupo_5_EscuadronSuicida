@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         url: {
             type: DataTypes.STRING(255)
@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
     }
     let config = {
         tableName: 'productimages',
-        TimesTamps: false
+        timestamps: false
     }
 
     const ProductImages = sequelize.define(alias, cols, config);
 
     ProductImages.associate = function(models){
         ProductImages.hasMany(models.Product, {
-            as: 'products',
+            as: 'productsimage',
             foreignKey: 'productImagesId',
 
         });

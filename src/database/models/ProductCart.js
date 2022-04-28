@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        idProduct: {
+        productCartId: {
             type: DataTypes.INTEGER
         },
-        idUser: {
+        userCartId: {
             type: DataTypes.INTEGER
         },
         amount: {
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         ProductCart.belongsToMany(models.Product, {
             as: 'products',
             through: 'prodCart',
-            foreignKey: 'prodCartId',
+            foreignKey: 'productId',
             otherKey: 'prodId',
             timestamps: 'false'
 

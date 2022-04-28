@@ -6,7 +6,7 @@ const router = require('../routes/users');
 
 const bcrypt = require('bcryptjs');
 const User= require('../src/database/models').User
-const UserImages = require('../src/database/models/UserImages').UserImages
+const UserImages = require('../src/database/models').UserImages
 //const db = require('../src/database/models/User')
 
 const controlador = {
@@ -37,31 +37,33 @@ const controlador = {
                 });
             };
             let imageUser = await UserImages.create({
-                url: req.file.filename
-            })
+               url: req.file.filename
+             
+            });console.log(imageUser)
+             
             let userCreated = await User.create({
                 firstName:req.body.first_name,
                 lastName: req.body.last_name,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                userImageId: imageUser,
-                role: req.body.role,
+                userImageId: imageUser.id,
+                admin: false,
             });
             return res.render('users/login');
+
+
         } catch (error) {
             res.status(500).send({msg: error.message})
         }
     },
     login: (req, res) => {
         res.render('users/login')
-
     },
-
     saveLogin: async function(req, res) {
             try {
                 let userToLogin = await User.findOne({where: {email: req.body.email}});
                 if (userToLogin != null) {
-                    let okPassword = bcryptjs.compareSync(req.body.password, userToLogin.hash);
+                    let okPassword = bcrypt.compareSync(req.body.password, userToLogin.hash);
                     if (okPassword){
                         delete userToLogin.hash;
                         req.session.userLogged = userToLogin;
@@ -108,7 +110,7 @@ const controlador = {
             // phone: req.body.phone,
             // brithDate: req.body.brithDate,
             // country: req.body.country,
-            roleId: req.body.role,
+            admin: false,
             userimageId: req.file.image,
 
         });
