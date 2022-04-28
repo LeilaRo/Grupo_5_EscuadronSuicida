@@ -6,12 +6,12 @@ const jsonProducts = fs.readFileSync(productsFilePath, "utf-8");
 //Traducir ese archivo json: luego lo usaremos en saveProduct para guardar los productos que se crean
 const products = JSON.parse(jsonProducts);
 
-const controlador={
+// const controlador={
 
-    productCart: (req, res) => {
-        res.render(path.resolve(__dirname, '../views/products/productCart'), {products})
-    }
+//     productCart: (req, res) => {
+//         res.render(path.resolve(__dirname, '../views/products/productCart'), {products})
+//     }
 
-}
+// }
 
-module.exports = controlador;
+//module.exports = controlador;
