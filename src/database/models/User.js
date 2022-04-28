@@ -40,8 +40,9 @@ module.exports = (sequelize, DataTypes) => {
         // country: {
         //     type: DataTypes.STRING(50)
         // },
-        roleId: {
-            type: DataTypes.STRING(30)
+        admin: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     }
     let config = {
@@ -55,10 +56,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'image', 
             foreignKey: 'userImageId',
             });
-        User.belongsTo(models.Role, {
-            as: 'roles',
-            foreignKey: 'roleId'
-        });
+    
         {
         User.belongsToMany(models.ProductCart, {
                 as: 'product',

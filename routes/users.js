@@ -54,7 +54,7 @@ const upload= multer({storage});
 router.get('/profile/:userId', userController.profile);
 
 router.get("/register", guestMiddleware, userController.register);
-router.post("/register",upload.single('image'), validations, userController.saveRegister);
+router.post("/register",upload.single('image'),/* validations*/ userController.saveRegister);
 
 router.get("/login", guestMiddleware, userController.login);
 router.post("/login", validations, userController.saveLogin);

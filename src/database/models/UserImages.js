@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     let config = {
         tableName: 'userImages',
-        TimesTamps: false
+        timestamps: false
     }
 
     const UserImages = sequelize.define(alias, cols, config);

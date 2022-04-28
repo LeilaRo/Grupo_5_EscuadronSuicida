@@ -15,17 +15,10 @@ module.exports = (sequelize, DataTypes) =>{
 }
     let config =  {
         tableName: 'role',
-        TimesTamps: false
+        timestamps: false
     }
     const Role = sequelize.define(alias, cols, config);
-
-        Role.associate = function(models){
-            Role.belongsTo(models.User, {
-                foreignKey: 'roleId',
-                as: 'roles'
-            })
-
-    }        
+    
     return Role;
     
 }
