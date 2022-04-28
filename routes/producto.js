@@ -4,6 +4,7 @@ const productosController= require('../controllers/productosController.js');
 const multer = require('multer');
 //const isAdminMiddleware = require('../middlewares/isAdminMiddleware');
 
+
 //Configuración de Multer:
 const storage = multer.diskStorage({
     destination:(req, file, cb)=>{
@@ -16,7 +17,7 @@ const storage = multer.diskStorage({
 const upload= multer({storage})
 const {body} = require('express-validator');
 
-const validations = [
+const validationsProduct = [
     body('product_name').notEmpty().withMessage('Debes completar el nombre del producto'),
     body('price').notEmpty().withMessage('Debes completar este campo'),
     body('description')
@@ -44,7 +45,7 @@ const validations = [
 router.get("/", productosController.productsList);
 
 //Formulario de creación de productos
-router.get("/create", /*isAdminMiddleware, */productosController.createProductView);
+router.get("/create", validationsProduct,/*isAdminMiddleware, */productosController.createProductView);
 
 //Acción de creación (a donde se envía el formulario) de POST
 router.post("/create", upload.single('productImage'), productosController.createProduct);
@@ -53,7 +54,7 @@ router.post("/create", upload.single('productImage'), productosController.create
 router.get("/:id", productosController.productDetail);
 
 //Formulario de edición de productos
-router.get("/:id/edit", /*isAdminMiddleware, */productosController.editProduct);
+router.get("/:id/edit", validationsProduct,/*isAdminMiddleware, */productosController.editProduct);
 
 //Acción de edición (a donde se envía el formulario):
 router.put("/:id", productosController.updateProduct);

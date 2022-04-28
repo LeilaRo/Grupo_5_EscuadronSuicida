@@ -24,7 +24,7 @@
                         </p>
                         <% } %>  
                     </div>
-                    <p class="form__input-error">Campo obligatorio debe contener al menos 5 caracteres</p>
+                    <p class="form__input-error_product_name">Campo obligatorio debe contener al menos 5 caracteres</p>
  
                     </p>
 
@@ -51,6 +51,7 @@
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
+
                     <input name="description" id="" cols="40" rows="6"
                     value="<%= locals.oldData ? oldData.description : null %> " class="description">
                     <% if (locals.errors && errors.description) { %>
@@ -59,7 +60,7 @@
                       </p>
                       <% } %>
                     </div>
-                    <p class="form__input-error">Campo obligatorio debe contener al menos 20 caracteres</p>
+                    <p class="form__input-error_description">Campo obligatorio debe contener al menos 20 caracteres</p>
                     </div>
                 </div>
                 <p>
@@ -88,6 +89,6 @@
     <%- include('../partials/footer') %> 
 
     <script src="/js/script.js"></script>
-    
+
 </body>
 </html>

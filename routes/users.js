@@ -11,8 +11,8 @@ const multer= require('multer');
 const {body} = require('express-validator');
 
 const validations = [
-    body('first_name').notEmpty().withMessage('Debes completar el campo "Nombre"'),
-    body('last_name').notEmpty().withMessage('Debes completar el campo "Apellido"'),
+    body('first_name').notEmpty().withMessage('Debes completar el campo "Nombre'),
+    body('last_name').notEmpty().withMessage('Debes completar el campo "Apellido'),
     body('email')
     .notEmpty().withMessage('Debes completar este campo').bail()
     .isEmail().withMessage('Debes completar con un email válido'),

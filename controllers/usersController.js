@@ -45,7 +45,7 @@ const controlador = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 userImageId: imageUser,
-                roleId: 1,
+                role: req.body.role,
             });
             return res.render('users/login');
         } catch (error) {
