@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 const upload= multer({storage})
 const {body} = require('express-validator');
 
-const validationsProduct = [
+const validations = [
     body('product_name').notEmpty().withMessage('Debes completar el nombre del producto'),
     body('price').notEmpty().withMessage('Debes completar este campo'),
     body('description')
@@ -45,19 +45,19 @@ const validationsProduct = [
 router.get("/", productosController.productsList);
 
 //Formulario de creación de productos
-router.get("/create", validationsProduct,/*isAdminMiddleware, */productosController.createProductView);
+router.get("/create",/*isAdminMiddleware, */productosController.createProductView);
 
 //Acción de creación (a donde se envía el formulario) de POST
-router.post("/create", upload.single('productImage'), productosController.createProduct);
+router.post("/create", validations, upload.single('productImage'), productosController.createProduct);
 
 //Detalle de un producto particular
 router.get("/:id", productosController.productDetail);
 
 //Formulario de edición de productos
-router.get("/:id/edit", validationsProduct,/*isAdminMiddleware, */productosController.editProduct);
+router.get("/:id/edit",/*isAdminMiddleware, */productosController.editProduct);
 
 //Acción de edición (a donde se envía el formulario):
-router.put("/:id", productosController.updateProduct);
+router.put("/:id", validations, productosController.updateProduct);
 
 //Borrar
 

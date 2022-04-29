@@ -17,7 +17,7 @@
 
             <label for="nombre">Nombre</label>
             <input type="text" name="first_name" placeholder=""
-              value="<%= locals.oldData ? oldData.first_name : null %> " class="first_name" id="first_name">
+              value="<%= locals.oldData ? oldData.first_name : null %>" class="first_name" id="first_name">
             <% if (locals.errors && errors.first_name) { %>
               <p class="errorMsg">
                 <%= errors.first_name.msg %>
@@ -30,8 +30,7 @@
 
                 <label for="apellido">Apellido</label>
                 <input type="text" name="last_name" placeholder=""
-                  value="<%= locals.oldData ? oldData.last_name
-                   : null %> " class="last_name" id="last_name">
+                  value="<%= locals.oldData ? oldData.last_name : null %>" class="last_name" id="last_name">
                 <% if (locals.errors && errors.last_name) { %>
                   <p class="errorMsg">
                     <%= errors.last_name.msg %>
