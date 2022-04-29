@@ -61,12 +61,23 @@ const controlador = {
     },
     saveLogin: async function(req, res) {
             try {
-                let userToLogin = await User.findOne({where: {email: req.body.email}});
+                let userToLogin = await User.findOne({
+                    where: {email: req.body.email}
+                    
+                });
                 if (userToLogin != null) {
-                    let okPassword = bcrypt.compareSync(req.body.password, userToLogin.hash);
+                    let okPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                     if (okPassword){
-                        delete userToLogin.hash;
-                        req.session.userLogged = userToLogin;
+                    
+                        const userLogged = {
+                            id: userToLogin.id,
+                            firstName:userToLogin.firstName,
+                            lastName:userToLogin.lastName,
+                            email:userToLogin.email,
+                            userimages: userToLogin.userImageId,
+                            admin: userToLogin.admin
+                        }
+                        req.session.userLogged = userLogged;
                         if (req.body.remember_user){
                             res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60});
                         }
@@ -117,7 +128,7 @@ const controlador = {
     },
 
     profile: (req, res) => {
-        retur| res.render('users/Profile', {
+        return res.render('users/Profile', {
             user: req.session.userLogged
         });
     },

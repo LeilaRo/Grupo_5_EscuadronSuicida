@@ -11,16 +11,17 @@
   <% products.forEach(product => { %>
       <div class="card">
         <div class="imagenCardContainer">
-          <img class="imagenCard" src= "/imagenes/products/<%= product[i].productImagesId %>"  alt="Producto"> 
+                    
+         <img class="imagenCard" src= "/imagenes/products/<%=product.productimages.url %>"  alt="Producto">
         </div>
-         <!--<%= products[i].image %> --> 
+         <!--<%=// products.image %> --> 
 
-          <h3> <%= product[i].name %> </h4>
+          <h3> <%= product.name %> </h4>
           <br>
-          <h4> $<%= product[i].price %> </h5>
+          <h4> $<%= product.price %> </h5>
           <br>
 
-          <a href="/products/<%=product[i].id%>">Ver más</a>
+          <a href="/products/<%=product.id%>">Ver más</a>
           <br>
           <br>
           <button type="submit" class="cardButton">Agregar al carrito</button>

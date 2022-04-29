@@ -11,7 +11,7 @@ const controlador={
     productsList: async (req, res)=>{
         try {
             const products = await Product.findAll({include: {all: true}});
-            res.render('products/productsList', {product: products});
+            res.render('products/productsList', {products: products});
         }
         catch (error) {
             res.status(500).send({message: error.message});
@@ -55,25 +55,7 @@ const controlador={
             res.status(500).send({message: error.message})
         }
     },
-    /*createProduct: (req, res)=>{
-       try{ let resultValidation = validationResult(req);
-        if(!resultValidation.isEmpty()){
-            return res.render('products/createProduct', {msgError: resultValidation.mapped})
-        }
-        else{
-            db.Product.create({
-                name: req.body.product_name,
-                description: req.body.description,
-                price: req.body.price,
-                categoryId: req.body.categories,
-                productImagesId:req.file.filename,
-            })
-            
-        } res.redirect("/products")
-       } catch (error) {
-        res.status(500).send({msg: error.message})
-    }        
-    }*/
+   
     editProduct: (req, res) => {
         Product.findByPK(req.params.id)
             .then(function(idProduct){

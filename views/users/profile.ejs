@@ -8,7 +8,7 @@
     <%- include('../partials/header') %> 
 
 <main class="profile">
-            <h1>¡Te damos la bienvenida <%=user.first_name%>  <%=user.last_name%> !</h1>
+            <h1>¡Te damos la bienvenida <%=user.firstName%>  <%=user.lastName%> !</h1>
                 
 
             <section class="data">
@@ -17,22 +17,21 @@
                 <article class="userData">
                     <br>
                     <figure class="userImage" >
-                        <img src="/imagenes/users/<%= user.image %>"  alt="Imagen de usuario">
+                        <img src="/imagenes/users/<%= user.userimages.url %>"  alt="Imagen de usuario">
                         </figure>
                         <br>
 
                     <div class="datas">
                         <h2>Datos de la cuenta</h2>
-                        <p>Nombre: <%= user.first_name %> </p>
-                        <p>Apellido: <%= user.last_name %></p>
+                        <p>Nombre: <%= user.firstName %> </p>
+                        <p>Apellido: <%= user.lastName %></p>
                         <p>Email: <%= user.email %> </p>
 
                     </div>
 
                 </article >
                 
-                
-                    
+                              
                <!-- 
                    <article class="personalData">
                     <h2>Datos personales</h2>
