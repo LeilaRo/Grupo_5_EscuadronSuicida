@@ -61,10 +61,14 @@ const controlador = {
     },
     saveLogin: async function(req, res) {
             try {
-                let userToLogin = await User.findOne({
-                    where: {email: req.body.email}
-                    
-                });
+                const resultValidation = validationResult(req);
+                if (resultValidation.errors.length > 0) {
+                    return res.render('users/login', {
+                        errors: resultValidation.mapped(),
+                        oldData: req.body
+                    });
+                };
+                let userToLogin = await User.findOne({where: {email: req.body.email}});
                 if (userToLogin != null) {
                     let okPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                     if (okPassword){
@@ -136,7 +140,35 @@ const controlador = {
 
         req.session.destroy();
         return res.redirect('/');
+    },
+    list: (req, res) => {
+        User
+            .findAll()
+            .then(users => {
+                return res.status(200).json({
+                    count: User.length,
+                    users: {
+                        id: users.id,
+                        firstName: users.firstName,
+                        lastName: users.lastName,
+                        email: users.email,
+                        detail: 'http://localhost:3030/users/api/list/:id'
+                    },
+                    status: 200
+                })
+            })
+    },
+    show: (req, res) => {
+        User
+            .findByPK(req.params.id)
+            .then(user => {
+                return res.status(200).json({
+                    data: user,
+                    status: 200
+                })
+            })
     }
+
 }
 
 module.exports = controlador

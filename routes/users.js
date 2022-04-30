@@ -11,8 +11,8 @@ const multer= require('multer');
 const {body} = require('express-validator');
 
 const validations = [
-    body('first_name').notEmpty().withMessage('Debes completar el campo "Nombre"'),
-    body('last_name').notEmpty().withMessage('Debes completar el campo "Apellido"'),
+    body('first_name').notEmpty().withMessage('Debes completar el campo Nombre'),
+    body('last_name').notEmpty().withMessage('Debes completar el campo Apellido'),
     body('email')
     .notEmpty().withMessage('Debes completar este campo').bail()
     .isEmail().withMessage('Debes completar con un email válido'),
@@ -54,12 +54,15 @@ const upload= multer({storage});
 router.get('/profile/:userId', userController.profile);
 
 router.get("/register", guestMiddleware, userController.register);
-router.post("/register",upload.single('image'),/* validations*/ userController.saveRegister);
+router.post("/register",upload.single('image'), validations, userController.saveRegister);
 
 router.get("/login", guestMiddleware, userController.login);
 router.post("/login", validations, userController.saveLogin);
 
 router.get("/profile", authMiddleware, userController.profile);
 router.get('/logout', userController.logout);
+
+router.get("/api/list", userController.list);
+router.get("/api/list/:id", userController.show);
 
 module.exports = router;

@@ -17,27 +17,27 @@
 
             <label for="nombre">Nombre</label>
             <input type="text" name="first_name" placeholder=""
-              value="<%= locals.oldData ? oldData.first_name : null %> " class="first_name" id="first_name">
+              value="<%= locals.oldData ? oldData.first_name : null %>" class="first_name" id="first_name">
             <% if (locals.errors && errors.first_name) { %>
               <p class="errorMsg">
                 <%= errors.first_name.msg %>
               </p>
               <% } %>
                 </div>
-                <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+                <p class="form__input-error_first_name">Campo obligatorio debe contener al menos 2 caracteres</p>
                 </div>
 
 
                 <label for="apellido">Apellido</label>
                 <input type="text" name="last_name" placeholder=""
-                  value="<%= locals.oldData ? oldData.last_name : null %> " class="last_name" id="last_name">
+                  value="<%= locals.oldData ? oldData.last_name : null %>" class="last_name" id="last_name">
                 <% if (locals.errors && errors.last_name) { %>
                   <p class="errorMsg">
                     <%= errors.last_name.msg %>
                   </p>
                   <% } %>
                     </div>
-                    <p class="form__input-error">Campo obligatorio debe contener al menos 2 caracteres</p>
+                    <p class="form__input-error_last_name">Campo obligatorio debe contener al menos 2 caracteres</p>
                     </div>
 
                     <body class="fondo">
@@ -52,7 +52,7 @@
                         <% } %>
                           </div>
 
-                          <p class="form__input-error">Campo obligatorio debe ingresar un mail valido</p>
+                          <p class="form__input-error_email">Campo obligatorio debe ingresar un mail valido</p>
                           </div>
 
                           <label for=>Contraseña</label>
@@ -63,7 +63,7 @@
                             </p>
                             <% } %>
                               </div>
-                              <p class="form__input-error">Campo obligatorio debe contener al menos 8 caracteres</p>
+                              <p class="form__input-error_password">Campo obligatorio debe contener al menos 8 caracteres</p>
                               </div>
 
                               <p>
@@ -78,6 +78,13 @@
                                   <% } %>
                               </p>
 
+                              <label>Perfil del usuario</label>
+                                <select name="role"  required>
+                                  <!--<option>administrador</option>-->
+                                  <option>usuario</option>
+                                </select>
+                              <br>
+                              <br>
                               <button type="submit" class="boton-formulario">REGISTRARSE</button>
 
 

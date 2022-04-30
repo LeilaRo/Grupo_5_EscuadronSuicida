@@ -319,9 +319,30 @@ input:focus{
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 
-.form__input-error {
+.form__input-error_first_name {
 	display: none;
 }
+
+.form__input-error_last_name {
+	display: none;
+}
+
+.form__input-error_password {
+	display: none;
+}
+
+.form__input-error_email {
+	display: none;
+}
+
+.form__input-error_product_name {
+	display: none;
+}
+
+.form__input-error_description {
+	display: none;
+}
+
 
 .form__input-error-activo {
 	display: block;
