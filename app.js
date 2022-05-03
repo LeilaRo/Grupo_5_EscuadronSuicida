@@ -10,6 +10,8 @@ const productsRoutes= require('./routes/producto.js');
 const userRoutes=require('./routes/users.js')
 const rutasMain= require('./routes/main.js');
 const cartRoutes= require('./routes/carrito.js')
+const usersApi= require('./routes/apiUser.js')
+const productsApi= require('./routes/apiProduct.js')
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const methodOverride = require('method-override');// put-delete
@@ -43,6 +45,9 @@ app.listen(3030, () =>{
 app.use('/products', productsRoutes);
 app.use('/users', userRoutes);
 app.use('/carrito', cartRoutes);
-app.use('/', rutasMain)
+app.use('/', rutasMain);
+app.use('/api/user', usersApi);
+app.use('/api/product', productsApi);
+
 
 

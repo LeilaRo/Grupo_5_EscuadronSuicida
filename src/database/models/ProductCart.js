@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: 'prodId',
             timestamps: 'false'
 
-        })*/
+        })
         ProductCart.belongsToMany(models.User, {
             as: 'users',
             through: 'userCart',
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: 'useCartId',
             timestamps: 'false'
 
-        })
+        })*/
     };
     return ProductCart
 

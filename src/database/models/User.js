@@ -22,24 +22,24 @@ module.exports = (sequelize, DataTypes) => {
         userImageId:{
             type: DataTypes.INTEGER,
         },
-        // address: {
-        //     type: DataTypes.STRING
-        // },
-        // city: {
-        //     type: DataTypes.STRING(50)
-        // },
-        // province: {
-        //     type: DataTypes.STRING(50)
-        // },
-        // phone: {
-        //     type: DataTypes.INTEGER
-        // },
-        // /*birthDate:{
-        //     type: DataTypes.DATETIME
-        // },*/
-        // country: {
-        //     type: DataTypes.STRING(50)
-        // },
+         address: {
+             type: DataTypes.STRING
+         },
+         city: {
+             type: DataTypes.STRING(50)
+         },
+         province: {
+            type: DataTypes.STRING(50)
+         },
+         phone: {
+             type: DataTypes.INTEGER
+         },
+         /*birthDate:{
+             type: DataTypes.DATETIME
+         },*/
+         country: {
+             type: DataTypes.STRING(50)
+         },
         admin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
@@ -58,14 +58,14 @@ module.exports = (sequelize, DataTypes) => {
             });
     
         {
-        User.belongsToMany(models.ProductCart, {
+        /*User.belongsToMany(models.ProductCart, {
                 as: 'product',
                 through: 'userCart',
                 foreignKey: 'useCartId',
                 otherKey: 'productoCartId',
                 timestamps: 'false'
 
-            })
+            })*/
         }
 
 

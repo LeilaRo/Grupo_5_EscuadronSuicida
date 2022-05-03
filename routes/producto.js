@@ -3,6 +3,7 @@ const router = express.Router();
 const productosController= require('../controllers/productosController.js');
 const multer = require('multer');
 //const isAdminMiddleware = require('../middlewares/isAdminMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
 //Configuración de Multer:
@@ -22,7 +23,6 @@ const validations = [
     body('price').notEmpty().withMessage('Debes completar este campo'),
     body('description')
     .notEmpty().withMessage('Debes completar este campo').bail(),
-    //Revisar si será necesario agregar una imagen al perfil
     body('productimage').custom((value, { req })=>{
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -45,7 +45,7 @@ const validations = [
 router.get("/", productosController.productsList);
 
 //Formulario de creación de productos
-router.get("/create",/*isAdminMiddleware, */productosController.createProductView);
+router.get("/create",/*isAdminMiddleware, */authMiddleware,productosController.createProductView);
 
 //Acción de creación (a donde se envía el formulario) de POST
 router.post("/create", validations, upload.single('productImage'), productosController.createProduct);
@@ -54,7 +54,7 @@ router.post("/create", validations, upload.single('productImage'), productosCont
 router.get("/:id", productosController.productDetail);
 
 //Formulario de edición de productos
-router.get("/:id/edit",/*isAdminMiddleware, */productosController.editProduct);
+router.get("/:id/edit",/*isAdminMiddleware, */authMiddleware,productosController.editProduct);
 
 //Acción de edición (a donde se envía el formulario):
 router.put("/:id", validations, productosController.updateProduct);

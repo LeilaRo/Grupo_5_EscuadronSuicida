@@ -1,6 +1,8 @@
 const path= require('path');
 const fs = require('fs');
 
+
+
 const {validationResult} = require('express-validator');
 const db = require('../src/database/models/Product');
 const Product= require('../src/database/models').Product
@@ -55,8 +57,52 @@ const controlador={
             res.status(500).send({message: error.message})
         }
     },
+
+    editProduct: async (req, res) => {
+        const id = Number(req.params.id);
+        try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('products/editProduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            };
+            const products = await Product.findByPk(id);
+            res.render('products/editProduct', {idProduct: products});
+        } catch (error) {
+            res.status(500).send({message: error.message})
+        }
+    },
+
+    updateProduct: async (req, res) => {
+        const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('products/editProduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            };
+        try{
+            let id = Number(req.body.id);
+            let productToModify = await Product.findByPk(id);
+        
+            let productModificated = await productToModify.update({
+                name: req.body.product_name,
+                categoryId: req.body.category,
+                description: req.body.description,
+                price: Number(req.body.price),
+                productImages: req.body.file
+
+                 });
+                 return res.redirect('/products');
+            } catch (error) {
+                res.status(500).send({message: error.message})
+            }
+    },
    
-    editProduct: (req, res) => {
+   
+    /*(req, res) => {
         Product.findByPK(req.params.id)
             .then(function(idProduct){
                 res.render('products/editProduct', {idProduct})
@@ -76,7 +122,7 @@ const controlador={
         }
         )
         res.redirect('/products')
-    },
+    },*/
     deleteProduct: (req, res) =>{
         Product.destroy({
             where: {

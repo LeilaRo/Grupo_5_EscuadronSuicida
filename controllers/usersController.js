@@ -5,7 +5,7 @@ const router = require('../routes/users');
 
 
 const bcrypt = require('bcryptjs');
-const User= require('../src/database/models').User
+const User = require('../src/database/models').User
 const UserImages = require('../src/database/models').UserImages
 //const db = require('../src/database/models/User')
 
@@ -15,7 +15,7 @@ const controlador = {
         res.render('users/register')
 
     },
-    saveRegister: async function (req, res){
+    saveRegister: async function (req, res) {
         try {
             const resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
@@ -25,24 +25,25 @@ const controlador = {
                 });
             };
             let userInDB = await User.findOne({
-                where: {email: req.body.email}});
+                where: { email: req.body.email }
+            });
             if (userInDB != null) {
                 return res.render('users/register', {
                     errors: {
                         email: {
-                            msg : 'Este email ya está registrado'
+                            msg: 'Este email ya está registrado'
                         }
                     },
                     oldData: req.body
                 });
             };
             let imageUser = await UserImages.create({
-               url: req.file.filename
-             
-            });console.log(imageUser)
-             
+                url: req.file.filename
+
+            }); console.log(imageUser)
+
             let userCreated = await User.create({
-                firstName:req.body.first_name,
+                firstName: req.body.first_name,
                 lastName: req.body.last_name,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -53,59 +54,60 @@ const controlador = {
 
 
         } catch (error) {
-            res.status(500).send({msg: error.message})
+            res.status(500).send({ msg: error.message })
         }
     },
     login: (req, res) => {
         res.render('users/login')
     },
-    saveLogin: async function(req, res) {
-            try {
-                const resultValidation = validationResult(req);
+    saveLogin: async function (req, res) {
+        /*const resultValidation = validationResult(req);
                 if (resultValidation.errors.length > 0) {
                     return res.render('users/login', {
                         errors: resultValidation.mapped(),
                         oldData: req.body
                     });
-                };
-                let userToLogin = await User.findOne({where: {email: req.body.email}});
-                if (userToLogin != null) {
-                    let okPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-                    if (okPassword){
-                    
-                        const userLogged = {
-                            id: userToLogin.id,
-                            firstName:userToLogin.firstName,
-                            lastName:userToLogin.lastName,
-                            email:userToLogin.email,
-                            userimages: userToLogin.userImageId,
-                            admin: userToLogin.admin
-                        }
-                        req.session.userLogged = userLogged;
-                        if (req.body.remember_user){
-                            res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 60});
-                        }
-                        return res.redirect('/users/profile');
+                };*/
+        try {
+
+            let userToLogin = await User.findOne({ where: { email: req.body.email } });
+            if (userToLogin != null) {
+                let okPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                if (okPassword) {
+
+                    const userLogged = {
+                        id: userToLogin.id,
+                        firstName: userToLogin.firstName,
+                        lastName: userToLogin.lastName,
+                        email: userToLogin.email,
+                        userimages: userToLogin.userImageId,
+                        admin: userToLogin.admin
                     }
-                    return res.render('users/login', {
-                        errors: {
-                            email: {
-                                msg: 'Las credenciales no son válidas'
-                            }
-                        }
-                    });
+                    req.session.userLogged = userLogged;
+                    if (req.body.remember_user) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
+                    }
+                    return res.redirect('/users/profile');
                 }
                 return res.render('users/login', {
                     errors: {
                         email: {
-                            msg: 'El usuario no se encuentra registrado.'
+                            msg: 'Las credenciales no son válidas'
                         }
                     }
                 });
-            } catch (errors) {
-                res.status(500).send({message: errors.message})
-            } 
-        },    
+            }
+            return res.render('users/login', {
+                errors: {
+                    email: {
+                        msg: 'El usuario no se encuentra registrado.'
+                    }
+                }
+            });
+        } catch (errors) {
+            res.status(500).send({ message: errors.message })
+        }
+    },
     edit: (req, res) => {
         User.findByPK(req.params.id)
             .then(function (idUser) {
@@ -148,27 +150,33 @@ const controlador = {
                 return res.status(200).json({
                     count: User.length,
                     users: {
-                        id: users.id,
-                        firstName: users.firstName,
-                        lastName: users.lastName,
-                        email: users.email,
+                        id: User.id,
+                        firstName: User.firstName,
+                        lastName: User.lastName,
+                        email: User.email,
                         detail: 'http://localhost:3030/users/api/list/:id'
                     },
-                    status: 200
+                    //status: 200
                 })
             })
     },
     show: (req, res) => {
-        User
-            .findByPK(req.params.id)
+        User.findByPK(req.params.id)
             .then(user => {
-                return res.status(200).json({
-                    data: user,
-                    status: 200
-                })
-            })
-    }
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: user.length,
+                        url: 'http://localhost:3030/users/api/list/:id'
+                    },
+                    data: user
+                }
+                res.json(respuesta);
+            });
+    },
 
 }
+
+
 
 module.exports = controlador

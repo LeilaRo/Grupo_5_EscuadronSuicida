@@ -9,15 +9,21 @@
 
     <main class="body-loadProduct">
         <h1>EDITAR PRODUCTO</h1> 
-        <form action="/products/<%= idProduct.id %>?_method=PUT" method= 'POST' class= "form-create" id="formValidations">
-            <input type="hidden" name="id" value=<%= idProduct.id %>> 
+        <form action="/products/id?_method=PUT" method= 'POST' class= "form-create" id="formValidations">
+            <!--<input type="hidden" name="id" value=<%= //idProduct.id %> -->
                 <div class="forms">
                 <div class="left">
                     <p>
                     <br>
                        <label>Nombre del producto</label> 
                        <br>
-                      <input type="text" name="product_name" value="<%= idProduct.name%>">
+                      <input type="text" name="product_name"  
+                      value="<%= locals.oldData ? oldData.product_name : null %> " class="product_name">
+                      <% if (locals.errors && errors.product_name) { %>
+                        <p class="errorMsg">
+                          <%= errors.product_name.msg %>
+                        </p>
+                        <% } %>
                         </div>
                         <p class="form__input-error_product_name">Campo obligatorio debe contener al menos 5 caracteres</p>
                         </div>
@@ -26,13 +32,19 @@
                     <p>
                         <label>Precio</label>
                         <br>
-                        <input type="number" name="price" value="<%= idProduct.price%>">
+                        <input type="number" name="price" 
+                        value="<%= locals.oldData ? oldData.price : null %> " class="price">
+                        <% if (locals.errors && errors.price) { %>
+                            <p class="errorMsg">
+                              <%= errors.price.msg %>
+                            </p>
+                            <% } %>
                     </p>
                 
                     <p>
                         <label>Categoría</label>
                         <br>
-                        <input type="text" name="category" value="<%= idProduct.category%>">
+                       <!-- <input type="text" name="category" value="<%=// idProduct.category%>"> --> 
                         
                     </p>   
                 </div>
@@ -41,7 +53,13 @@
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
-                   <input name="description" id="" cols="40" rows="6" <%= idProduct.description %>>
+                   <input name="description" id="" cols="40" rows="6"
+                   value="<%= locals.oldData ? oldData.description : null %> " class="description">
+                   <% if (locals.errors && errors.description) { %>
+                     <p class="errorMsg">
+                       <%= errors.description.msg %>
+                     </p>
+                     <% } %>
                     </div>
                     <p class="form__input-error_description">Campo obligatorio debe contener al menos 5 caracteres</p>
                     </div>
@@ -55,16 +73,15 @@
             </div>
             <br>
         
-                <button type="submit" class="loadProd">GUARDAR</button>
-        
-                    <button type="reset" class="loadProd">BORRAR</button>
-            
+                <button type="submit" class="loadProd">GUARDAR</button>            
 
                 <br>
             </form>  
+
     </main>
 
     <%- include('../partials/footer') %> 
+    <script src="/js/script.js"></script>
 
 
 </body>
