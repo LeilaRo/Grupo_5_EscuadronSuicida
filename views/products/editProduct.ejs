@@ -33,7 +33,7 @@
                         <label>Precio</label>
                         <br>
                         <input type="number" name="price" 
-                        value="<%= locals.oldData ? oldData.price : idProduct.price %> " class="price">
+                        value="<%= locals.oldData ? oldData.price : idProduct.price%> " class="price">
                         <% if (locals.errors && errors.price) { %>
                             <p class="errorMsg">
                               <%= errors.price.msg %>
@@ -85,9 +85,9 @@
 
                 <br>
             </form>  
-            <!--<form action="/products/<%=//product.id%>?_method=DELETE" method="POST">
+            <form action="/products/<%=idProduct.id%>?_method=DELETE" method="POST">
                 <button type="submit" class="cardButton">BORRAR</button>
-            </form> -->
+            </form> 
 
     </main>
 

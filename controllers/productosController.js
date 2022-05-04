@@ -108,37 +108,21 @@ const controlador = {
         }
     },
 
-
-    /*(req, res) => {
-        Product.findByPK(req.params.id)
-            .then(function(idProduct){
-                res.render('products/editProduct', {idProduct})
-            })
-    },
-    updateProduct: (req, res)=>{
-        Product.update({
-            name:req.body.product_name,
-            description: req.body.description,
-            categoryId: req.body.categories,
-            price: req.body.price,
-            productImagesId:req.file.filename,
-        }, {
-            where:{
-                id: req.params.id
-            }
-        }
-        )
-        res.redirect('/products')
-    },*/
-    deleteProduct: (req, res) => {
+   deleteProduct: (req, res) => {
         Product.destroy({
             where: {
                 id: req.params.id
-            }
+            },
         })
-        res.redirect('/products')
+        .then(()=>{
+            return res.redirect('/products')
+        }) .catch((error) =>{
+            res.status(500).send({message: error.message})
+        })
+        
 
     },
+     
     /*search:(req,res) =>{
         db.Product.findOne({
             where: {
@@ -146,6 +130,7 @@ const controlador = {
             }
         }) .then
     }*/
+
 
 }
 
