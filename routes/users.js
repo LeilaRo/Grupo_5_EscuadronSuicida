@@ -51,8 +51,6 @@ const storage = multer.diskStorage({
 })
 const upload= multer({storage});
 
-router.get('/profile/:userId', userController.profile);
-
 router.get("/register", guestMiddleware, userController.register);
 router.post("/register",upload.single('image'), validations, userController.saveRegister);
 
@@ -60,6 +58,12 @@ router.get("/login", guestMiddleware, userController.login);
 router.post("/login", validations, userController.saveLogin);
 
 router.get("/profile", authMiddleware, userController.profile);
+
+router.get('/edit/:id', authMiddleware, userController.editProfile);
+
+//Acción de edición (a donde se envía el formulario):
+router.put("/edit/:id", validations, userController.updateProfile);
+
 router.get('/logout', userController.logout);
 
 router.get("/api/list", userController.list);

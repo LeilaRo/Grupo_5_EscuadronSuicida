@@ -1,0 +1,107 @@
+<html lang="es">
+
+<%- include('../partials/head')%>
+
+    <body class="fondo">
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <section class="registerForm">
+                    <h1>EDITAR PERFIL</h1>
+
+
+                    <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+                        class="control-formulario" id="formValidations">
+                        
+                        <input style="display: none" name="id" value=<%= user.id %>>
+
+
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="first_name" placeholder=""
+                            value="<%= locals.oldData ? oldData.first_name : user.firstName %>" class="first_name"
+                            id="first_name">
+                        <% if (locals.errors && errors.first_name) { %>
+                            <p class="errorMsg">
+                                <%= errors.first_name.msg %>
+                            </p>
+                            <% } %>
+                                </div>
+                                <p class="form__input-error_first_name">Campo obligatorio debe contener al menos 2
+                                    caracteres</p>
+                                </div>
+
+
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="last_name" placeholder=""
+                                    value="<%= locals.oldData ? oldData.last_name : user.lastName%>" class="last_name"
+                                    id="last_name">
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <p class="errorMsg">
+                                        <%= errors.last_name.msg %>
+                                    </p>
+                                    <% } %>
+                                        </div>
+                                        <p class="form__input-error_last_name">Campo obligatorio debe contener al menos
+                                            2 caracteres</p>
+                                        </div>
+
+                                        <body class="fondo">
+
+                                            <label>Email</label>
+                                            <input type="email" name="email" placeholder="ejemplo@correo"
+                                                value="<%= locals.oldData ? oldData.email : user.email %> "
+                                                class="email" id="email">
+                                            <% if (locals.errors && errors.email) { %>
+                                                <p class="errorMsg">
+                                                    <%= errors.email.msg %>
+                                                </p>
+                                                <% } %>
+                                                    </div>
+
+                                                    <p class="form__input-error_email">Campo obligatorio debe ingresar
+                                                        un mail valido</p>
+                                                    </div>
+
+
+                                                    <br>
+                                                    <br>
+                                                    <input style="display: none" type="password" name="password"
+                                                        placeholder="" class="password" id="password"
+                                                        value="<%= user.password %> ">
+
+                                                    <p>
+                                                        <label>Seleccione una imagen de perfil</label>
+
+                                                        <input type="file" name="image" accept=".jpg, .png"
+                                                            class="control-input" class="image">
+                                                        <% if (locals.errors && errors.image) { %>
+                                                            <p class="errorMsg">
+                                                                <%= errors.image.msg %>
+                                                            </p>
+
+                                                            <% } %>
+                                                    </p>
+
+                                                    <label>Perfil del usuario</label>
+                                                    <select name="role" required>
+                                                        <option>usuario</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <button type="submit" class="boton-formulario">GUARDAR</button>
+
+
+                    </form>
+
+                </section>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+
+                <script src="/js/script.js"></script>
+
+    </body>
+
+</html>

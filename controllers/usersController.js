@@ -108,36 +108,63 @@ const controlador = {
             res.status(500).send({ message: errors.message })
         }
     },
-    edit: (req, res) => {
-        User.findByPK(req.params.id)
-            .then(function (idUser) {
-                res.render('users/edit', { idUser })
-            });
-    },
-
-    saveEdit: (req, res) => {
-        User.update({
-            firstName: req.body.first_name,
-            lastName: req.body.last_name,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            // address: req.body.address,
-            // city: req.body.city,
-            // province: req.body.province,
-            // phone: req.body.phone,
-            // brithDate: req.body.brithDate,
-            // country: req.body.country,
-            admin: false,
-            userimageId: req.file.image,
-
-        });
-    },
-
     profile: (req, res) => {
         return res.render('users/Profile', {
             user: req.session.userLogged
         });
     },
+    editProfile: async (req, res) => {
+        const id = Number(req.params.id);
+        try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render('users/editProfile', {
+              
+                });
+            };
+            const user = await User.findByPk(id);
+            res.render('users/editProfile', { user: user });
+        } catch (error) {
+            res.status(500).send({ message: error.message })
+        }
+    },
+    
+    updateProfile:async (req, res) =>{
+
+            const resultValidation = validationResult(req);
+            /* if (resultValidation.errors.length > 0) {
+                console.log(resultValidation.errors)
+                return res.render('products/editProduct', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                });
+            }; */
+            try {
+                let id = Number(req.params.id);
+              
+                let userToModify = await User.findByPk(id);
+                /*let id = req.params.id
+                console.log(id)
+                let userToModify = await User.findByPK(req.params.id);*/
+
+                let userEdit = await userToModify.update({
+                    firstName: req.body.first_name,
+                    lastName: req.body.last_name,
+                    email: req.body.email,
+                    //password: bcrypt.hashSync(req.body.password, 10),
+                    admin: false,
+                    userImage: req.body.file,
+        
+                });
+                console.log(req.body)
+                console.log("Hola" + userEdit)
+        
+                await userToModify.save() 
+                return res.redirect('/users/profile');
+            } catch (error) {
+                res.status(500).send({ message: error.message })
+            }
+        },
     logout: (req, res) => {
 
         req.session.destroy();
