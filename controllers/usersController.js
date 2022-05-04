@@ -75,15 +75,15 @@ const controlador = {
                 let okPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                 if (okPassword) {
 
-                    const userLogged = {
+                    /*const userLogged = {
                         id: userToLogin.id,
                         firstName: userToLogin.firstName,
                         lastName: userToLogin.lastName,
                         email: userToLogin.email,
                         userimages: userToLogin.userImageId,
                         admin: userToLogin.admin
-                    }
-                    req.session.userLogged = userLogged;
+                    }*/
+                    req.session.userLogged = userToLogin //userLogged;
                     if (req.body.remember_user) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
                     }

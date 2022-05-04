@@ -10,7 +10,7 @@
     <main class="body-loadProduct">
         <h1>EDITAR PRODUCTO</h1> 
         <form action="/products/id?_method=PUT" method= 'POST' class= "form-create" id="formValidations">
-            <!--<input type="hidden" name="id" value=<%= //idProduct.id %> -->
+                <input style="display: none" name="id" value=<%= idProduct.id %> />
                 <div class="forms">
                 <div class="left">
                     <p>
@@ -18,7 +18,7 @@
                        <label>Nombre del producto</label> 
                        <br>
                       <input type="text" name="product_name"  
-                      value="<%= locals.oldData ? oldData.product_name : null %> " class="product_name">
+                      value="<%= locals.oldData ? oldData.product_name : idProduct.name %> " class="product_name">
                       <% if (locals.errors && errors.product_name) { %>
                         <p class="errorMsg">
                           <%= errors.product_name.msg %>
@@ -33,7 +33,7 @@
                         <label>Precio</label>
                         <br>
                         <input type="number" name="price" 
-                        value="<%= locals.oldData ? oldData.price : null %> " class="price">
+                        value="<%= locals.oldData ? oldData.price : idProduct.price %> " class="price">
                         <% if (locals.errors && errors.price) { %>
                             <p class="errorMsg">
                               <%= errors.price.msg %>
@@ -43,6 +43,14 @@
                 
                     <p>
                         <label>Categoría</label>
+                        <label>Categoría</label>
+                        <select name="category">
+                          <option value="1">Platos</option>
+                          <option value="2">Cuencos</option>
+                          <option value="3">Tazas</option>
+                          <option value="4">Mates</option>
+                          <option value="5">Deco</option>
+                          </select>  
                         <br>
                        <!-- <input type="text" name="category" value="<%=// idProduct.category%>"> --> 
                         
@@ -54,7 +62,7 @@
                    <label>Descripción del Producto</label> 
                    <br>
                    <input name="description" id="" cols="40" rows="6"
-                   value="<%= locals.oldData ? oldData.description : null %> " class="description">
+                   value="<%= locals.oldData ? oldData.description : idProduct.description %> " class="description">
                    <% if (locals.errors && errors.description) { %>
                      <p class="errorMsg">
                        <%= errors.description.msg %>
@@ -77,6 +85,9 @@
 
                 <br>
             </form>  
+            <!--<form action="/products/<%=//product.id%>?_method=DELETE" method="POST">
+                <button type="submit" class="cardButton">BORRAR</button>
+            </form> -->
 
     </main>
 

@@ -48,7 +48,7 @@ router.get("/", productosController.productsList);
 router.get("/create",/*isAdminMiddleware, */authMiddleware,productosController.createProductView);
 
 //Acción de creación (a donde se envía el formulario) de POST
-router.post("/create", validations, upload.single('productImage'), productosController.createProduct);
+router.post("/create", /*validations,*/ upload.single('productImage'), productosController.createProduct);
 
 //Detalle de un producto particular
 router.get("/:id", productosController.productDetail);
