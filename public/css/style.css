@@ -9,9 +9,26 @@
     font-family: 'Montserrat', sans-serif;
  
 }
-/*body{
+.producto-a-comprar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  background-color: #6c7758a9
+
+}
+.producto-a-comprar img{
+  width: 25%;
+  margin: 15px;
+}
+.itemsCart{
+  padding: 100px
+}
+body{
+  /*background-color:#252525*/
   background-color: rgb(73, 67, 49)
-}*/
+}
 .sliderImagenes{
   background-color: rgba(255, 255, 255, 0)
 }
@@ -22,8 +39,10 @@
   position: sticky;
   top: 0px;
   z-index: 300000;
-  /*background-color: rgb(250, 245, 245);*/
-  background-color: #c5beb0;
+  /*background-color: rgb(250, 245, 245);
+  background-color: #c5beb0;*/
+  background-color:   #272c1d;
+  color: white;
   /*background-image: linear-gradient(to top, #eee4d3, #f0e2cb, #f2e1c4, #f4dfbc, #f6ddb5);*/
   width: 100%;
   padding: 0px;
@@ -39,12 +58,12 @@
     text-align: right;
     max-width: 10vh;
     height: auto;
-    color: black;
+    color: rgb(248, 242, 183);
     font-size: 20px;
     background-color: rgba(238, 228, 209, 0) 
 }
 .imagenLogo {
-    background-color: rgba(238, 228, 209, 0);
+    background-color: rgba(217, 215, 212, 0);
   width: 118px; 
   justify-content: center;
 }
@@ -57,6 +76,9 @@
     font-size: 25px;
     cursor:pointer;
 }
+.mySidenav{
+  color: white
+}
 .sidenav {
     height: 100%;
     width: 0vw;
@@ -64,7 +86,8 @@
     z-index: 200000;
     top: 0;
     left: 0;
-    background-color: rgba(238, 228, 209);
+    background-color:   #272c1d;
+    color:rgb(237, 233, 212);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -74,11 +97,11 @@
   }  
   
   .sidenav a {
-    background-color: rgb(238, 228, 209);
+    background-color:   #272c1d;
+    color:rgb(237, 233, 212);
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #181818;
     display: block;
     transition: 0.3s;
   }
@@ -124,7 +147,7 @@ li {
 a{
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  color:black;
+  color:rgb(237, 233, 212)
 }
 
 .slideshow-container {
@@ -258,15 +281,19 @@ footer {
 }
 .containerBeneficios{
   display: flex;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
   margin-bottom: 10px;
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(116, 106, 75, 0.947)
+  
+  /*background-color:rgba(237, 233, 212, 0.479);*/
 }
 .imgBene {
   height: auto;
   max-width:8%;
+  
 }
 .contenedorImagen {
   flex-direction: column;
@@ -288,7 +315,8 @@ footer {
 .footerContainer{
   display: flex;
   flex-direction: column;
-  background-color: rgb(235, 231, 231);
+  background-color: #272c1d;
+  color:rgb(237, 233, 212)
   /*background-color:#f0dda9*/
 
 }
@@ -517,14 +545,13 @@ background-color: rgb(253, 250, 242);
 margin:0 auto;
 }
 .cardName{
-  font-size:15px;
-  font-weight:bold;
+
   padding: 5px;
 
 }
 .cardPrice{
-  font-size:15px;
-  color:#ca802c;
+  font-size:18px;
+  color:#9e9a8a;
   padding: 5px;
   font-weight:bold;
 }
@@ -547,10 +574,12 @@ margin:0 auto;
   margin:auto;
 }
 .card{
-  width: 250px;
+  width: 300px;
   height:auto;
   border-radius: 3px;
-  border: solid 1px rgba(175, 174, 174, 0.068);
+  border: solid 1px rgb(101, 101, 101);
+  background-color: #272c1d6d;
+  color: #dcd1a7 ;
   overflow: hidden;
   margin: 20px;
   text-align: center;
@@ -587,11 +616,12 @@ margin:0 auto;
 }
 /******* Formulario crear producto ********/
 .body-loadProduct{
-  background-color: rgb(253, 250, 242);
+  background-color:   #272c1d9a;
   width:70%;
   padding: 20px ;
   margin: 0 auto;
-  border: solid 20px white;
+  color:rgb(237, 233, 212);
+
   border-radius: 10px;
 }
 .forms{
@@ -628,12 +658,13 @@ margin:0 auto;
 }
 .registerForm{
  
-  box-shadow: 0px 0px 3px rgb(209, 193, 138);
-  background-color: rgb(253, 250, 242);
+  background-color:#272c1daa;
+  color:rgb(237, 233, 212);
   width: 60%;
   margin: 3% auto;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  border-radius: 20px; 
   }
   .registerForm h1{
     font-size: 20px;
@@ -668,7 +699,7 @@ margin:0 auto;
   width: 80%;
   font-size: 15px;
   text-align: left;
-  background-color: #fff; 
+  background-color:rgb(237, 233, 212)
 }
 .data h2{
   text-align: left;
@@ -754,7 +785,7 @@ margin:0 auto;
   .left{
     display:flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
   }
   .right{
     display:flex;
@@ -795,6 +826,15 @@ margin:0 auto;
 .datas{
   width: 80%;
 
+}
+.producto-a-comprar{
+  flex-direction: row;
+  border: solid 1px;
+  background-color: #6c7758a9
+}
+.carritoDetail{
+  display:flex;
+  flex-direction: row;
 }
 }
 }

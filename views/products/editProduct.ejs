@@ -29,7 +29,7 @@
                         </div>
                     </p>
 
-                    <p>
+                    <br>
                         <label>Precio</label>
                         <br>
                         <input type="number" name="price" 
@@ -40,10 +40,9 @@
                             </p>
                             <% } %>
                     </p>
-                
-                    <p>
+                <br>
                         <label>Categoría</label>
-                        <label>Categoría</label>
+                        <br>
                         <select name="category">
                           <option value="1">Platos</option>
                           <option value="2">Cuencos</option>
@@ -52,23 +51,24 @@
                           <option value="5">Deco</option>
                           </select>  
                         <br>
+                        <br>
                        <!-- <input type="text" name="category" value="<%=// idProduct.category%>"> --> 
-                        
-                    </p>   
                 </div>
                 
                 <div class="right">
                 <div class="form-loadProd"></p>
                    <label>Descripción del Producto</label> 
                    <br>
-                   <input name="description" id="" cols="40" rows="6"
+                 
+                   <textarea name="description" id="" cols="40" rows="6"
                    value="<%= locals.oldData ? oldData.description : idProduct.description %> " class="description">
                    <% if (locals.errors && errors.description) { %>
                      <p class="errorMsg">
                        <%= errors.description.msg %>
                      </p>
-                     <% } %>
+                     <% } %> </textarea>
                     </div>
+
                     <p class="form__input-error_description">Campo obligatorio debe contener al menos 5 caracteres</p>
                     </div>
                 </div>
