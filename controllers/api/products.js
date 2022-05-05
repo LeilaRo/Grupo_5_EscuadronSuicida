@@ -10,6 +10,7 @@ module.exports = {
         try {
             let allProducts = await Product.findAll();
             let allCategories = await Categories.findAll({include: {all: true}});
+            let lastProduct = await Product.findAll({order: [['id', 'DESC']], limit: 1});
 
             return res.status(200).json({
                 count: allProducts.length,
@@ -24,6 +25,7 @@ module.exports = {
                     description: product.description,
                     detail: 'http://localhost:3030/api/product/'+ product.id,
                 })),
+                lastProduct: lastProduct,
 
                 status: 200
             });
@@ -37,6 +39,7 @@ module.exports = {
             let product = await Product.findByPk(req.params.id, { include: { all: true } });
             let allCategories = await Categories.findAll({include: {all: true}});
             let imageProduct = await productImages.findByPk(product.productImagesId, {include: {all: true}});
+            
 
             return res.status(200).json({
                 id: product.id,
@@ -44,7 +47,8 @@ module.exports = {
                 description: product.description,
                 category: product.categoryId,
                 price: product.price,
-                productImages: imageProduct.url
+                productImages: imageProduct.url,
+                
 
             
             })
