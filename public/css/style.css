@@ -84,6 +84,7 @@ body{
   color: white
 }
 .sidenav {
+    color:#272c1d;;
     height: 100%;
     width: 0vw;
     position: fixed;
@@ -753,6 +754,7 @@ background-color: #272c1d6d;
   display:flex;
   flex-direction: row;
 }
+
 @media(min-width:769px){
   .contenedor-buscador{
     display: block;
