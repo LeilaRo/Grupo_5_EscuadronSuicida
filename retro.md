@@ -50,5 +50,13 @@ Retro Sprint 6:
 
 Retro Sprint 7:
 
+* Como buena práctica destacamos la utilización del tablero de trelo organizando las tareas por prioridades y dividiendolas por pequeñas tareas y asi trabajar de manera mas organizada.
+* Continuar haciendo: comunicación durante la semana encuentros por meet. Usar como referencia el tablero de trello para trabajar mas organizados.
+* Hacer más: pedir ayuda a los profesores, ya que al no poder resolver los problemas por nuestra cuenta, nos retrasamos en el resto de las tareas del proyecto.
+
 Retro Sprint 8:
 
+* Como buena práctica destacamos que aprendimos a lo largo del proyecto a organizarnos mejor en tiempos y priorizando tareas lo cual fue un punto a mejorar en sprints anteriores y llegamos al ultimo sprint siendo una de unas mayores fortalezas como grupo ya que solo quedamos 2 miembros lo cual nos llevo a tener que organizarnos de la mejor manera para cumplir con las tareas.
+* Continuar haciendo: comunicación durante la semana encuentros por meet. Usar como referencia el tablero de trello para trabajar mas organizados.
+* Hacer más: pedir ayuda a los profesores, ya que al no poder resolver los problemas por nuestra cuenta, nos retrasamos en el resto de las tareas del proyecto.
+* Como falencia: no haber pedido ayuda antes a los profesores al estar bloqueados en cierta parte del proyecto y tratar de resolverlos solos, lo que nos llevo a atrasarnos en el proyecto y tener muchas tareas pendientes.
