@@ -28,5 +28,6 @@ Nuestro grupo está conformado por:
   hola, me encuentro estudiando programación ademas de trabajar en comercio, en mis ratos libres me dedico a la musica.
 
 Link de  tablero de trello https://trello.com/grupo5trabajointegrador/home
+En la carpeta Dashboard se encuentra el proyecto de REACT
 
 
